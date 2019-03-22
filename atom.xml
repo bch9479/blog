@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-22T12:34:35.083Z</updated>
+  <updated>2019-03-22T15:44:12.496Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2019/03/22/vue-%E7%AC%94%E8%AE%B0-1/"/>
     <id>http://yoursite.com/2019/03/22/vue-笔记-1/</id>
     <published>2019-03-22T12:33:57.000Z</published>
-    <updated>2019-03-22T12:34:35.083Z</updated>
+    <updated>2019-03-22T15:44:12.496Z</updated>
     
     <content type="html"><![CDATA[<h1 id="vue-笔记-一"><a href="#vue-笔记-一" class="headerlink" title="vue 笔记 一"></a>vue 笔记 一</h1><p>vue 渐进式框架前端框架</p>]]></content>
     
