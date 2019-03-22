@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="Chinese">
+<html>
 <head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="utf-8">
-    
-    <title>Hello World | 个人博客</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta charset="utf-8">
+  
+  <title>Hello World | 个人博客 | BCH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="theme-color" content="#3F51B5">
+  
+  
+  <meta name="keywords" content>
+  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hello World">
 <meta property="og:url" content="http://yoursite.com/2019/03/22/hello-world/index.html">
@@ -19,109 +21,188 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hello World">
 <meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-
-    
-        <link rel="icon" href="/favicon.ico">
-    
-
-    <link rel="stylesheet" href="/libs/fontawesome/css/font-awesome-5.1.0.min.css">
-    <link rel="stylesheet" href="/libs/opensans-web/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-    <link rel="stylesheet" href="/libs/justifiedGallery/justifiedGallery.min.css">
-    <link rel="stylesheet" href="/libs/fancybox/jquery.fancybox.min.css">
-
-    <link rel="stylesheet" href="/css/style.css">
-
-    <script src="/libs/jquery/jquery-2.2.4.min.js"></script>
-    
-        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-        <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-    
-    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-    <!-- Global Site Tag (gtag.js) - Google Analytics -->
-    
-
-    <!-- Baidu Analytics -->
-    
-</head></html>
+  
+    <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
+  
+  <meta name="summary" content="bch_bk">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
 <body>
-    <div id="wrap">
-        <header class="header">
-    <nav class="header-nav container">
-        <div class="header-hamburger">
-            <svg height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 0h24v24H0z" fill="none"/>
-                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-            </svg> 
-        </div>
-        <ul id="nav-menu" class="nav-menu">
-            
-                
-                    <li class="nav-menu-list-item">
-                        <a class="nav-menu-list-link" href="/">Home</a>
-                    </li>
-                
-                
-                    <li class="nav-menu-list-item">
-                        <a class="nav-menu-list-link" href="/archives/">Archives</a>
-                    </li>
-                
-                
-                    
-                
-        </ul>
-        <div id="search-icon" class="header-search-btn">
-            <i class="fas fa-search search-open"></i>
-        </div>
-    </nav>
-</header>
-<div class="hero">
-    
-        <div class="hero-article container">
-            
-                <div class="article-title">
-                    <i class="fas fa-bookmark"></i>
-                    <h1 class="page-title" itemprop="name">Hello World</h1>
-                </div>
-                <div class="article-meta">
-    
-        <span class="article-author">BY STAUNCHKAI ON</span>
-        <time class="article-date">March 22 2019</time>
-        <span class="article-count">
-            阅读本文大约需要: 1分钟
-            <i class="far fa-eye"></i>
-            <span id="busuanzi_value_page_pv"></span>
-        </span>
-    
-</div>
-            
-        </div>
-    
-</div>
-        <div class="search">
-    <div class="search-mask"></div>
-    <div class="search-wrapper">
-        <span class="search-title">Begin to <strong>explore</strong></span>
-        <input type="text" id="local-search-input" class="search-input" name="q" results="0" placeholder="搜索文章" autocomplete="off">
-        <i class="fas fa-times-circle search-close"></i>
+  <div id="loading" class="active"></div>
+
+  <nav id="menu" class="hide" >
+   <div class="inner flex-row-vertical">
+  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+      <i class="icon icon-lg icon-close"></i>
+  </a>
+  <div class="brand-wrap">
+    <div class="brand">
+      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
+      <hgroup class="introduce">
+        <h5 class="nickname">BCH</h5>
+        <a href="mailto:634206017@qq.com" title="634206017@qq.com" class="mail">634206017@qq.com</a>
+      </hgroup>
     </div>
-    <div id="local-search-result" class="search-result"></div>
-    <script src="/js/search.js"></script>
-    <script type="text/javascript">      
-        var search_path = "search.xml";
-        if (search_path.length == 0) {
-            search_path = "search.xml";
-        }
-        var path = "/" + search_path;
-        searchFunc(path, 'local-search-input', 'local-search-result');
-    </script>
+  </div>
+  <div class="scroll-wrap flex-col">
+    <ul class="nav">
+      
+          <li class="waves-block waves-effect">
+            <a href="/">
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/archives">
+              <i class="icon icon-lg icon-archives"></i>
+              Archives
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/tags">
+              <i class="icon icon-lg icon-tags"></i>
+              Tags
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://github.com/yscoder" target="_blank">
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="http://www.weibo.com/ysweb" target="_blank">
+              <i class="icon icon-lg icon-weibo"></i>
+              Weibo
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/404">
+              <i class="icon icon-lg icon-link"></i>
+              测试
+            </a>
+          </li>
+      
+    </ul>
+
+    <footer class="footer">
+  <p><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAllBMVEUAAAD///+rsapERER3d3eIiIjMzMzu7u4iIiKUmZO6v7rKzsoODg4RERFVVVUNDQ0NDg0PEA8zMzNLTEtbXltmZmZydnF9gn2AgICPkI+ZmZmqqqq7u7vFxsXIzMgNDQwZGRkgICAhISEkJSMnKCcuMC4xMzE5Ozk7PTtBQkFCQkJDQ0Nna2eGhoaHh4ezuLLGysbd3d1wVGpAAAAA4UlEQVR42q2T1xqCMAyFk7QsBQeKA9x7j/d/OSm22CpX0nzcpA1/T05aAOuBVkMAScQFHLnEwoCo2f1TnQIGoVMewjZEjVFN4GH1Ue1Cn2jWqwfsOOj6wDwGvotsl/c8lv7KIq1eLOsT0HMFHMIE/RZyHnlphryT9zyV+8WH5e8yQw3wnQvgAFxPTKUVi555SHR/lOfLMgVTeDlSfN+TaoUsiTyeIm+bCkHvCA2FUKG48LDtYBZBknsYP/G8NTw0gaaHyuQf4H5pecrB/FYCT2sL9zAfy1Xyjou6L8X2W7YcLyBZCRtnq/zfAAAAAElFTkSuQmCC"></a></p>
+  <p>个人博客 &copy; 2019</p>
+  <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+</footer>
+
+  </div>
 </div>
-        <div class="container">
-            <div class="content">
-                <article id="post" class="page-article" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+
+  </nav>
+  <main id="main">
+    <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Hello World</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header">
+  <div class="container">
+    <h1 class="author">Hello World</h1>
+    <h5 class="subtitle">
+        
+            <time datetime="2019-03-22T11:47:08.788Z" itemprop="datePublished" class="page-time">
+  2019-03-22
+</time>
+
+
+        
+    </h5>
+  </div>
+</header>
+
+    <div class="container body-wrap">
+      <article id="post-hello-world" class="article article-type-post" itemprop="blogPost">
+    <div class="post-meta flex-row">
+        
+    </div>
+    <div class="post-body">
+        <aside class="post-widget" id="post-widget">
+
+            
+            <div class="post-share" id="post-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+            
+
+            
+            <nav class="post-toc-wrap" id="post-toc">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Quick-Start"><span class="post-toc-number">1.</span> <span class="post-toc-text">Quick Start</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Create-a-new-post"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Create a new post</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Run-server"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Run server</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generate-static-files"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Generate static files</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Deploy-to-remote-sites"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+            </nav>
+            
+        </aside>
+
+        <div class="post-main">
+
+            <div class="post-content" id="post-content" itemprop="postContent">
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
@@ -131,224 +212,171 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
-    </div>
-    
-        <div class="reward">
-    <button class="reward-btn">
-        捐赠
-    </button>
-    <div class="reward-content">
-        <i class="fas fa-thumbs-up"></i>
-        <span class="reward-title">请我吃包辣条！</span>
-        <div class="reward-images">
-            <a href data-fancybox="gallery">
-                <img src>
-            </a>
-            <a href data-fancybox="gallery">
-                <img src>
-            </a>
-        </div>
-    </div>
-</div>
-    
-    
-        <div class="article-tags">
-    
-</div>
-    
-    <div class="aricle-actions">
-    <nav class="action-nav">
-        
-            <a href="/2019/03/22/vue-笔记-1/" class="nav-btn" title="vue 笔记 1">
-                <i class="fas fa-angle-left"></i>
-                <span>上一篇</span>
-            </a>
-        
-        
-    </nav>
-    <div class="share">
-    <div class="share-alone">
-        
-            <a class="share-btn" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2019/03/22/hello-world/index.html&sharesource=qzone&title=个人博客 | Hello World&summary=bch_bk" target="_blank">
-                <i class="fab fa-qq"></i>
-            </a>
-        
-        
-            <a class="share-btn" href="http://service.weibo.com/share/share.php?appkey=&title=个人博客 | Hello World&url=http://yoursite.com/2019/03/22/hello-world/index.html&searchPic=false&style=simple" target="_blank">
-                <i class="fab fa-weibo"></i>
-            </a>
-        
-        
-            <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/03/22/hello-world/index.html" target="_blank">
-                <i class="fab fa-facebook"></i>
-            </a>
-        
-        
-            <a class="share-btn" href="https://twitter.com/intent/tweet?text=个人博客Hello World&url=http://yoursite.com/2019/03/22/hello-world/index.html&via=BCH" target="_blank">
-                <i class="fab fa-twitter"></i>
-            </a>
-        
-        
-            <a class="share-btn" href="https://plus.google.com/share?url=http://yoursite.com/2019/03/22/hello-world/index.html" target="_blank">
-                <i class="fab fa-google-plus-g"></i>
-            </a>
-        
-        
-            <a class="share-btn" href="https://telegram.me/share/url?url=http://yoursite.com/2019/03/22/hello-world/index.html&text=个人博客 | Hello World" target="_blank">
-                <i class="fab fa-telegram-plane"></i>
-            </a>
-        
-    </div>
-    <a class="share-all-btn share-btn">
-        <i class="fas fa-share-alt"></i>
-    </a>
-</div>
-</div>
-    
-        <div id="comment" class="vcomment v"></div>
-        <script>
-            new Valine({
-                el: '#comment' ,
-                notify: true,
-                verify: false,
-                app_id: '',
-                app_key: '',
-                placeholder: 'Please leave your footprints',
-                pageSize: '10',
-                avatar: '',
-                avatar_cdn: 'https://gravatar.loli.net/avatar/'
-            });
-        </script>
-    
 
-    <script src="/libs/justifiedGallery/jquery.justifiedGallery.min.js"></script>
-    <script src="/libs/fancybox/jquery.fancybox.min.js"></script>
-</article>
-                <aside class="sidebar">
-    <!-- Sidebar-Social -->
-    
-        <section class="section-social sidebar-section">
-            <div class="social-content">
-                
-                    <a href="//staunchkai.com" class="social-btn" target="_blank">
-                        <i class="fab fa-github btn-icon"></i>
-                    </a>
-                
-                    <a href="mailto:staunchkai@outlook.com" class="social-btn" target="_blank">
-                        <i class="fas fa-envelope btn-icon"></i>
-                    </a>
-                
-                    <a href="//staunchkai.com" class="social-btn" target="_blank">
-                        <i class="fab fa-qq btn-icon"></i>
-                    </a>
-                
-                    <a href="//staunchkai.com" class="social-btn" target="_blank">
-                        <i class="fab fa-twitter btn-icon"></i>
-                    </a>
-                
-            </div>
-        </section>
-    
-
-    <!-- Sidebar-Notice -->
-    
-        <section class="section-notice sidebar-section">
-            <h3 class="section-title"><i class="far fa-sticky-note"></i>告示 </h3>
-            <div class="notice-content">
-                <ul>
-                    <li>Staunch 主题正式发布！主题下载：<a href="https://github.com/staunchkai/hexo-theme-staunch" target="_blank">Staunch 主题</a></li> <li>Staunch 正式文档发布，<a href="//staunchkai.com/docs.html">点击查看</a></li>
-                </ul>
-            </div>
-        </section>
-    
-    <!-- Sidebar-Categorys -->
-    <div class="section-category sidebar-section">
-        <h3 class="section-title"><i class="far fa-folder-open"></i>分类</h3>
-        
-    </div>
-    <!-- Sidebar-Tags -->
-    <div class="section-tags sidebar-section">
-        <h3 class="section-title"><i class="fas fa-tags"></i>标签</h3>
-        <div class="tags-list">
             
-        </div>
-        <div style="clear: both;"></div>
+            <div class="post-reward">
+                <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
+            </div>
+            
+            
+            <blockquote>
+                <p>
+                本文地址：
+                <a href="http://yoursite.com/2019/03/22/hello-world/" target="_blank" rel="external">http://yoursite.com/2019/03/22/hello-world/</a>
+                </p>
+                <footer><cite><a href="http://yoursite.com">@个人博客</a></cite></footer>
+            </blockquote>
+            </div>
+            
+<nav class="post-nav">
+  
+    <div class="waves-block waves-effect prev fl">
+      <a href="/2019/03/22/vue-笔记-1/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">vue 笔记 1</h4>
+      </a>
     </div>
+  
 
-    <!-- Sidebar-Links -->
-    
-    <div class="section-links sidebar-section">
-        <h3 class="section-title"><i class="fas fa-link"></i>链接</h3>
-        
-            <div class="link">
-                
-                    <img src="/img/avatar.png">
-                
-                <a href="http://staunchkai.com" target="_blank">StaunchKai</a>
-            </div>
-        
-    </div>
-    
+  
+</nav>
 
-    <!-- Sidebar-Count -->
-    
-        <section class="section-count sidebar-section">
-            <h3 class="section-title"><i class="fas fa-chart-area"></i>统计</h3>
-            <ul class="count-visit">
-                
-                <li>
-                    <img src="/img/sidebar/visit.png">
-                    <span id="busuanzi_value_site_pv"></span>
-                    <span class="note">总访问量</span>
-                </li>
-                
-                
-                <li>
-                    <img src="/img/sidebar/visitor.png">
-                    <span id="busuanzi_value_site_uv"></span>
-                    <span class="note">总访客数</span>
-                </li>
-                
-                
-                <li>
-                    <img src="/img/sidebar/article.png">
-                    <span>2</span>
-                    <span class="note">文章数</span>
-                </li>
-                
-                
-                <li>
-                    <img src="/img/sidebar/wordcount.png">
-                    <span>87</span>
-                    <span class="note">总字数</span>
-                </li>
-                
-            </ul>
-        </section>
-    
-</aside>
-            </div>
-            <!-- Sidebar-Toc -->
- 
-            <div class="top">
-                <i class="fas fa-chevron-up"></i>
-            </div>
-            <footer class="footer">
-    <div class="footer-content">
-        
-            <div class="copyright">
-                Copyright © 2018 StaunchKai. All rights reserved
-            </div>
-        
-        <!-- 主题制作不易，还请保留出处 -->
-        <div class="licenses">
-            Powered by <a href="http://hexo.io" target="_blank"> Hexo </a>&nbsp
-            Theme - <a href="https://github.com/staunchkai/hexo-theme-staunch" target="_blank">Staunch</a>
+
+            
+            
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="hello-world" data-title="Hello World" data-url="http://yoursite.com/2019/03/22/hello-world/index.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"ysblog"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
         </div>
     </div>
-</footer>
-            <script src="/js/staunch.js"></script>
-        </div>
+</article>
+
+<div id="reward" class="reward-lay">
+    <a class="reward-off" id="rewardOff" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
     </div>
+  </main>
+<div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+<script>
+var BLOG_SHARE = {
+    title: "Hello World",
+    pic: "/img/logo.jpg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "http://yoursite.com/2019/03/22/hello-world/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
+
+
+
+
+
+
+
+
+
 </body>
 </html>
