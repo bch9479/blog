@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2019/03/22/hello-world/"/>
-      <url>/2019/03/22/hello-world/</url>
+      <title>cycle</title>
+      <link href="/2019/03/25/cycle/"/>
+      <url>/2019/03/25/cycle/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
       
       
@@ -17,12 +17,56 @@
     
     
     <entry>
+      <title>es6_async_await</title>
+      <link href="/2019/03/25/es6-async-await/"/>
+      <url>/2019/03/25/es6-async-await/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 未知 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>REACT_组件通信</title>
+      <link href="/2018/03/25/react_fscom/"/>
+      <url>/2018/03/25/react_fscom/</url>
+      
+        <content type="html"><![CDATA[<h3 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h3><h5 id="父组件通过-props-传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过-props-传递数据，子组件不能直接修改-props，-而是必须通过调用父组件函数的方式告知父组件修改数据。"><a href="#父组件通过-props-传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过-props-传递数据，子组件不能直接修改-props，-而是必须通过调用父组件函数的方式告知父组件修改数据。" class="headerlink" title="父组件通过  props  传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过  props  传递数据，子组件不能直接修改  props， 而是必须通过调用父组件函数的方式告知父组件修改数据。"></a>父组件通过  props  传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过  props  传递数据，子组件不能直接修改  props， 而是必须通过调用父组件函数的方式告知父组件修改数据。</h5><h3 id="兄弟组件通信"><a href="#兄弟组件通信" class="headerlink" title="兄弟组件通信"></a>兄弟组件通信</h3><h5 id="对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件调用父组件传递过来的事件函数修改父组件中的状态，然后父组件将状态传递给另一个兄弟组件。"><a href="#对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件调用父组件传递过来的事件函数修改父组件中的状态，然后父组件将状态传递给另一个兄弟组件。" class="headerlink" title="对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件调用父组件传递过来的事件函数修改父组件中的状态，然后父组件将状态传递给另一个兄弟组件。"></a>对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件调用父组件传递过来的事件函数修改父组件中的状态，然后父组件将状态传递给另一个兄弟组件。</h5><h3 id="跨多层次组件通信"><a href="#跨多层次组件通信" class="headerlink" title="跨多层次组件通信"></a>跨多层次组件通信</h3><h5 id="如果你使用-16-3-以上版本的话，对于这种情况可以使用-Context-API。"><a href="#如果你使用-16-3-以上版本的话，对于这种情况可以使用-Context-API。" class="headerlink" title="如果你使用 16.3 以上版本的话，对于这种情况可以使用 Context API。"></a>如果你使用 16.3 以上版本的话，对于这种情况可以使用 Context API。</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">// 创建 Context，可以在开始就传入值</span><br><span class="line">const StateContext = React.createContext()</span><br><span class="line">class Parent extends React.Component &#123;</span><br><span class="line">  <span class="function"><span class="title">render</span></span> () &#123;</span><br><span class="line">    <span class="built_in">return</span> (</span><br><span class="line">      // value 就是传入 Context 中的值</span><br><span class="line">      &lt;StateContext.Provider value=<span class="string">'yck'</span>&gt;</span><br><span class="line">        &lt;Child /&gt;</span><br><span class="line">      &lt;/StateContext.Provider&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Child extends React.Component &#123;</span><br><span class="line">  <span class="function"><span class="title">render</span></span> () &#123;</span><br><span class="line">    <span class="built_in">return</span> (</span><br><span class="line">      &lt;ThemeContext.Consumer&gt;</span><br><span class="line">        // 取出值</span><br><span class="line">        &#123;context =&gt; (</span><br><span class="line">          name is &#123; context &#125;</span><br><span class="line">        )&#125;</span><br><span class="line">      &lt;/ThemeContext.Consumer&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> react </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>REACT_setState</title>
-      <link href="/2018/03/22/vue-%E7%AC%94%E8%AE%B0-1/"/>
-      <url>/2018/03/22/vue-%E7%AC%94%E8%AE%B0-1/</url>
+      <link href="/2018/03/22/setStarte/"/>
+      <url>/2018/03/22/setStarte/</url>
       
         <content type="html"><![CDATA[<h2 id="setState"><a href="#setState" class="headerlink" title="setState"></a>setState</h2><h3 id="setState-在-React-中是经常使用的一个-API，但是它存在一些的问题经常会导致初学者出错，核心原因就是因为这个-API-是异步的。首先-setState-的调用并不会马上引起-state-的改变，并且如果你一次调用了多个-setState-，那么结果可能并不如你期待的一样。"><a href="#setState-在-React-中是经常使用的一个-API，但是它存在一些的问题经常会导致初学者出错，核心原因就是因为这个-API-是异步的。首先-setState-的调用并不会马上引起-state-的改变，并且如果你一次调用了多个-setState-，那么结果可能并不如你期待的一样。" class="headerlink" title="setState 在 React 中是经常使用的一个 API，但是它存在一些的问题经常会导致初学者出错，核心原因就是因为这个 API 是异步的。首先  setState  的调用并不会马上引起  state  的改变，并且如果你一次调用了多个  setState ，那么结果可能并不如你期待的一样。"></a>setState 在 React 中是经常使用的一个 API，但是它存在一些的问题经常会导致初学者出错，核心原因就是因为这个 API 是异步的。首先  setState  的调用并不会马上引起  state  的改变，并且如果你一次调用了多个  setState ，那么结果可能并不如你期待的一样。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">handle</span></span>() &#123;</span><br><span class="line">  // 初始化 `count` 为 0</span><br><span class="line">  console.log(this.state.count) // -&gt; 0</span><br><span class="line">  this.setState(&#123; count: this.state.count + 1 &#125;)</span><br><span class="line">  this.setState(&#123; count: this.state.count + 1 &#125;)</span><br><span class="line">  this.setState(&#123; count: this.state.count + 1 &#125;)</span><br><span class="line">  console.log(this.state.count) // -&gt; 0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="第一，两次的打印都为-0，因为-setState-是个异步-API，只有同步代码运行完毕才会执行。setState-异步的原因我认为在于，setState-可能会导致-DOM-的重绘，如果调用一次就马上去进行重绘，那么调用多次就会造成不必要的性能损失。设计成异步的话，就可以将多次调用放入一个队列中，在恰当的时候统一进行更新过程。"><a href="#第一，两次的打印都为-0，因为-setState-是个异步-API，只有同步代码运行完毕才会执行。setState-异步的原因我认为在于，setState-可能会导致-DOM-的重绘，如果调用一次就马上去进行重绘，那么调用多次就会造成不必要的性能损失。设计成异步的话，就可以将多次调用放入一个队列中，在恰当的时候统一进行更新过程。" class="headerlink" title="第一，两次的打印都为 0，因为  setState  是个异步 API，只有同步代码运行完毕才会执行。setState  异步的原因我认为在于，setState  可能会导致 DOM 的重绘，如果调用一次就马上去进行重绘，那么调用多次就会造成不必要的性能损失。设计成异步的话，就可以将多次调用放入一个队列中，在恰当的时候统一进行更新过程。"></a>第一，两次的打印都为 0，因为  setState  是个异步 API，只有同步代码运行完毕才会执行。setState  异步的原因我认为在于，setState  可能会导致 DOM 的重绘，如果调用一次就马上去进行重绘，那么调用多次就会造成不必要的性能损失。设计成异步的话，就可以将多次调用放入一个队列中，在恰当的时候统一进行更新过程。</h3><h3 id="第二，虽然调用了三次-setState-，但是-count-的值还是为-1。因为多次调用会合并为一次，只有当更新结束后-state-才会改变，三次调用等同于如下代码"><a href="#第二，虽然调用了三次-setState-，但是-count-的值还是为-1。因为多次调用会合并为一次，只有当更新结束后-state-才会改变，三次调用等同于如下代码" class="headerlink" title="第二，虽然调用了三次  setState ，但是  count  的值还是为 1。因为多次调用会合并为一次，只有当更新结束后  state  才会改变，三次调用等同于如下代码"></a>第二，虽然调用了三次  setState ，但是  count  的值还是为 1。因为多次调用会合并为一次，只有当更新结束后  state  才会改变，三次调用等同于如下代码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Object.assign(</span><br><span class="line">  &#123;&#125;,</span><br><span class="line">  &#123; count: this.state.count + 1 &#125;,</span><br><span class="line">  &#123; count: this.state.count + 1 &#125;,</span><br><span class="line">  &#123; count: this.state.count + 1 &#125;,</span><br><span class="line">)</span><br></pre></td></tr></table></figure><h3 id="当然你也可以通过以下方式来实现调用三次-setState-使得-count-为-3"><a href="#当然你也可以通过以下方式来实现调用三次-setState-使得-count-为-3" class="headerlink" title="当然你也可以通过以下方式来实现调用三次  setState  使得  count  为 3"></a>当然你也可以通过以下方式来实现调用三次  setState  使得  count  为 3</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">handle</span></span>() &#123;</span><br><span class="line">  this.setState((prevState) =&gt; (&#123; count: prevState.count + 1 &#125;))</span><br><span class="line">  this.setState((prevState) =&gt; (&#123; count: prevState.count + 1 &#125;))</span><br><span class="line">  this.setState((prevState) =&gt; (&#123; count: prevState.count + 1 &#125;))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="如果你想在每次调用-setState-后获得正确的-state-，可以通过如下代码实现"><a href="#如果你想在每次调用-setState-后获得正确的-state-，可以通过如下代码实现" class="headerlink" title="如果你想在每次调用  setState  后获得正确的  state ，可以通过如下代码实现"></a>如果你想在每次调用  setState  后获得正确的  state ，可以通过如下代码实现</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">handle</span></span>() &#123;</span><br><span class="line">    this.setState((prevState) =&gt; (&#123; count: prevState.count + 1 &#125;), () =&gt; &#123;</span><br><span class="line">        console.log(this.state)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       
+      
+      <categories>
+          
+          <category> react </category>
+          
+      </categories>
       
       
         <tags>
