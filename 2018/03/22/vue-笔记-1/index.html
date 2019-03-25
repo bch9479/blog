@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>REACT_setState | 个人博客 | BCH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="theme-color" content="#3F51B5">
+  
+  
+  <meta name="keywords" content="react">
+  <meta name="description" content="setStatesetState 在 React 中是经常使用的一个 API，但是它存在一些的问题经常会导致初学者出错，核心原因就是因为这个 API 是异步的。首先  setState  的调用并不会马上引起  state  的改变，并且如果你一次调用了多个  setState ，那么结果可能并不如你期待的一样。12345678handle() &amp;#123;  // 初始化 `count` 为 0">
+<meta name="keywords" content="react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="REACT_setState">
+<meta property="og:url" content="http://yoursite.com/2018/03/22/vue-笔记-1/index.html">
+<meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="setStatesetState 在 React 中是经常使用的一个 API，但是它存在一些的问题经常会导致初学者出错，核心原因就是因为这个 API 是异步的。首先  setState  的调用并不会马上引起  state  的改变，并且如果你一次调用了多个  setState ，那么结果可能并不如你期待的一样。12345678handle() &amp;#123;  // 初始化 `count` 为 0">
+<meta property="og:locale" content="Chinese">
+<meta property="og:updated_time" content="2019-03-25T14:24:36.092Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="REACT_setState">
+<meta name="twitter:description" content="setStatesetState 在 React 中是经常使用的一个 API，但是它存在一些的问题经常会导致初学者出错，核心原因就是因为这个 API 是异步的。首先  setState  的调用并不会马上引起  state  的改变，并且如果你一次调用了多个  setState ，那么结果可能并不如你期待的一样。12345678handle() &amp;#123;  // 初始化 `count` 为 0">
+  
+    <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
+  
+  <meta name="summary" content="bch_bk">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="loading" class="active"></div>
+
+  <nav id="menu" class="hide" >
+   <div class="inner flex-row-vertical">
+  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+      <i class="icon icon-lg icon-close"></i>
+  </a>
+  <div class="brand-wrap">
+    <div class="brand">
+      <a href="/" class="avatar"><img src="/img/logos.jpeg"></a>
+      <hgroup class="introduce">
+        <h5 class="nickname">BCH</h5>
+        <a href="mailto:17600280987@163.com" title="17600280987@163.com" class="mail">17600280987@163.com</a>
+      </hgroup>
+    </div>
+  </div>
+  <div class="scroll-wrap flex-col">
+    <ul class="nav">
+      
+          <li class="waves-block waves-effect">
+            <a href="/">
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/blog">
+              <i class="icon icon-lg icon-archives"></i>
+              档案
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/tags">
+              <i class="icon icon-lg icon-tags"></i>
+              标签
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://github.com/bch9479/blog" target="_blank">
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://weibo.com/5900743344/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">
+              <i class="icon icon-lg icon-weibo"></i>
+              微博
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/404">
+              <i class="icon icon-lg icon-link"></i>
+              测试
+            </a>
+          </li>
+      
+    </ul>
+
+    <footer class="footer">
+  <p>个人博客 &copy; 2019</p>
+</footer>
+
+  </div>
+</div>
+
+  </nav>
+  <main id="main">
+    <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">REACT_setState</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header">
+  <div class="container">
+    <h1 class="author">REACT_setState</h1>
+    <h5 class="subtitle">
+        
+            <time datetime="2018-03-22T12:33:57.000Z" itemprop="datePublished" class="page-time">
+  2018-03-22
+</time>
+
+
+        
+    </h5>
+  </div>
+</header>
+
+    <div class="container body-wrap">
+      <article id="post-vue-笔记-1" class="article article-type-post" itemprop="blogPost">
+    <div class="post-meta flex-row">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
+
+    </div>
+    <div class="post-body">
+        <aside class="post-widget" id="post-widget">
+
+            
+            <div class="post-share" id="post-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+            
+
+            
+            <nav class="post-toc-wrap" id="post-toc">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#setState"><span class="post-toc-number">1.</span> <span class="post-toc-text">setState</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#setState-在-React-中是经常使用的一个-API，但是它存在一些的问题经常会导致初学者出错，核心原因就是因为这个-API-是异步的。首先-setState-的调用并不会马上引起-state-的改变，并且如果你一次调用了多个-setState-，那么结果可能并不如你期待的一样。"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">setState 在 React 中是经常使用的一个 API，但是它存在一些的问题经常会导致初学者出错，核心原因就是因为这个 API 是异步的。首先  setState  的调用并不会马上引起  state  的改变，并且如果你一次调用了多个  setState ，那么结果可能并不如你期待的一样。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第一，两次的打印都为-0，因为-setState-是个异步-API，只有同步代码运行完毕才会执行。setState-异步的原因我认为在于，setState-可能会导致-DOM-的重绘，如果调用一次就马上去进行重绘，那么调用多次就会造成不必要的性能损失。设计成异步的话，就可以将多次调用放入一个队列中，在恰当的时候统一进行更新过程。"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">第一，两次的打印都为 0，因为  setState  是个异步 API，只有同步代码运行完毕才会执行。setState  异步的原因我认为在于，setState  可能会导致 DOM 的重绘，如果调用一次就马上去进行重绘，那么调用多次就会造成不必要的性能损失。设计成异步的话，就可以将多次调用放入一个队列中，在恰当的时候统一进行更新过程。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第二，虽然调用了三次-setState-，但是-count-的值还是为-1。因为多次调用会合并为一次，只有当更新结束后-state-才会改变，三次调用等同于如下代码"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">第二，虽然调用了三次  setState ，但是  count  的值还是为 1。因为多次调用会合并为一次，只有当更新结束后  state  才会改变，三次调用等同于如下代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#当然你也可以通过以下方式来实现调用三次-setState-使得-count-为-3"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">当然你也可以通过以下方式来实现调用三次  setState  使得  count  为 3</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如果你想在每次调用-setState-后获得正确的-state-，可以通过如下代码实现"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">如果你想在每次调用  setState  后获得正确的  state ，可以通过如下代码实现</span></a></li></ol></li></ol>
+            </nav>
+            
+        </aside>
+
+        <div class="post-main">
+
+            <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="setState"><a href="#setState" class="headerlink" title="setState"></a>setState</h2><h3 id="setState-在-React-中是经常使用的一个-API，但是它存在一些的问题经常会导致初学者出错，核心原因就是因为这个-API-是异步的。首先-setState-的调用并不会马上引起-state-的改变，并且如果你一次调用了多个-setState-，那么结果可能并不如你期待的一样。"><a href="#setState-在-React-中是经常使用的一个-API，但是它存在一些的问题经常会导致初学者出错，核心原因就是因为这个-API-是异步的。首先-setState-的调用并不会马上引起-state-的改变，并且如果你一次调用了多个-setState-，那么结果可能并不如你期待的一样。" class="headerlink" title="setState 在 React 中是经常使用的一个 API，但是它存在一些的问题经常会导致初学者出错，核心原因就是因为这个 API 是异步的。首先  setState  的调用并不会马上引起  state  的改变，并且如果你一次调用了多个  setState ，那么结果可能并不如你期待的一样。"></a>setState 在 React 中是经常使用的一个 API，但是它存在一些的问题经常会导致初学者出错，核心原因就是因为这个 API 是异步的。首先  setState  的调用并不会马上引起  state  的改变，并且如果你一次调用了多个  setState ，那么结果可能并不如你期待的一样。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">handle</span></span>() &#123;</span><br><span class="line">  // 初始化 `count` 为 0</span><br><span class="line">  console.log(this.state.count) // -&gt; 0</span><br><span class="line">  this.setState(&#123; count: this.state.count + 1 &#125;)</span><br><span class="line">  this.setState(&#123; count: this.state.count + 1 &#125;)</span><br><span class="line">  this.setState(&#123; count: this.state.count + 1 &#125;)</span><br><span class="line">  console.log(this.state.count) // -&gt; 0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="第一，两次的打印都为-0，因为-setState-是个异步-API，只有同步代码运行完毕才会执行。setState-异步的原因我认为在于，setState-可能会导致-DOM-的重绘，如果调用一次就马上去进行重绘，那么调用多次就会造成不必要的性能损失。设计成异步的话，就可以将多次调用放入一个队列中，在恰当的时候统一进行更新过程。"><a href="#第一，两次的打印都为-0，因为-setState-是个异步-API，只有同步代码运行完毕才会执行。setState-异步的原因我认为在于，setState-可能会导致-DOM-的重绘，如果调用一次就马上去进行重绘，那么调用多次就会造成不必要的性能损失。设计成异步的话，就可以将多次调用放入一个队列中，在恰当的时候统一进行更新过程。" class="headerlink" title="第一，两次的打印都为 0，因为  setState  是个异步 API，只有同步代码运行完毕才会执行。setState  异步的原因我认为在于，setState  可能会导致 DOM 的重绘，如果调用一次就马上去进行重绘，那么调用多次就会造成不必要的性能损失。设计成异步的话，就可以将多次调用放入一个队列中，在恰当的时候统一进行更新过程。"></a>第一，两次的打印都为 0，因为  setState  是个异步 API，只有同步代码运行完毕才会执行。setState  异步的原因我认为在于，setState  可能会导致 DOM 的重绘，如果调用一次就马上去进行重绘，那么调用多次就会造成不必要的性能损失。设计成异步的话，就可以将多次调用放入一个队列中，在恰当的时候统一进行更新过程。</h3><h3 id="第二，虽然调用了三次-setState-，但是-count-的值还是为-1。因为多次调用会合并为一次，只有当更新结束后-state-才会改变，三次调用等同于如下代码"><a href="#第二，虽然调用了三次-setState-，但是-count-的值还是为-1。因为多次调用会合并为一次，只有当更新结束后-state-才会改变，三次调用等同于如下代码" class="headerlink" title="第二，虽然调用了三次  setState ，但是  count  的值还是为 1。因为多次调用会合并为一次，只有当更新结束后  state  才会改变，三次调用等同于如下代码"></a>第二，虽然调用了三次  setState ，但是  count  的值还是为 1。因为多次调用会合并为一次，只有当更新结束后  state  才会改变，三次调用等同于如下代码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Object.assign(</span><br><span class="line">  &#123;&#125;,</span><br><span class="line">  &#123; count: this.state.count + 1 &#125;,</span><br><span class="line">  &#123; count: this.state.count + 1 &#125;,</span><br><span class="line">  &#123; count: this.state.count + 1 &#125;,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h3 id="当然你也可以通过以下方式来实现调用三次-setState-使得-count-为-3"><a href="#当然你也可以通过以下方式来实现调用三次-setState-使得-count-为-3" class="headerlink" title="当然你也可以通过以下方式来实现调用三次  setState  使得  count  为 3"></a>当然你也可以通过以下方式来实现调用三次  setState  使得  count  为 3</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">handle</span></span>() &#123;</span><br><span class="line">  this.setState((prevState) =&gt; (&#123; count: prevState.count + 1 &#125;))</span><br><span class="line">  this.setState((prevState) =&gt; (&#123; count: prevState.count + 1 &#125;))</span><br><span class="line">  this.setState((prevState) =&gt; (&#123; count: prevState.count + 1 &#125;))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="如果你想在每次调用-setState-后获得正确的-state-，可以通过如下代码实现"><a href="#如果你想在每次调用-setState-后获得正确的-state-，可以通过如下代码实现" class="headerlink" title="如果你想在每次调用  setState  后获得正确的  state ，可以通过如下代码实现"></a>如果你想在每次调用  setState  后获得正确的  state ，可以通过如下代码实现</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">handle</span></span>() &#123;</span><br><span class="line">    this.setState((prevState) =&gt; (&#123; count: prevState.count + 1 &#125;), () =&gt; &#123;</span><br><span class="line">        console.log(this.state)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+            
+            <div class="post-reward">
+                <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
+            </div>
+            
+            
+            <blockquote>
+                <p>
+                本文地址：
+                <a href="http://yoursite.com/2018/03/22/vue-笔记-1/" target="_blank" rel="external">http://yoursite.com/2018/03/22/vue-笔记-1/</a>
+                </p>
+                <footer><cite><a href="http://yoursite.com">@个人博客</a></cite></footer>
+            </blockquote>
+            </div>
+            
+<nav class="post-nav">
+  
+    <div class="waves-block waves-effect prev fl">
+      <a href="/2019/03/22/hello-world/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Hello World</h4>
+      </a>
+    </div>
+  
+
+  
+</nav>
+
+
+            
+            
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="vue-笔记-1" data-title="REACT_setState" data-url="http://yoursite.com/2018/03/22/vue-笔记-1/index.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"ysblog"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+<div id="reward" class="reward-lay">
+    <a class="reward-off" id="rewardOff" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        感谢支持
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/vx.png" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/zfb.png" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+  </main>
+<div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+<script>
+var BLOG_SHARE = {
+    title: "REACT_setState",
+    pic: "/img/logos.jpeg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "http://yoursite.com/2018/03/22/vue-笔记-1/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
