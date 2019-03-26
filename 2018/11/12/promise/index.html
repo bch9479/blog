@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>promise | 个人博客 | BCH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="theme-color" content="#3F51B5">
+  
+  
+  <meta name="keywords" content="promise">
+  <meta name="description" content="Promise 的含义Promise 是异步编程的一种解决方案，比传统的解决方案–回调函数和事件－－更合理和更强大。它由社区最早提出和实现，ES6 将其写进了语言标准，统一了语法，原生提供了 Promise所谓 Promise ，简单说就是一个容器，里面保存着某个未来才回结束的事件(通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。Promise 对象">
+<meta name="keywords" content="promise">
+<meta property="og:type" content="article">
+<meta property="og:title" content="promise">
+<meta property="og:url" content="http://blog.bochunhao.cn/2018/11/12/promise/index.html">
+<meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="Promise 的含义Promise 是异步编程的一种解决方案，比传统的解决方案–回调函数和事件－－更合理和更强大。它由社区最早提出和实现，ES6 将其写进了语言标准，统一了语法，原生提供了 Promise所谓 Promise ，简单说就是一个容器，里面保存着某个未来才回结束的事件(通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。Promise 对象">
+<meta property="og:locale" content="Chinese">
+<meta property="og:updated_time" content="2019-03-26T09:43:31.566Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="promise">
+<meta name="twitter:description" content="Promise 的含义Promise 是异步编程的一种解决方案，比传统的解决方案–回调函数和事件－－更合理和更强大。它由社区最早提出和实现，ES6 将其写进了语言标准，统一了语法，原生提供了 Promise所谓 Promise ，简单说就是一个容器，里面保存着某个未来才回结束的事件(通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。Promise 对象">
+  
+    <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
+  
+  <meta name="summary" content="bch_bk">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="loading" class="active"></div>
+
+  <nav id="menu" class="hide" >
+   <div class="inner flex-row-vertical">
+  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+      <i class="icon icon-lg icon-close"></i>
+  </a>
+  <div class="brand-wrap">
+    <div class="brand">
+      <a href="/" class="avatar"><img src="/img/logos.jpeg"></a>
+      <hgroup class="introduce">
+        <h5 class="nickname">BCH</h5>
+        <a href="mailto:17600280987@163.com" title="17600280987@163.com" class="mail">17600280987@163.com</a>
+      </hgroup>
+    </div>
+  </div>
+  <div class="scroll-wrap flex-col">
+    <ul class="nav">
+      
+          <li class="waves-block waves-effect">
+            <a href="/">
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/categories">
+              <i class="icon icon-lg icon-archives"></i>
+              分类
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/tags">
+              <i class="icon icon-lg icon-tags"></i>
+              标签
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://github.com/bch9479/blog" target="_blank">
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://weibo.com/5900743344/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">
+              <i class="icon icon-lg icon-weibo"></i>
+              微博
+            </a>
+          </li>
+      
+    </ul>
+
+    <footer class="footer">
+  <p>个人博客 &copy; 2019</p>
+  <p style="color:#3F51B5;font-size: 16px;font-weight:bolder">
+    不积跬步，无以至千里
+  </p>
+  <p style="color:#3F51B5;font-size: 16px;font-weight:bolder">
+    不积小流，无以成江海
+  </p>
+</footer>
+
+  </div>
+</div>
+
+  </nav>
+  <main id="main">
+    <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">promise</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header">
+  <div class="container">
+    <h1 class="author">promise</h1>
+    <h5 class="subtitle">
+        
+            <time datetime="2018-11-12T11:33:15.000Z" itemprop="datePublished" class="page-time">
+  2018-11-12
+</time>
+
+
+        
+    </h5>
+  </div>
+</header>
+
+    <div class="container body-wrap">
+      <article id="post-promise" class="article article-type-post" itemprop="blogPost">
+  <div class="post-meta flex-row">
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/promise/">promise</a></li></ul>
+
+  </div>
+  <div class="post-body">
+    <aside class="post-widget" id="post-widget">
+       
+      <nav class="post-toc-wrap" id="post-toc">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Promise-的含义"><span class="post-toc-number">1.</span> <span class="post-toc-text">Promise 的含义</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#三种状态"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">三种状态:</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#状态改变："><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">状态改变：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#基本用法"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">基本用法</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#例子"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">例子:</span></a></li></ol></li></ol>
+      </nav>
+      
+    </aside>
+
+    <div class="post-main">
+      <div class="post-content" id="post-content" itemprop="postContent">
+        <h3 id="Promise-的含义"><a href="#Promise-的含义" class="headerlink" title="Promise 的含义"></a>Promise 的含义</h3><p>Promise 是异步编程的一种解决方案，比传统的解决方案–回调函数和事件－－更合理和更强大。它由社区最早提出和实现，ES6 将其写进了语言标准，统一了语法，原生提供了 Promise<br>所谓 Promise ，简单说就是一个容器，里面保存着某个未来才回结束的事件(通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。<br>Promise 对象的状态不受外界影响</p>
+<h5 id="三种状态"><a href="#三种状态" class="headerlink" title="三种状态:"></a>三种状态:</h5><pre>
+pending：进行中
+fulfilled :已经成功
+rejected 已经失败
+</pre>
+
+<h5 id="状态改变："><a href="#状态改变：" class="headerlink" title="状态改变："></a>状态改变：</h5><p>Promise 对象的状态改变，只有两种可能：</p>
+<pre>
+从pending变为fulfilled
+从pending变为rejected
+</pre>
+
+<p>这两种情况只要发生，状态就凝固了，不会再变了，这时就称为 resolved（已定型）</p>
+<h5 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h5><p>ES6 规定，Promise 对象是一个构造函数，用来生成 Promise 实例</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const promist = new Promise(<span class="keyword">function</span>(resolve,reject)&#123;</span><br><span class="line">    <span class="keyword">if</span>(/*异步操作成功*/)&#123;</span><br><span class="line">        resolve(value);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        reject(error);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>resolve 函数的作用是，将 Promise 对象的状态从“未完成”变为“成功”（即从  pending  变为  resolved），在异步操作成功时调用，并将异步操作的结果，作为参数传递出去；<br>reject 函数的作用是，将 Promise 对象的状态从“未完成”变为“失败”（即从  pending  变为  rejected），在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。<br>Promise 实例生成以后，可以用 then 方法分别指定 resolved 状态和 rejected 状态的回调函数。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">promise.then(<span class="keyword">function</span>(value)&#123;</span><br><span class="line">//success</span><br><span class="line">&#125;,<span class="keyword">function</span>(error)&#123;</span><br><span class="line">//failure</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h5 id="例子"><a href="#例子" class="headerlink" title="例子:"></a>例子:</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> timeout(ms)&#123;</span><br><span class="line">    <span class="built_in">return</span> new Promise((resolve,reject)=&gt;&#123;</span><br><span class="line">        setTimeout(resolve,ms,<span class="string">'done'</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line">timeout(100).<span class="keyword">then</span>((value)=&gt;&#123;</span><br><span class="line">    console.log(value);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">let</span> promise = new Promise(<span class="keyword">function</span>(resolve,reject)&#123;</span><br><span class="line">    console.log(<span class="string">'Promise'</span>);</span><br><span class="line">    resolve();</span><br><span class="line">&#125;);</span><br><span class="line">promise.then(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    console.log(<span class="string">'resolved'</span>);</span><br><span class="line">&#125;);</span><br><span class="line">console.log(<span class="string">'Hi!'</span>);</span><br><span class="line"></span><br><span class="line">//Promise</span><br><span class="line">//Hi!</span><br><span class="line">//resolved</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//异步加载图片</span><br><span class="line"><span class="keyword">function</span> loadImageAsync(url)&#123;</span><br><span class="line">    <span class="built_in">return</span> new Promise(<span class="keyword">function</span>(resolve,reject)&#123;</span><br><span class="line">        const image = new Image();</span><br><span class="line">        image.onload = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            resolve(image);</span><br><span class="line">        &#125;;</span><br><span class="line">        image.onerror = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            reject(new Error(<span class="string">'error'</span>);</span><br><span class="line">        &#125;;</span><br><span class="line">        image.src = url;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面是一个用 Promise 对象实现的 Ajax 操作的例子。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">const getJSON = <span class="keyword">function</span>(url) &#123;</span><br><span class="line">  const promise = new Promise(<span class="keyword">function</span>(resolve, reject)&#123;</span><br><span class="line">    const handler = <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">      <span class="keyword">if</span> (this.readyState !== 4) &#123;</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (this.status === 200) &#123;</span><br><span class="line">        resolve(this.response);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        reject(new Error(this.statusText));</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    const client = new XMLHttpRequest();</span><br><span class="line">    client.open(<span class="string">"GET"</span>, url);</span><br><span class="line">    client.onreadystatechange = handler;</span><br><span class="line">    client.responseType = <span class="string">"json"</span>;</span><br><span class="line">    client.setRequestHeader(<span class="string">"Accept"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">    client.send();</span><br><span class="line"></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">return</span> promise;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">getJSON(<span class="string">"/posts.json"</span>).<span class="keyword">then</span>(<span class="keyword">function</span>(json) &#123;</span><br><span class="line">  console.log(<span class="string">'Contents: '</span> + json);</span><br><span class="line">&#125;, <span class="keyword">function</span>(error) &#123;</span><br><span class="line">  console.error(<span class="string">'出错了'</span>, error);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+ 
+        <div class="post-reward">
+          <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
+        </div>
+        
+
+        <blockquote>
+          <p>
+            本文地址：
+            <a href="http://blog.bochunhao.cn/2018/11/12/promise/" target="_blank" rel="external">http://blog.bochunhao.cn/2018/11/12/promise/</a>
+          </p>
+          <footer>
+            <cite><a href="http://blog.bochunhao.cn" target="_blank" rel="external">@个人博客</a></cite>
+          </footer>
+        </blockquote>
+      </div>
+      
+<nav class="post-nav">
+  
+
+  
+    <div class="waves-block waves-effect next fr">
+      <a href="/2018/11/01/css/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">css</h4>
+      </a>
+    </div>
+  
+</nav>
+
+ 
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="promise" data-title="promise" data-url="http://blog.bochunhao.cn/2018/11/12/promise/index.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"ysblog"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+    </div>
+  </div>
+</article>
+
+<div id="reward" class="reward-lay">
+    <a class="reward-off" id="rewardOff" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        感谢支持
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/vx.png" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/zfb.png" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+    </div>
+  </main>
+<div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
