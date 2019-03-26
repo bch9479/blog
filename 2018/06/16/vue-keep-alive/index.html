@@ -133,43 +133,39 @@
 
     <div class="container body-wrap">
       <article id="post-vue-keep-alive" class="article article-type-post" itemprop="blogPost">
-    <div class="post-meta flex-row">
-        
+  <div class="post-meta flex-row">
+    
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
 
-    </div>
-    <div class="post-body">
-        <aside class="post-widget" id="post-widget">
+  </div>
+  <div class="post-body">
+    <aside class="post-widget" id="post-widget">
+       
+      <nav class="post-toc-wrap" id="post-toc">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#keep-alive-组件有什么作用"><span class="post-toc-number">1.</span> <span class="post-toc-text">keep-alive 组件有什么作用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#如果你需要在组件切换的时候，保存一些组件的状态防止多次渲染，就可以使用-keep-alive-组件包裹需要保存的组件。"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">如果你需要在组件切换的时候，保存一些组件的状态防止多次渲染，就可以使用  keep-alive  组件包裹需要保存的组件。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#对于-keep-alive-组件来说，它拥有两个独有的生命周期钩子函数，分别为-activated-和-deactivated-。用-keep-alive-包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行-deactivated-钩子函数，命中缓存渲染后会执行-actived-钩子函数。"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">对于  keep-alive  组件来说，它拥有两个独有的生命周期钩子函数，分别为  activated  和  deactivated 。用  keep-alive  包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行  deactivated  钩子函数，命中缓存渲染后会执行  actived  钩子函数。</span></a></li></ol></li></ol>
+      </nav>
+      
+    </aside>
 
-            
+    <div class="post-main">
+      <div class="post-content" id="post-content" itemprop="postContent">
+        <h3 id="keep-alive-组件有什么作用"><a href="#keep-alive-组件有什么作用" class="headerlink" title="keep-alive 组件有什么作用"></a>keep-alive 组件有什么作用</h3><h5 id="如果你需要在组件切换的时候，保存一些组件的状态防止多次渲染，就可以使用-keep-alive-组件包裹需要保存的组件。"><a href="#如果你需要在组件切换的时候，保存一些组件的状态防止多次渲染，就可以使用-keep-alive-组件包裹需要保存的组件。" class="headerlink" title="如果你需要在组件切换的时候，保存一些组件的状态防止多次渲染，就可以使用  keep-alive  组件包裹需要保存的组件。"></a>如果你需要在组件切换的时候，保存一些组件的状态防止多次渲染，就可以使用  keep-alive  组件包裹需要保存的组件。</h5><h5 id="对于-keep-alive-组件来说，它拥有两个独有的生命周期钩子函数，分别为-activated-和-deactivated-。用-keep-alive-包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行-deactivated-钩子函数，命中缓存渲染后会执行-actived-钩子函数。"><a href="#对于-keep-alive-组件来说，它拥有两个独有的生命周期钩子函数，分别为-activated-和-deactivated-。用-keep-alive-包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行-deactivated-钩子函数，命中缓存渲染后会执行-actived-钩子函数。" class="headerlink" title="对于  keep-alive  组件来说，它拥有两个独有的生命周期钩子函数，分别为  activated  和  deactivated 。用  keep-alive  包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行  deactivated  钩子函数，命中缓存渲染后会执行  actived  钩子函数。"></a>对于  keep-alive  组件来说，它拥有两个独有的生命周期钩子函数，分别为  activated  和  deactivated 。用  keep-alive  包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行  deactivated  钩子函数，命中缓存渲染后会执行  actived  钩子函数。</h5> 
+        <div class="post-reward">
+          <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
+        </div>
+        
 
-            
-            <nav class="post-toc-wrap" id="post-toc">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#keep-alive-组件有什么作用"><span class="post-toc-number">1.</span> <span class="post-toc-text">keep-alive 组件有什么作用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#如果你需要在组件切换的时候，保存一些组件的状态防止多次渲染，就可以使用-keep-alive-组件包裹需要保存的组件。"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">如果你需要在组件切换的时候，保存一些组件的状态防止多次渲染，就可以使用  keep-alive  组件包裹需要保存的组件。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#对于-keep-alive-组件来说，它拥有两个独有的生命周期钩子函数，分别为-activated-和-deactivated-。用-keep-alive-包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行-deactivated-钩子函数，命中缓存渲染后会执行-actived-钩子函数。"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">对于  keep-alive  组件来说，它拥有两个独有的生命周期钩子函数，分别为  activated  和  deactivated 。用  keep-alive  包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行  deactivated  钩子函数，命中缓存渲染后会执行  actived  钩子函数。</span></a></li></ol></li></ol>
-            </nav>
-            
-        </aside>
-
-        <div class="post-main">
-
-            <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="keep-alive-组件有什么作用"><a href="#keep-alive-组件有什么作用" class="headerlink" title="keep-alive 组件有什么作用"></a>keep-alive 组件有什么作用</h3><h5 id="如果你需要在组件切换的时候，保存一些组件的状态防止多次渲染，就可以使用-keep-alive-组件包裹需要保存的组件。"><a href="#如果你需要在组件切换的时候，保存一些组件的状态防止多次渲染，就可以使用-keep-alive-组件包裹需要保存的组件。" class="headerlink" title="如果你需要在组件切换的时候，保存一些组件的状态防止多次渲染，就可以使用  keep-alive  组件包裹需要保存的组件。"></a>如果你需要在组件切换的时候，保存一些组件的状态防止多次渲染，就可以使用  keep-alive  组件包裹需要保存的组件。</h5><h5 id="对于-keep-alive-组件来说，它拥有两个独有的生命周期钩子函数，分别为-activated-和-deactivated-。用-keep-alive-包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行-deactivated-钩子函数，命中缓存渲染后会执行-actived-钩子函数。"><a href="#对于-keep-alive-组件来说，它拥有两个独有的生命周期钩子函数，分别为-activated-和-deactivated-。用-keep-alive-包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行-deactivated-钩子函数，命中缓存渲染后会执行-actived-钩子函数。" class="headerlink" title="对于  keep-alive  组件来说，它拥有两个独有的生命周期钩子函数，分别为  activated  和  deactivated 。用  keep-alive  包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行  deactivated  钩子函数，命中缓存渲染后会执行  actived  钩子函数。"></a>对于  keep-alive  组件来说，它拥有两个独有的生命周期钩子函数，分别为  activated  和  deactivated 。用  keep-alive  包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行  deactivated  钩子函数，命中缓存渲染后会执行  actived  钩子函数。</h5>
-
-            
-            <div class="post-reward">
-                <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
-            </div>
-            
-            
-            <blockquote>
-                <p>
-                本文地址：
-                <a href="http://blog.bochunhao.cn/2018/06/16/vue-keep-alive/" target="_blank" rel="external">http://blog.bochunhao.cn/2018/06/16/vue-keep-alive/</a>
-                </p>
-                <footer><cite><a href="http://blog.bochunhao.cn">@个人博客</a></cite></footer>
-            </blockquote>
-            </div>
-            
+        <blockquote>
+          <p>
+            本文地址：
+            <a href="http://blog.bochunhao.cn/2018/06/16/vue-keep-alive/" target="_blank" rel="external">http://blog.bochunhao.cn/2018/06/16/vue-keep-alive/</a>
+          </p>
+          <footer>
+            <cite><a href="http://blog.bochunhao.cn" target="_blank">@个人博客</a></cite>
+          </footer>
+        </blockquote>
+      </div>
+      
 <nav class="post-nav">
   
     <div class="waves-block waves-effect prev fl">
@@ -190,9 +186,7 @@
   
 </nav>
 
-
-            
-            
+ 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	<div class="ds-thread" data-thread-key="vue-keep-alive" data-title="vue_keep-alive" data-url="http://blog.bochunhao.cn/2018/06/16/vue-keep-alive/index.html"></div>
@@ -216,8 +210,8 @@
 
 
 
-        </div>
     </div>
+  </div>
 </article>
 
 <div id="reward" class="reward-lay">
@@ -243,6 +237,7 @@
         
     </ul>
 </div>
+
 
     </div>
   </main>

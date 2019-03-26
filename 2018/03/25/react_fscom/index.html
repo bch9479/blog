@@ -133,44 +133,40 @@
 
     <div class="container body-wrap">
       <article id="post-react_fscom" class="article article-type-post" itemprop="blogPost">
-    <div class="post-meta flex-row">
-        
+  <div class="post-meta flex-row">
+    
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
 
-    </div>
-    <div class="post-body">
-        <aside class="post-widget" id="post-widget">
+  </div>
+  <div class="post-body">
+    <aside class="post-widget" id="post-widget">
+       
+      <nav class="post-toc-wrap" id="post-toc">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#父子组件通信"><span class="post-toc-number">1.</span> <span class="post-toc-text">父子组件通信</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#父组件通过-props-传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过-props-传递数据，子组件不能直接修改-props，-而是必须通过调用父组件函数的方式告知父组件修改数据。"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">父组件通过  props  传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过  props  传递数据，子组件不能直接修改  props， 而是必须通过调用父组件函数的方式告知父组件修改数据。</span></a></li></ol></li></ol><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#兄弟组件通信"><span class="post-toc-number">2.</span> <span class="post-toc-text">兄弟组件通信</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件调用父组件传递过来的事件函数修改父组件中的状态，然后父组件将状态传递给另一个兄弟组件。"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件调用父组件传递过来的事件函数修改父组件中的状态，然后父组件将状态传递给另一个兄弟组件。</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#跨多层次组件通信"><span class="post-toc-number">3.</span> <span class="post-toc-text">跨多层次组件通信</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#如果你使用-16-3-以上版本的话，对于这种情况可以使用-Context-API。"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">如果你使用 16.3 以上版本的话，对于这种情况可以使用 Context API。</span></a></li></ol></li>
+      </nav>
+      
+    </aside>
 
-            
+    <div class="post-main">
+      <div class="post-content" id="post-content" itemprop="postContent">
+        <h3 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h3><h5 id="父组件通过-props-传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过-props-传递数据，子组件不能直接修改-props，-而是必须通过调用父组件函数的方式告知父组件修改数据。"><a href="#父组件通过-props-传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过-props-传递数据，子组件不能直接修改-props，-而是必须通过调用父组件函数的方式告知父组件修改数据。" class="headerlink" title="父组件通过  props  传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过  props  传递数据，子组件不能直接修改  props， 而是必须通过调用父组件函数的方式告知父组件修改数据。"></a>父组件通过  props  传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过  props  传递数据，子组件不能直接修改  props， 而是必须通过调用父组件函数的方式告知父组件修改数据。</h5><h3 id="兄弟组件通信"><a href="#兄弟组件通信" class="headerlink" title="兄弟组件通信"></a>兄弟组件通信</h3><h5 id="对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件调用父组件传递过来的事件函数修改父组件中的状态，然后父组件将状态传递给另一个兄弟组件。"><a href="#对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件调用父组件传递过来的事件函数修改父组件中的状态，然后父组件将状态传递给另一个兄弟组件。" class="headerlink" title="对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件调用父组件传递过来的事件函数修改父组件中的状态，然后父组件将状态传递给另一个兄弟组件。"></a>对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件调用父组件传递过来的事件函数修改父组件中的状态，然后父组件将状态传递给另一个兄弟组件。</h5><h3 id="跨多层次组件通信"><a href="#跨多层次组件通信" class="headerlink" title="跨多层次组件通信"></a>跨多层次组件通信</h3><h5 id="如果你使用-16-3-以上版本的话，对于这种情况可以使用-Context-API。"><a href="#如果你使用-16-3-以上版本的话，对于这种情况可以使用-Context-API。" class="headerlink" title="如果你使用 16.3 以上版本的话，对于这种情况可以使用 Context API。"></a>如果你使用 16.3 以上版本的话，对于这种情况可以使用 Context API。</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">// 创建 Context，可以在开始就传入值</span><br><span class="line">const StateContext = React.createContext()</span><br><span class="line">class Parent extends React.Component &#123;</span><br><span class="line">  <span class="function"><span class="title">render</span></span> () &#123;</span><br><span class="line">    <span class="built_in">return</span> (</span><br><span class="line">      // value 就是传入 Context 中的值</span><br><span class="line">      &lt;StateContext.Provider value=<span class="string">'yck'</span>&gt;</span><br><span class="line">        &lt;Child /&gt;</span><br><span class="line">      &lt;/StateContext.Provider&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Child extends React.Component &#123;</span><br><span class="line">  <span class="function"><span class="title">render</span></span> () &#123;</span><br><span class="line">    <span class="built_in">return</span> (</span><br><span class="line">      &lt;ThemeContext.Consumer&gt;</span><br><span class="line">        // 取出值</span><br><span class="line">        &#123;context =&gt; (</span><br><span class="line">          name is &#123; context &#125;</span><br><span class="line">        )&#125;</span><br><span class="line">      &lt;/ThemeContext.Consumer&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ 
+        <div class="post-reward">
+          <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
+        </div>
+        
 
-            
-            <nav class="post-toc-wrap" id="post-toc">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#父子组件通信"><span class="post-toc-number">1.</span> <span class="post-toc-text">父子组件通信</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#父组件通过-props-传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过-props-传递数据，子组件不能直接修改-props，-而是必须通过调用父组件函数的方式告知父组件修改数据。"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">父组件通过  props  传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过  props  传递数据，子组件不能直接修改  props， 而是必须通过调用父组件函数的方式告知父组件修改数据。</span></a></li></ol></li></ol><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#兄弟组件通信"><span class="post-toc-number">2.</span> <span class="post-toc-text">兄弟组件通信</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件调用父组件传递过来的事件函数修改父组件中的状态，然后父组件将状态传递给另一个兄弟组件。"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件调用父组件传递过来的事件函数修改父组件中的状态，然后父组件将状态传递给另一个兄弟组件。</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#跨多层次组件通信"><span class="post-toc-number">3.</span> <span class="post-toc-text">跨多层次组件通信</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#如果你使用-16-3-以上版本的话，对于这种情况可以使用-Context-API。"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">如果你使用 16.3 以上版本的话，对于这种情况可以使用 Context API。</span></a></li></ol></li>
-            </nav>
-            
-        </aside>
-
-        <div class="post-main">
-
-            <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h3><h5 id="父组件通过-props-传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过-props-传递数据，子组件不能直接修改-props，-而是必须通过调用父组件函数的方式告知父组件修改数据。"><a href="#父组件通过-props-传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过-props-传递数据，子组件不能直接修改-props，-而是必须通过调用父组件函数的方式告知父组件修改数据。" class="headerlink" title="父组件通过  props  传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过  props  传递数据，子组件不能直接修改  props， 而是必须通过调用父组件函数的方式告知父组件修改数据。"></a>父组件通过  props  传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过  props  传递数据，子组件不能直接修改  props， 而是必须通过调用父组件函数的方式告知父组件修改数据。</h5><h3 id="兄弟组件通信"><a href="#兄弟组件通信" class="headerlink" title="兄弟组件通信"></a>兄弟组件通信</h3><h5 id="对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件调用父组件传递过来的事件函数修改父组件中的状态，然后父组件将状态传递给另一个兄弟组件。"><a href="#对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件调用父组件传递过来的事件函数修改父组件中的状态，然后父组件将状态传递给另一个兄弟组件。" class="headerlink" title="对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件调用父组件传递过来的事件函数修改父组件中的状态，然后父组件将状态传递给另一个兄弟组件。"></a>对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件调用父组件传递过来的事件函数修改父组件中的状态，然后父组件将状态传递给另一个兄弟组件。</h5><h3 id="跨多层次组件通信"><a href="#跨多层次组件通信" class="headerlink" title="跨多层次组件通信"></a>跨多层次组件通信</h3><h5 id="如果你使用-16-3-以上版本的话，对于这种情况可以使用-Context-API。"><a href="#如果你使用-16-3-以上版本的话，对于这种情况可以使用-Context-API。" class="headerlink" title="如果你使用 16.3 以上版本的话，对于这种情况可以使用 Context API。"></a>如果你使用 16.3 以上版本的话，对于这种情况可以使用 Context API。</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">// 创建 Context，可以在开始就传入值</span><br><span class="line">const StateContext = React.createContext()</span><br><span class="line">class Parent extends React.Component &#123;</span><br><span class="line">  <span class="function"><span class="title">render</span></span> () &#123;</span><br><span class="line">    <span class="built_in">return</span> (</span><br><span class="line">      // value 就是传入 Context 中的值</span><br><span class="line">      &lt;StateContext.Provider value=<span class="string">'yck'</span>&gt;</span><br><span class="line">        &lt;Child /&gt;</span><br><span class="line">      &lt;/StateContext.Provider&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Child extends React.Component &#123;</span><br><span class="line">  <span class="function"><span class="title">render</span></span> () &#123;</span><br><span class="line">    <span class="built_in">return</span> (</span><br><span class="line">      &lt;ThemeContext.Consumer&gt;</span><br><span class="line">        // 取出值</span><br><span class="line">        &#123;context =&gt; (</span><br><span class="line">          name is &#123; context &#125;</span><br><span class="line">        )&#125;</span><br><span class="line">      &lt;/ThemeContext.Consumer&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-            
-            <div class="post-reward">
-                <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
-            </div>
-            
-            
-            <blockquote>
-                <p>
-                本文地址：
-                <a href="http://blog.bochunhao.cn/2018/03/25/react_fscom/" target="_blank" rel="external">http://blog.bochunhao.cn/2018/03/25/react_fscom/</a>
-                </p>
-                <footer><cite><a href="http://blog.bochunhao.cn">@个人博客</a></cite></footer>
-            </blockquote>
-            </div>
-            
+        <blockquote>
+          <p>
+            本文地址：
+            <a href="http://blog.bochunhao.cn/2018/03/25/react_fscom/" target="_blank" rel="external">http://blog.bochunhao.cn/2018/03/25/react_fscom/</a>
+          </p>
+          <footer>
+            <cite><a href="http://blog.bochunhao.cn" target="_blank">@个人博客</a></cite>
+          </footer>
+        </blockquote>
+      </div>
+      
 <nav class="post-nav">
   
     <div class="waves-block waves-effect prev fl">
@@ -191,9 +187,7 @@
   
 </nav>
 
-
-            
-            
+ 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	<div class="ds-thread" data-thread-key="react_fscom" data-title="REACT_组件通信" data-url="http://blog.bochunhao.cn/2018/03/25/react_fscom/index.html"></div>
@@ -217,8 +211,8 @@
 
 
 
-        </div>
     </div>
+  </div>
 </article>
 
 <div id="reward" class="reward-lay">
@@ -244,6 +238,7 @@
         
     </ul>
 </div>
+
 
     </div>
   </main>

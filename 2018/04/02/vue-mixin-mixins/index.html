@@ -133,44 +133,40 @@
 
     <div class="container body-wrap">
       <article id="post-vue-mixin-mixins" class="article article-type-post" itemprop="blogPost">
-    <div class="post-meta flex-row">
-        
+  <div class="post-meta flex-row">
+    
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
 
-    </div>
-    <div class="post-body">
-        <aside class="post-widget" id="post-widget">
+  </div>
+  <div class="post-body">
+    <aside class="post-widget" id="post-widget">
+       
+      <nav class="post-toc-wrap" id="post-toc">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#mixin-和-mixins-区别"><span class="post-toc-number">1.</span> <span class="post-toc-text">mixin 和 mixins 区别</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#mixin-用于全局混入，会影响到每个组件实例，通常插件都是这样做初始化的。"><span class="post-toc-number">1.0.0.1.</span> <span class="post-toc-text">mixin  用于全局混入，会影响到每个组件实例，通常插件都是这样做初始化的。</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#虽然文档不建议我们在应用中直接使用-mixin，但是如果不滥用的话也是很有帮助的，比如可以全局混入封装好的-ajax-或者一些工具函数等等。"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">虽然文档不建议我们在应用中直接使用  mixin，但是如果不滥用的话也是很有帮助的，比如可以全局混入封装好的  ajax  或者一些工具函数等等。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#mixins-应该是我们最常使用的扩展组件的方式了。如果多个组件中有相同的业务逻辑，就可以将这些逻辑剥离出来，通过-mixins-混入代码，比如上拉下拉加载数据这种逻辑等等。"><span class="post-toc-number">1.0.1.1.</span> <span class="post-toc-text">mixins  应该是我们最常使用的扩展组件的方式了。如果多个组件中有相同的业务逻辑，就可以将这些逻辑剥离出来，通过  mixins  混入代码，比如上拉下拉加载数据这种逻辑等等。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#另外需要注意的是-mixins-混入的钩子函数会先于组件内的钩子函数执行，并且在遇到同名选项的时候也会有选择性的进行合并，具体可以阅读-文档。"><span class="post-toc-number">1.0.1.2.</span> <span class="post-toc-text">另外需要注意的是  mixins  混入的钩子函数会先于组件内的钩子函数执行，并且在遇到同名选项的时候也会有选择性的进行合并，具体可以阅读   文档。</span></a></li></ol></li></ol>
+      </nav>
+      
+    </aside>
 
-            
+    <div class="post-main">
+      <div class="post-content" id="post-content" itemprop="postContent">
+        <h3 id="mixin-和-mixins-区别"><a href="#mixin-和-mixins-区别" class="headerlink" title="mixin 和 mixins 区别"></a>mixin 和 mixins 区别</h3><h6 id="mixin-用于全局混入，会影响到每个组件实例，通常插件都是这样做初始化的。"><a href="#mixin-用于全局混入，会影响到每个组件实例，通常插件都是这样做初始化的。" class="headerlink" title="mixin  用于全局混入，会影响到每个组件实例，通常插件都是这样做初始化的。"></a>mixin  用于全局混入，会影响到每个组件实例，通常插件都是这样做初始化的。</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Vue.mixin(&#123;</span><br><span class="line">    <span class="function"><span class="title">beforeCreate</span></span>() &#123;</span><br><span class="line">        // ...逻辑</span><br><span class="line">        // 这种方式会影响到每个组件的 beforeCreate 钩子函数</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="虽然文档不建议我们在应用中直接使用-mixin，但是如果不滥用的话也是很有帮助的，比如可以全局混入封装好的-ajax-或者一些工具函数等等。"><a href="#虽然文档不建议我们在应用中直接使用-mixin，但是如果不滥用的话也是很有帮助的，比如可以全局混入封装好的-ajax-或者一些工具函数等等。" class="headerlink" title="虽然文档不建议我们在应用中直接使用  mixin，但是如果不滥用的话也是很有帮助的，比如可以全局混入封装好的  ajax  或者一些工具函数等等。"></a>虽然文档不建议我们在应用中直接使用  mixin，但是如果不滥用的话也是很有帮助的，比如可以全局混入封装好的  ajax  或者一些工具函数等等。</h5><h6 id="mixins-应该是我们最常使用的扩展组件的方式了。如果多个组件中有相同的业务逻辑，就可以将这些逻辑剥离出来，通过-mixins-混入代码，比如上拉下拉加载数据这种逻辑等等。"><a href="#mixins-应该是我们最常使用的扩展组件的方式了。如果多个组件中有相同的业务逻辑，就可以将这些逻辑剥离出来，通过-mixins-混入代码，比如上拉下拉加载数据这种逻辑等等。" class="headerlink" title="mixins  应该是我们最常使用的扩展组件的方式了。如果多个组件中有相同的业务逻辑，就可以将这些逻辑剥离出来，通过  mixins  混入代码，比如上拉下拉加载数据这种逻辑等等。"></a>mixins  应该是我们最常使用的扩展组件的方式了。如果多个组件中有相同的业务逻辑，就可以将这些逻辑剥离出来，通过  mixins  混入代码，比如上拉下拉加载数据这种逻辑等等。</h6><h6 id="另外需要注意的是-mixins-混入的钩子函数会先于组件内的钩子函数执行，并且在遇到同名选项的时候也会有选择性的进行合并，具体可以阅读-文档。"><a href="#另外需要注意的是-mixins-混入的钩子函数会先于组件内的钩子函数执行，并且在遇到同名选项的时候也会有选择性的进行合并，具体可以阅读-文档。" class="headerlink" title="另外需要注意的是  mixins  混入的钩子函数会先于组件内的钩子函数执行，并且在遇到同名选项的时候也会有选择性的进行合并，具体可以阅读   文档。"></a>另外需要注意的是  mixins  混入的钩子函数会先于组件内的钩子函数执行，并且在遇到同名选项的时候也会有选择性的进行合并，具体可以阅读   文档。</h6> 
+        <div class="post-reward">
+          <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
+        </div>
+        
 
-            
-            <nav class="post-toc-wrap" id="post-toc">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#mixin-和-mixins-区别"><span class="post-toc-number">1.</span> <span class="post-toc-text">mixin 和 mixins 区别</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#mixin-用于全局混入，会影响到每个组件实例，通常插件都是这样做初始化的。"><span class="post-toc-number">1.0.0.1.</span> <span class="post-toc-text">mixin  用于全局混入，会影响到每个组件实例，通常插件都是这样做初始化的。</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#虽然文档不建议我们在应用中直接使用-mixin，但是如果不滥用的话也是很有帮助的，比如可以全局混入封装好的-ajax-或者一些工具函数等等。"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">虽然文档不建议我们在应用中直接使用  mixin，但是如果不滥用的话也是很有帮助的，比如可以全局混入封装好的  ajax  或者一些工具函数等等。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#mixins-应该是我们最常使用的扩展组件的方式了。如果多个组件中有相同的业务逻辑，就可以将这些逻辑剥离出来，通过-mixins-混入代码，比如上拉下拉加载数据这种逻辑等等。"><span class="post-toc-number">1.0.1.1.</span> <span class="post-toc-text">mixins  应该是我们最常使用的扩展组件的方式了。如果多个组件中有相同的业务逻辑，就可以将这些逻辑剥离出来，通过  mixins  混入代码，比如上拉下拉加载数据这种逻辑等等。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#另外需要注意的是-mixins-混入的钩子函数会先于组件内的钩子函数执行，并且在遇到同名选项的时候也会有选择性的进行合并，具体可以阅读-文档。"><span class="post-toc-number">1.0.1.2.</span> <span class="post-toc-text">另外需要注意的是  mixins  混入的钩子函数会先于组件内的钩子函数执行，并且在遇到同名选项的时候也会有选择性的进行合并，具体可以阅读   文档。</span></a></li></ol></li></ol>
-            </nav>
-            
-        </aside>
-
-        <div class="post-main">
-
-            <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="mixin-和-mixins-区别"><a href="#mixin-和-mixins-区别" class="headerlink" title="mixin 和 mixins 区别"></a>mixin 和 mixins 区别</h3><h6 id="mixin-用于全局混入，会影响到每个组件实例，通常插件都是这样做初始化的。"><a href="#mixin-用于全局混入，会影响到每个组件实例，通常插件都是这样做初始化的。" class="headerlink" title="mixin  用于全局混入，会影响到每个组件实例，通常插件都是这样做初始化的。"></a>mixin  用于全局混入，会影响到每个组件实例，通常插件都是这样做初始化的。</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Vue.mixin(&#123;</span><br><span class="line">    <span class="function"><span class="title">beforeCreate</span></span>() &#123;</span><br><span class="line">        // ...逻辑</span><br><span class="line">        // 这种方式会影响到每个组件的 beforeCreate 钩子函数</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h5 id="虽然文档不建议我们在应用中直接使用-mixin，但是如果不滥用的话也是很有帮助的，比如可以全局混入封装好的-ajax-或者一些工具函数等等。"><a href="#虽然文档不建议我们在应用中直接使用-mixin，但是如果不滥用的话也是很有帮助的，比如可以全局混入封装好的-ajax-或者一些工具函数等等。" class="headerlink" title="虽然文档不建议我们在应用中直接使用  mixin，但是如果不滥用的话也是很有帮助的，比如可以全局混入封装好的  ajax  或者一些工具函数等等。"></a>虽然文档不建议我们在应用中直接使用  mixin，但是如果不滥用的话也是很有帮助的，比如可以全局混入封装好的  ajax  或者一些工具函数等等。</h5><h6 id="mixins-应该是我们最常使用的扩展组件的方式了。如果多个组件中有相同的业务逻辑，就可以将这些逻辑剥离出来，通过-mixins-混入代码，比如上拉下拉加载数据这种逻辑等等。"><a href="#mixins-应该是我们最常使用的扩展组件的方式了。如果多个组件中有相同的业务逻辑，就可以将这些逻辑剥离出来，通过-mixins-混入代码，比如上拉下拉加载数据这种逻辑等等。" class="headerlink" title="mixins  应该是我们最常使用的扩展组件的方式了。如果多个组件中有相同的业务逻辑，就可以将这些逻辑剥离出来，通过  mixins  混入代码，比如上拉下拉加载数据这种逻辑等等。"></a>mixins  应该是我们最常使用的扩展组件的方式了。如果多个组件中有相同的业务逻辑，就可以将这些逻辑剥离出来，通过  mixins  混入代码，比如上拉下拉加载数据这种逻辑等等。</h6><h6 id="另外需要注意的是-mixins-混入的钩子函数会先于组件内的钩子函数执行，并且在遇到同名选项的时候也会有选择性的进行合并，具体可以阅读-文档。"><a href="#另外需要注意的是-mixins-混入的钩子函数会先于组件内的钩子函数执行，并且在遇到同名选项的时候也会有选择性的进行合并，具体可以阅读-文档。" class="headerlink" title="另外需要注意的是  mixins  混入的钩子函数会先于组件内的钩子函数执行，并且在遇到同名选项的时候也会有选择性的进行合并，具体可以阅读   文档。"></a>另外需要注意的是  mixins  混入的钩子函数会先于组件内的钩子函数执行，并且在遇到同名选项的时候也会有选择性的进行合并，具体可以阅读   文档。</h6>
-
-            
-            <div class="post-reward">
-                <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
-            </div>
-            
-            
-            <blockquote>
-                <p>
-                本文地址：
-                <a href="http://blog.bochunhao.cn/2018/04/02/vue-mixin-mixins/" target="_blank" rel="external">http://blog.bochunhao.cn/2018/04/02/vue-mixin-mixins/</a>
-                </p>
-                <footer><cite><a href="http://blog.bochunhao.cn">@个人博客</a></cite></footer>
-            </blockquote>
-            </div>
-            
+        <blockquote>
+          <p>
+            本文地址：
+            <a href="http://blog.bochunhao.cn/2018/04/02/vue-mixin-mixins/" target="_blank" rel="external">http://blog.bochunhao.cn/2018/04/02/vue-mixin-mixins/</a>
+          </p>
+          <footer>
+            <cite><a href="http://blog.bochunhao.cn" target="_blank">@个人博客</a></cite>
+          </footer>
+        </blockquote>
+      </div>
+      
 <nav class="post-nav">
   
     <div class="waves-block waves-effect prev fl">
@@ -191,9 +187,7 @@
   
 </nav>
 
-
-            
-            
+ 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	<div class="ds-thread" data-thread-key="vue-mixin-mixins" data-title="vue_mixin_mixins" data-url="http://blog.bochunhao.cn/2018/04/02/vue-mixin-mixins/index.html"></div>
@@ -217,8 +211,8 @@
 
 
 
-        </div>
     </div>
+  </div>
 </article>
 
 <div id="reward" class="reward-lay">
@@ -244,6 +238,7 @@
         
     </ul>
 </div>
+
 
     </div>
   </main>
