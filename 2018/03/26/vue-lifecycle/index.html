@@ -10,18 +10,18 @@
   
   
   <meta name="keywords" content="vue">
-  <meta name="description" content="生命周期钩子函数在  beforeCreate  钩子函数调用的时候，是获取不到  props  或者  data  中的数据的，因为这些数据的初始化都在  initState  中。然后会执行  created  钩子函数，在这一步的时候已经可以访问到之前不能访问到的数据，但是这时候组件还没被挂载，所以是看不到的。接下来会先执行  beforeMount  钩子函数，开始创建 VDOM，最后执行">
+  <meta name="description" content="生命周期钩子函数在  beforeCreate  钩子函数调用的时候，是获取不到  props  或者  data  中的数据的，因为这些数据的初始化都在  initState  中。 然后会执行  created  钩子函数，在这一步的时候已经可以访问到之前不能访问到的数据，但是这时候组件还没被挂载，所以是看不到的。 接下来会先执行  beforeMount  钩子函数，开始创建 VDOM，最后">
 <meta name="keywords" content="vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue_lifecycle">
 <meta property="og:url" content="http://blog.bochunhao.cn/2018/03/26/vue-lifecycle/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="生命周期钩子函数在  beforeCreate  钩子函数调用的时候，是获取不到  props  或者  data  中的数据的，因为这些数据的初始化都在  initState  中。然后会执行  created  钩子函数，在这一步的时候已经可以访问到之前不能访问到的数据，但是这时候组件还没被挂载，所以是看不到的。接下来会先执行  beforeMount  钩子函数，开始创建 VDOM，最后执行">
+<meta property="og:description" content="生命周期钩子函数在  beforeCreate  钩子函数调用的时候，是获取不到  props  或者  data  中的数据的，因为这些数据的初始化都在  initState  中。 然后会执行  created  钩子函数，在这一步的时候已经可以访问到之前不能访问到的数据，但是这时候组件还没被挂载，所以是看不到的。 接下来会先执行  beforeMount  钩子函数，开始创建 VDOM，最后">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2019-03-26T06:30:37.383Z">
+<meta property="og:updated_time" content="2019-03-26T08:36:28.288Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue_lifecycle">
-<meta name="twitter:description" content="生命周期钩子函数在  beforeCreate  钩子函数调用的时候，是获取不到  props  或者  data  中的数据的，因为这些数据的初始化都在  initState  中。然后会执行  created  钩子函数，在这一步的时候已经可以访问到之前不能访问到的数据，但是这时候组件还没被挂载，所以是看不到的。接下来会先执行  beforeMount  钩子函数，开始创建 VDOM，最后执行">
+<meta name="twitter:description" content="生命周期钩子函数在  beforeCreate  钩子函数调用的时候，是获取不到  props  或者  data  中的数据的，因为这些数据的初始化都在  initState  中。 然后会执行  created  钩子函数，在这一步的时候已经可以访问到之前不能访问到的数据，但是这时候组件还没被挂载，所以是看不到的。 接下来会先执行  beforeMount  钩子函数，开始创建 VDOM，最后">
   
     <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
   
@@ -148,14 +148,20 @@
     <aside class="post-widget" id="post-widget">
        
       <nav class="post-toc-wrap" id="post-toc">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#生命周期钩子函数"><span class="post-toc-number">1.</span> <span class="post-toc-text">生命周期钩子函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#在-beforeCreate-钩子函数调用的时候，是获取不到-props-或者-data-中的数据的，因为这些数据的初始化都在-initState-中。"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">在  beforeCreate  钩子函数调用的时候，是获取不到  props  或者  data  中的数据的，因为这些数据的初始化都在  initState  中。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#然后会执行-created-钩子函数，在这一步的时候已经可以访问到之前不能访问到的数据，但是这时候组件还没被挂载，所以是看不到的。"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">然后会执行  created  钩子函数，在这一步的时候已经可以访问到之前不能访问到的数据，但是这时候组件还没被挂载，所以是看不到的。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#接下来会先执行-beforeMount-钩子函数，开始创建-VDOM，最后执行-mounted-钩子，并将-VDOM-渲染为真实-DOM-并且渲染数据。组件中如果有子组件的话，会递归挂载子组件，只有当所有子组件全部挂载完毕，才会执行根组件的挂载钩子。"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">接下来会先执行  beforeMount  钩子函数，开始创建 VDOM，最后执行  mounted  钩子，并将 VDOM 渲染为真实 DOM 并且渲染数据。组件中如果有子组件的话，会递归挂载子组件，只有当所有子组件全部挂载完毕，才会执行根组件的挂载钩子。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#接下来是数据更新时会调用的钩子函数-beforeUpdate-和-updated，这两个钩子函数没什么好说的，就是分别在数据更新前和更新后会调用。"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">接下来是数据更新时会调用的钩子函数  beforeUpdate  和  updated，这两个钩子函数没什么好说的，就是分别在数据更新前和更新后会调用。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#另外还有-keep-alive-独有的生命周期，分别为-activated-和-deactivated-。用-keep-alive-包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行-deactivated-钩子函数，命中缓存渲染后会执行-actived-钩子函数。"><span class="post-toc-number">1.0.5.</span> <span class="post-toc-text">另外还有  keep-alive  独有的生命周期，分别为  activated  和  deactivated 。用  keep-alive  包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行  deactivated  钩子函数，命中缓存渲染后会执行  actived  钩子函数。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#最后就是销毁组件的钩子函数-beforeDestroy-和-destroyed。前者适合移除事件、定时器等等，否则可能会引起内存泄露的问题。然后进行一系列的销毁操作，如果有子组件的话，也会递归销毁子组件，所有子组件都销毁完毕后才会执行根组件的-destroyed-钩子函数。"><span class="post-toc-number">1.0.6.</span> <span class="post-toc-text">最后就是销毁组件的钩子函数  beforeDestroy  和  destroyed。前者适合移除事件、定时器等等，否则可能会引起内存泄露的问题。然后进行一系列的销毁操作，如果有子组件的话，也会递归销毁子组件，所有子组件都销毁完毕后才会执行根组件的  destroyed  钩子函数。</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#生命周期钩子函数"><span class="post-toc-number">1.</span> <span class="post-toc-text">生命周期钩子函数</span></a></li></ol>
       </nav>
       
     </aside>
 
     <div class="post-main">
       <div class="post-content" id="post-content" itemprop="postContent">
-        <h3 id="生命周期钩子函数"><a href="#生命周期钩子函数" class="headerlink" title="生命周期钩子函数"></a>生命周期钩子函数</h3><h5 id="在-beforeCreate-钩子函数调用的时候，是获取不到-props-或者-data-中的数据的，因为这些数据的初始化都在-initState-中。"><a href="#在-beforeCreate-钩子函数调用的时候，是获取不到-props-或者-data-中的数据的，因为这些数据的初始化都在-initState-中。" class="headerlink" title="在  beforeCreate  钩子函数调用的时候，是获取不到  props  或者  data  中的数据的，因为这些数据的初始化都在  initState  中。"></a>在  beforeCreate  钩子函数调用的时候，是获取不到  props  或者  data  中的数据的，因为这些数据的初始化都在  initState  中。</h5><h5 id="然后会执行-created-钩子函数，在这一步的时候已经可以访问到之前不能访问到的数据，但是这时候组件还没被挂载，所以是看不到的。"><a href="#然后会执行-created-钩子函数，在这一步的时候已经可以访问到之前不能访问到的数据，但是这时候组件还没被挂载，所以是看不到的。" class="headerlink" title="然后会执行  created  钩子函数，在这一步的时候已经可以访问到之前不能访问到的数据，但是这时候组件还没被挂载，所以是看不到的。"></a>然后会执行  created  钩子函数，在这一步的时候已经可以访问到之前不能访问到的数据，但是这时候组件还没被挂载，所以是看不到的。</h5><h5 id="接下来会先执行-beforeMount-钩子函数，开始创建-VDOM，最后执行-mounted-钩子，并将-VDOM-渲染为真实-DOM-并且渲染数据。组件中如果有子组件的话，会递归挂载子组件，只有当所有子组件全部挂载完毕，才会执行根组件的挂载钩子。"><a href="#接下来会先执行-beforeMount-钩子函数，开始创建-VDOM，最后执行-mounted-钩子，并将-VDOM-渲染为真实-DOM-并且渲染数据。组件中如果有子组件的话，会递归挂载子组件，只有当所有子组件全部挂载完毕，才会执行根组件的挂载钩子。" class="headerlink" title="接下来会先执行  beforeMount  钩子函数，开始创建 VDOM，最后执行  mounted  钩子，并将 VDOM 渲染为真实 DOM 并且渲染数据。组件中如果有子组件的话，会递归挂载子组件，只有当所有子组件全部挂载完毕，才会执行根组件的挂载钩子。"></a>接下来会先执行  beforeMount  钩子函数，开始创建 VDOM，最后执行  mounted  钩子，并将 VDOM 渲染为真实 DOM 并且渲染数据。组件中如果有子组件的话，会递归挂载子组件，只有当所有子组件全部挂载完毕，才会执行根组件的挂载钩子。</h5><h5 id="接下来是数据更新时会调用的钩子函数-beforeUpdate-和-updated，这两个钩子函数没什么好说的，就是分别在数据更新前和更新后会调用。"><a href="#接下来是数据更新时会调用的钩子函数-beforeUpdate-和-updated，这两个钩子函数没什么好说的，就是分别在数据更新前和更新后会调用。" class="headerlink" title="接下来是数据更新时会调用的钩子函数  beforeUpdate  和  updated，这两个钩子函数没什么好说的，就是分别在数据更新前和更新后会调用。"></a>接下来是数据更新时会调用的钩子函数  beforeUpdate  和  updated，这两个钩子函数没什么好说的，就是分别在数据更新前和更新后会调用。</h5><h5 id="另外还有-keep-alive-独有的生命周期，分别为-activated-和-deactivated-。用-keep-alive-包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行-deactivated-钩子函数，命中缓存渲染后会执行-actived-钩子函数。"><a href="#另外还有-keep-alive-独有的生命周期，分别为-activated-和-deactivated-。用-keep-alive-包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行-deactivated-钩子函数，命中缓存渲染后会执行-actived-钩子函数。" class="headerlink" title="另外还有  keep-alive  独有的生命周期，分别为  activated  和  deactivated 。用  keep-alive  包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行  deactivated  钩子函数，命中缓存渲染后会执行  actived  钩子函数。"></a>另外还有  keep-alive  独有的生命周期，分别为  activated  和  deactivated 。用  keep-alive  包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行  deactivated  钩子函数，命中缓存渲染后会执行  actived  钩子函数。</h5><h5 id="最后就是销毁组件的钩子函数-beforeDestroy-和-destroyed。前者适合移除事件、定时器等等，否则可能会引起内存泄露的问题。然后进行一系列的销毁操作，如果有子组件的话，也会递归销毁子组件，所有子组件都销毁完毕后才会执行根组件的-destroyed-钩子函数。"><a href="#最后就是销毁组件的钩子函数-beforeDestroy-和-destroyed。前者适合移除事件、定时器等等，否则可能会引起内存泄露的问题。然后进行一系列的销毁操作，如果有子组件的话，也会递归销毁子组件，所有子组件都销毁完毕后才会执行根组件的-destroyed-钩子函数。" class="headerlink" title="最后就是销毁组件的钩子函数  beforeDestroy  和  destroyed。前者适合移除事件、定时器等等，否则可能会引起内存泄露的问题。然后进行一系列的销毁操作，如果有子组件的话，也会递归销毁子组件，所有子组件都销毁完毕后才会执行根组件的  destroyed  钩子函数。"></a>最后就是销毁组件的钩子函数  beforeDestroy  和  destroyed。前者适合移除事件、定时器等等，否则可能会引起内存泄露的问题。然后进行一系列的销毁操作，如果有子组件的话，也会递归销毁子组件，所有子组件都销毁完毕后才会执行根组件的  destroyed  钩子函数。</h5> 
+        <h3 id="生命周期钩子函数"><a href="#生命周期钩子函数" class="headerlink" title="生命周期钩子函数"></a>生命周期钩子函数</h3><p>在  beforeCreate  钩子函数调用的时候，是获取不到  props  或者  data  中的数据的，因为这些数据的初始化都在  initState  中。</p>
+<p>然后会执行  created  钩子函数，在这一步的时候已经可以访问到之前不能访问到的数据，但是这时候组件还没被挂载，所以是看不到的。</p>
+<p>接下来会先执行  beforeMount  钩子函数，开始创建 VDOM，最后执行  mounted  钩子，并将 VDOM 渲染为真实 DOM 并且渲染数据。组件中如果有子组件的话，会递归挂载子组件，只有当所有子组件全部挂载完毕，才会执行根组件的挂载钩子。</p>
+<p>接下来是数据更新时会调用的钩子函数  beforeUpdate  和  updated，这两个钩子函数没什么好说的，就是分别在数据更新前和更新后会调用。</p>
+<p>另外还有  keep-alive  独有的生命周期，分别为  activated  和  deactivated 。用  keep-alive  包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行  deactivated  钩子函数，命中缓存渲染后会执行  actived  钩子函数。</p>
+<p>最后就是销毁组件的钩子函数  beforeDestroy  和  destroyed。前者适合移除事件、定时器等等，否则可能会引起内存泄露的问题。然后进行一系列的销毁操作，如果有子组件的话，也会递归销毁子组件，所有子组件都销毁完毕后才会执行根组件的  destroyed  钩子函数。</p>
+ 
         <div class="post-reward">
           <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
         </div>
