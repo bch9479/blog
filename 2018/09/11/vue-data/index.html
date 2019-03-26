@@ -3,25 +3,25 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>vue_keep-alive | 个人博客 | BCH</title>
+  <title>vue_data | 个人博客 | BCH</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="theme-color" content="#3F51B5">
   
   
   <meta name="keywords" content="vue">
-  <meta name="description" content="keep-alive 组件有什么作用如果你需要在组件切换的时候，保存一些组件的状态防止多次渲染，就可以使用  keep-alive  组件包裹需要保存的组件。对于  keep-alive  组件来说，它拥有两个独有的生命周期钩子函数，分别为  activated  和  deactivated 。用  keep-alive  包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行  deactiv">
+  <meta name="description" content="组件中 data 什么时候可以使用对象组件复用时所有组件实例都会共享  data，如果  data  是对象的话，就会造成一个组件修改  data  以后会影响到其他所有组件，所以需要将  data  写成函数，每次用到就调用一次函数获得新的数据。当我们使用  new Vue()  的方式的时候，无论我们将  data  设置为对象还是函数都是可以的，因为  new Vue()  的方式是生成一个">
 <meta name="keywords" content="vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue_keep-alive">
-<meta property="og:url" content="http://blog.bochunhao.cn/2018/06/16/vue-keep-alive/index.html">
+<meta property="og:title" content="vue_data">
+<meta property="og:url" content="http://blog.bochunhao.cn/2018/09/11/vue-data/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="keep-alive 组件有什么作用如果你需要在组件切换的时候，保存一些组件的状态防止多次渲染，就可以使用  keep-alive  组件包裹需要保存的组件。对于  keep-alive  组件来说，它拥有两个独有的生命周期钩子函数，分别为  activated  和  deactivated 。用  keep-alive  包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行  deactiv">
+<meta property="og:description" content="组件中 data 什么时候可以使用对象组件复用时所有组件实例都会共享  data，如果  data  是对象的话，就会造成一个组件修改  data  以后会影响到其他所有组件，所以需要将  data  写成函数，每次用到就调用一次函数获得新的数据。当我们使用  new Vue()  的方式的时候，无论我们将  data  设置为对象还是函数都是可以的，因为  new Vue()  的方式是生成一个">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2019-03-26T06:27:10.260Z">
+<meta property="og:updated_time" content="2019-03-26T06:29:35.640Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue_keep-alive">
-<meta name="twitter:description" content="keep-alive 组件有什么作用如果你需要在组件切换的时候，保存一些组件的状态防止多次渲染，就可以使用  keep-alive  组件包裹需要保存的组件。对于  keep-alive  组件来说，它拥有两个独有的生命周期钩子函数，分别为  activated  和  deactivated 。用  keep-alive  包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行  deactiv">
+<meta name="twitter:title" content="vue_data">
+<meta name="twitter:description" content="组件中 data 什么时候可以使用对象组件复用时所有组件实例都会共享  data，如果  data  是对象的话，就会造成一个组件修改  data  以后会影响到其他所有组件，所以需要将  data  写成函数，每次用到就调用一次函数获得新的数据。当我们使用  new Vue()  的方式的时候，无论我们将  data  设置为对象还是函数都是可以的，因为  new Vue()  的方式是生成一个">
   
     <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
   
@@ -101,7 +101,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">vue_keep-alive</div>
+        <div class="flex-col header-title ellipsis">vue_data</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -118,11 +118,11 @@
 </header>
 <header class="content-header">
   <div class="container">
-    <h1 class="author">vue_keep-alive</h1>
+    <h1 class="author">vue_data</h1>
     <h5 class="subtitle">
         
-            <time datetime="2018-06-16T11:35:08.000Z" itemprop="datePublished" class="page-time">
-  2018-06-16
+            <time datetime="2018-09-11T11:50:03.000Z" itemprop="datePublished" class="page-time">
+  2018-09-11
 </time>
 
 
@@ -132,7 +132,7 @@
 </header>
 
     <div class="container body-wrap">
-      <article id="post-vue-keep-alive" class="article article-type-post" itemprop="blogPost">
+      <article id="post-vue-data" class="article article-type-post" itemprop="blogPost">
     <div class="post-meta flex-row">
         
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
@@ -145,7 +145,7 @@
 
             
             <nav class="post-toc-wrap" id="post-toc">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#keep-alive-组件有什么作用"><span class="post-toc-number">1.</span> <span class="post-toc-text">keep-alive 组件有什么作用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#如果你需要在组件切换的时候，保存一些组件的状态防止多次渲染，就可以使用-keep-alive-组件包裹需要保存的组件。"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">如果你需要在组件切换的时候，保存一些组件的状态防止多次渲染，就可以使用  keep-alive  组件包裹需要保存的组件。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#对于-keep-alive-组件来说，它拥有两个独有的生命周期钩子函数，分别为-activated-和-deactivated-。用-keep-alive-包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行-deactivated-钩子函数，命中缓存渲染后会执行-actived-钩子函数。"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">对于  keep-alive  组件来说，它拥有两个独有的生命周期钩子函数，分别为  activated  和  deactivated 。用  keep-alive  包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行  deactivated  钩子函数，命中缓存渲染后会执行  actived  钩子函数。</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#组件中-data-什么时候可以使用对象"><span class="post-toc-number">1.</span> <span class="post-toc-text">组件中 data 什么时候可以使用对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#组件复用时所有组件实例都会共享-data，如果-data-是对象的话，就会造成一个组件修改-data-以后会影响到其他所有组件，所以需要将-data-写成函数，每次用到就调用一次函数获得新的数据。"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">组件复用时所有组件实例都会共享  data，如果  data  是对象的话，就会造成一个组件修改  data  以后会影响到其他所有组件，所以需要将  data  写成函数，每次用到就调用一次函数获得新的数据。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#当我们使用-new-Vue-的方式的时候，无论我们将-data-设置为对象还是函数都是可以的，因为-new-Vue-的方式是生成一个根组件，该组件不会复用，也就不存在共享-data-的情况了。"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">当我们使用  new Vue()  的方式的时候，无论我们将  data  设置为对象还是函数都是可以的，因为  new Vue()  的方式是生成一个根组件，该组件不会复用，也就不存在共享  data  的情况了。</span></a></li></ol></li></ol>
             </nav>
             
         </aside>
@@ -153,7 +153,7 @@
         <div class="post-main">
 
             <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="keep-alive-组件有什么作用"><a href="#keep-alive-组件有什么作用" class="headerlink" title="keep-alive 组件有什么作用"></a>keep-alive 组件有什么作用</h3><h5 id="如果你需要在组件切换的时候，保存一些组件的状态防止多次渲染，就可以使用-keep-alive-组件包裹需要保存的组件。"><a href="#如果你需要在组件切换的时候，保存一些组件的状态防止多次渲染，就可以使用-keep-alive-组件包裹需要保存的组件。" class="headerlink" title="如果你需要在组件切换的时候，保存一些组件的状态防止多次渲染，就可以使用  keep-alive  组件包裹需要保存的组件。"></a>如果你需要在组件切换的时候，保存一些组件的状态防止多次渲染，就可以使用  keep-alive  组件包裹需要保存的组件。</h5><h5 id="对于-keep-alive-组件来说，它拥有两个独有的生命周期钩子函数，分别为-activated-和-deactivated-。用-keep-alive-包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行-deactivated-钩子函数，命中缓存渲染后会执行-actived-钩子函数。"><a href="#对于-keep-alive-组件来说，它拥有两个独有的生命周期钩子函数，分别为-activated-和-deactivated-。用-keep-alive-包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行-deactivated-钩子函数，命中缓存渲染后会执行-actived-钩子函数。" class="headerlink" title="对于  keep-alive  组件来说，它拥有两个独有的生命周期钩子函数，分别为  activated  和  deactivated 。用  keep-alive  包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行  deactivated  钩子函数，命中缓存渲染后会执行  actived  钩子函数。"></a>对于  keep-alive  组件来说，它拥有两个独有的生命周期钩子函数，分别为  activated  和  deactivated 。用  keep-alive  包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行  deactivated  钩子函数，命中缓存渲染后会执行  actived  钩子函数。</h5>
+            <h3 id="组件中-data-什么时候可以使用对象"><a href="#组件中-data-什么时候可以使用对象" class="headerlink" title="组件中 data 什么时候可以使用对象"></a>组件中 data 什么时候可以使用对象</h3><h5 id="组件复用时所有组件实例都会共享-data，如果-data-是对象的话，就会造成一个组件修改-data-以后会影响到其他所有组件，所以需要将-data-写成函数，每次用到就调用一次函数获得新的数据。"><a href="#组件复用时所有组件实例都会共享-data，如果-data-是对象的话，就会造成一个组件修改-data-以后会影响到其他所有组件，所以需要将-data-写成函数，每次用到就调用一次函数获得新的数据。" class="headerlink" title="组件复用时所有组件实例都会共享  data，如果  data  是对象的话，就会造成一个组件修改  data  以后会影响到其他所有组件，所以需要将  data  写成函数，每次用到就调用一次函数获得新的数据。"></a>组件复用时所有组件实例都会共享  data，如果  data  是对象的话，就会造成一个组件修改  data  以后会影响到其他所有组件，所以需要将  data  写成函数，每次用到就调用一次函数获得新的数据。</h5><h5 id="当我们使用-new-Vue-的方式的时候，无论我们将-data-设置为对象还是函数都是可以的，因为-new-Vue-的方式是生成一个根组件，该组件不会复用，也就不存在共享-data-的情况了。"><a href="#当我们使用-new-Vue-的方式的时候，无论我们将-data-设置为对象还是函数都是可以的，因为-new-Vue-的方式是生成一个根组件，该组件不会复用，也就不存在共享-data-的情况了。" class="headerlink" title="当我们使用  new Vue()  的方式的时候，无论我们将  data  设置为对象还是函数都是可以的，因为  new Vue()  的方式是生成一个根组件，该组件不会复用，也就不存在共享  data  的情况了。"></a>当我们使用  new Vue()  的方式的时候，无论我们将  data  设置为对象还是函数都是可以的，因为  new Vue()  的方式是生成一个根组件，该组件不会复用，也就不存在共享  data  的情况了。</h5>
 
             
             <div class="post-reward">
@@ -164,7 +164,7 @@
             <blockquote>
                 <p>
                 本文地址：
-                <a href="http://blog.bochunhao.cn/2018/06/16/vue-keep-alive/" target="_blank" rel="external">http://blog.bochunhao.cn/2018/06/16/vue-keep-alive/</a>
+                <a href="http://blog.bochunhao.cn/2018/09/11/vue-data/" target="_blank" rel="external">http://blog.bochunhao.cn/2018/09/11/vue-data/</a>
                 </p>
                 <footer><cite><a href="http://blog.bochunhao.cn">@个人博客</a></cite></footer>
             </blockquote>
@@ -172,19 +172,12 @@
             
 <nav class="post-nav">
   
-    <div class="waves-block waves-effect prev fl">
-      <a href="/2018/09/11/vue-data/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">vue_data</h4>
-      </a>
-    </div>
-  
 
   
     <div class="waves-block waves-effect next fr">
-      <a href="/2018/06/02/vue-v-show-v-if/" id="post-next" class="post-nav-link">
+      <a href="/2018/06/16/vue-keep-alive/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">vue_v-show_v-if</h4>
+        <h4 class="title">vue_keep-alive</h4>
       </a>
     </div>
   
@@ -195,7 +188,7 @@
             
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="vue-keep-alive" data-title="vue_keep-alive" data-url="http://blog.bochunhao.cn/2018/06/16/vue-keep-alive/index.html"></div>
+	<div class="ds-thread" data-thread-key="vue-data" data-title="vue_data" data-url="http://blog.bochunhao.cn/2018/09/11/vue-data/index.html"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

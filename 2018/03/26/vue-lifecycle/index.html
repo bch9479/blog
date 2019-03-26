@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>vue_lifecycle | 个人博客 | BCH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="theme-color" content="#3F51B5">
+  
+  
+  <meta name="keywords" content="vue">
+  <meta name="description" content="生命周期钩子函数在  beforeCreate  钩子函数调用的时候，是获取不到  props  或者  data  中的数据的，因为这些数据的初始化都在  initState  中。然后会执行  created  钩子函数，在这一步的时候已经可以访问到之前不能访问到的数据，但是这时候组件还没被挂载，所以是看不到的。接下来会先执行  beforeMount  钩子函数，开始创建 VDOM，最后执行">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue_lifecycle">
+<meta property="og:url" content="http://blog.bochunhao.cn/2018/03/26/vue-lifecycle/index.html">
+<meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="生命周期钩子函数在  beforeCreate  钩子函数调用的时候，是获取不到  props  或者  data  中的数据的，因为这些数据的初始化都在  initState  中。然后会执行  created  钩子函数，在这一步的时候已经可以访问到之前不能访问到的数据，但是这时候组件还没被挂载，所以是看不到的。接下来会先执行  beforeMount  钩子函数，开始创建 VDOM，最后执行">
+<meta property="og:locale" content="Chinese">
+<meta property="og:updated_time" content="2019-03-26T06:30:37.383Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue_lifecycle">
+<meta name="twitter:description" content="生命周期钩子函数在  beforeCreate  钩子函数调用的时候，是获取不到  props  或者  data  中的数据的，因为这些数据的初始化都在  initState  中。然后会执行  created  钩子函数，在这一步的时候已经可以访问到之前不能访问到的数据，但是这时候组件还没被挂载，所以是看不到的。接下来会先执行  beforeMount  钩子函数，开始创建 VDOM，最后执行">
+  
+    <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
+  
+  <meta name="summary" content="bch_bk">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="loading" class="active"></div>
+
+  <nav id="menu" class="hide" >
+   <div class="inner flex-row-vertical">
+  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+      <i class="icon icon-lg icon-close"></i>
+  </a>
+  <div class="brand-wrap">
+    <div class="brand">
+      <a href="/" class="avatar"><img src="/img/logos.jpeg"></a>
+      <hgroup class="introduce">
+        <h5 class="nickname">BCH</h5>
+        <a href="mailto:17600280987@163.com" title="17600280987@163.com" class="mail">17600280987@163.com</a>
+      </hgroup>
+    </div>
+  </div>
+  <div class="scroll-wrap flex-col">
+    <ul class="nav">
+      
+          <li class="waves-block waves-effect">
+            <a href="/">
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/categories">
+              <i class="icon icon-lg icon-archives"></i>
+              分类
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/tags">
+              <i class="icon icon-lg icon-tags"></i>
+              标签
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://github.com/bch9479/blog" target="_blank">
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://weibo.com/5900743344/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">
+              <i class="icon icon-lg icon-weibo"></i>
+              微博
+            </a>
+          </li>
+      
+    </ul>
+
+    <footer class="footer">
+  <p>个人博客 &copy; 2019</p>
+</footer>
+
+  </div>
+</div>
+
+  </nav>
+  <main id="main">
+    <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vue_lifecycle</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header">
+  <div class="container">
+    <h1 class="author">vue_lifecycle</h1>
+    <h5 class="subtitle">
+        
+            <time datetime="2018-03-26T05:56:41.000Z" itemprop="datePublished" class="page-time">
+  2018-03-26
+</time>
+
+
+        
+    </h5>
+  </div>
+</header>
+
+    <div class="container body-wrap">
+      <article id="post-vue-lifecycle" class="article article-type-post" itemprop="blogPost">
+    <div class="post-meta flex-row">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </div>
+    <div class="post-body">
+        <aside class="post-widget" id="post-widget">
+
+            
+
+            
+            <nav class="post-toc-wrap" id="post-toc">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#生命周期钩子函数"><span class="post-toc-number">1.</span> <span class="post-toc-text">生命周期钩子函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#在-beforeCreate-钩子函数调用的时候，是获取不到-props-或者-data-中的数据的，因为这些数据的初始化都在-initState-中。"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">在  beforeCreate  钩子函数调用的时候，是获取不到  props  或者  data  中的数据的，因为这些数据的初始化都在  initState  中。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#然后会执行-created-钩子函数，在这一步的时候已经可以访问到之前不能访问到的数据，但是这时候组件还没被挂载，所以是看不到的。"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">然后会执行  created  钩子函数，在这一步的时候已经可以访问到之前不能访问到的数据，但是这时候组件还没被挂载，所以是看不到的。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#接下来会先执行-beforeMount-钩子函数，开始创建-VDOM，最后执行-mounted-钩子，并将-VDOM-渲染为真实-DOM-并且渲染数据。组件中如果有子组件的话，会递归挂载子组件，只有当所有子组件全部挂载完毕，才会执行根组件的挂载钩子。"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">接下来会先执行  beforeMount  钩子函数，开始创建 VDOM，最后执行  mounted  钩子，并将 VDOM 渲染为真实 DOM 并且渲染数据。组件中如果有子组件的话，会递归挂载子组件，只有当所有子组件全部挂载完毕，才会执行根组件的挂载钩子。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#接下来是数据更新时会调用的钩子函数-beforeUpdate-和-updated，这两个钩子函数没什么好说的，就是分别在数据更新前和更新后会调用。"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">接下来是数据更新时会调用的钩子函数  beforeUpdate  和  updated，这两个钩子函数没什么好说的，就是分别在数据更新前和更新后会调用。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#另外还有-keep-alive-独有的生命周期，分别为-activated-和-deactivated-。用-keep-alive-包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行-deactivated-钩子函数，命中缓存渲染后会执行-actived-钩子函数。"><span class="post-toc-number">1.0.5.</span> <span class="post-toc-text">另外还有  keep-alive  独有的生命周期，分别为  activated  和  deactivated 。用  keep-alive  包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行  deactivated  钩子函数，命中缓存渲染后会执行  actived  钩子函数。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#最后就是销毁组件的钩子函数-beforeDestroy-和-destroyed。前者适合移除事件、定时器等等，否则可能会引起内存泄露的问题。然后进行一系列的销毁操作，如果有子组件的话，也会递归销毁子组件，所有子组件都销毁完毕后才会执行根组件的-destroyed-钩子函数。"><span class="post-toc-number">1.0.6.</span> <span class="post-toc-text">最后就是销毁组件的钩子函数  beforeDestroy  和  destroyed。前者适合移除事件、定时器等等，否则可能会引起内存泄露的问题。然后进行一系列的销毁操作，如果有子组件的话，也会递归销毁子组件，所有子组件都销毁完毕后才会执行根组件的  destroyed  钩子函数。</span></a></li></ol></li></ol>
+            </nav>
+            
+        </aside>
+
+        <div class="post-main">
+
+            <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="生命周期钩子函数"><a href="#生命周期钩子函数" class="headerlink" title="生命周期钩子函数"></a>生命周期钩子函数</h3><h5 id="在-beforeCreate-钩子函数调用的时候，是获取不到-props-或者-data-中的数据的，因为这些数据的初始化都在-initState-中。"><a href="#在-beforeCreate-钩子函数调用的时候，是获取不到-props-或者-data-中的数据的，因为这些数据的初始化都在-initState-中。" class="headerlink" title="在  beforeCreate  钩子函数调用的时候，是获取不到  props  或者  data  中的数据的，因为这些数据的初始化都在  initState  中。"></a>在  beforeCreate  钩子函数调用的时候，是获取不到  props  或者  data  中的数据的，因为这些数据的初始化都在  initState  中。</h5><h5 id="然后会执行-created-钩子函数，在这一步的时候已经可以访问到之前不能访问到的数据，但是这时候组件还没被挂载，所以是看不到的。"><a href="#然后会执行-created-钩子函数，在这一步的时候已经可以访问到之前不能访问到的数据，但是这时候组件还没被挂载，所以是看不到的。" class="headerlink" title="然后会执行  created  钩子函数，在这一步的时候已经可以访问到之前不能访问到的数据，但是这时候组件还没被挂载，所以是看不到的。"></a>然后会执行  created  钩子函数，在这一步的时候已经可以访问到之前不能访问到的数据，但是这时候组件还没被挂载，所以是看不到的。</h5><h5 id="接下来会先执行-beforeMount-钩子函数，开始创建-VDOM，最后执行-mounted-钩子，并将-VDOM-渲染为真实-DOM-并且渲染数据。组件中如果有子组件的话，会递归挂载子组件，只有当所有子组件全部挂载完毕，才会执行根组件的挂载钩子。"><a href="#接下来会先执行-beforeMount-钩子函数，开始创建-VDOM，最后执行-mounted-钩子，并将-VDOM-渲染为真实-DOM-并且渲染数据。组件中如果有子组件的话，会递归挂载子组件，只有当所有子组件全部挂载完毕，才会执行根组件的挂载钩子。" class="headerlink" title="接下来会先执行  beforeMount  钩子函数，开始创建 VDOM，最后执行  mounted  钩子，并将 VDOM 渲染为真实 DOM 并且渲染数据。组件中如果有子组件的话，会递归挂载子组件，只有当所有子组件全部挂载完毕，才会执行根组件的挂载钩子。"></a>接下来会先执行  beforeMount  钩子函数，开始创建 VDOM，最后执行  mounted  钩子，并将 VDOM 渲染为真实 DOM 并且渲染数据。组件中如果有子组件的话，会递归挂载子组件，只有当所有子组件全部挂载完毕，才会执行根组件的挂载钩子。</h5><h5 id="接下来是数据更新时会调用的钩子函数-beforeUpdate-和-updated，这两个钩子函数没什么好说的，就是分别在数据更新前和更新后会调用。"><a href="#接下来是数据更新时会调用的钩子函数-beforeUpdate-和-updated，这两个钩子函数没什么好说的，就是分别在数据更新前和更新后会调用。" class="headerlink" title="接下来是数据更新时会调用的钩子函数  beforeUpdate  和  updated，这两个钩子函数没什么好说的，就是分别在数据更新前和更新后会调用。"></a>接下来是数据更新时会调用的钩子函数  beforeUpdate  和  updated，这两个钩子函数没什么好说的，就是分别在数据更新前和更新后会调用。</h5><h5 id="另外还有-keep-alive-独有的生命周期，分别为-activated-和-deactivated-。用-keep-alive-包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行-deactivated-钩子函数，命中缓存渲染后会执行-actived-钩子函数。"><a href="#另外还有-keep-alive-独有的生命周期，分别为-activated-和-deactivated-。用-keep-alive-包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行-deactivated-钩子函数，命中缓存渲染后会执行-actived-钩子函数。" class="headerlink" title="另外还有  keep-alive  独有的生命周期，分别为  activated  和  deactivated 。用  keep-alive  包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行  deactivated  钩子函数，命中缓存渲染后会执行  actived  钩子函数。"></a>另外还有  keep-alive  独有的生命周期，分别为  activated  和  deactivated 。用  keep-alive  包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行  deactivated  钩子函数，命中缓存渲染后会执行  actived  钩子函数。</h5><h5 id="最后就是销毁组件的钩子函数-beforeDestroy-和-destroyed。前者适合移除事件、定时器等等，否则可能会引起内存泄露的问题。然后进行一系列的销毁操作，如果有子组件的话，也会递归销毁子组件，所有子组件都销毁完毕后才会执行根组件的-destroyed-钩子函数。"><a href="#最后就是销毁组件的钩子函数-beforeDestroy-和-destroyed。前者适合移除事件、定时器等等，否则可能会引起内存泄露的问题。然后进行一系列的销毁操作，如果有子组件的话，也会递归销毁子组件，所有子组件都销毁完毕后才会执行根组件的-destroyed-钩子函数。" class="headerlink" title="最后就是销毁组件的钩子函数  beforeDestroy  和  destroyed。前者适合移除事件、定时器等等，否则可能会引起内存泄露的问题。然后进行一系列的销毁操作，如果有子组件的话，也会递归销毁子组件，所有子组件都销毁完毕后才会执行根组件的  destroyed  钩子函数。"></a>最后就是销毁组件的钩子函数  beforeDestroy  和  destroyed。前者适合移除事件、定时器等等，否则可能会引起内存泄露的问题。然后进行一系列的销毁操作，如果有子组件的话，也会递归销毁子组件，所有子组件都销毁完毕后才会执行根组件的  destroyed  钩子函数。</h5>
+
+            
+            <div class="post-reward">
+                <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
+            </div>
+            
+            
+            <blockquote>
+                <p>
+                本文地址：
+                <a href="http://blog.bochunhao.cn/2018/03/26/vue-lifecycle/" target="_blank" rel="external">http://blog.bochunhao.cn/2018/03/26/vue-lifecycle/</a>
+                </p>
+                <footer><cite><a href="http://blog.bochunhao.cn">@个人博客</a></cite></footer>
+            </blockquote>
+            </div>
+            
+<nav class="post-nav">
+  
+    <div class="waves-block waves-effect prev fl">
+      <a href="/2018/04/02/vue-mixin-mixins/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">vue_mixin_mixins</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next fr">
+      <a href="/2018/03/25/react_fscom/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">REACT_组件通信</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+            
+            
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="vue-lifecycle" data-title="vue_lifecycle" data-url="http://blog.bochunhao.cn/2018/03/26/vue-lifecycle/index.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"ysblog"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+<div id="reward" class="reward-lay">
+    <a class="reward-off" id="rewardOff" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        感谢支持
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/vx.png" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/zfb.png" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+  </main>
+<div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
