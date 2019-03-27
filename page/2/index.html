@@ -24,7 +24,7 @@
     <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
   
   <meta name="summary" content="bch_bk">
-  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 </html>
@@ -38,7 +38,7 @@
   </a>
   <div class="brand-wrap">
     <div class="brand">
-      <a href="/" class="avatar"><img src="/img/logos.jpeg"></a>
+      <a href="/" class="avatar"><img src="/img/loggo.png"></a>
       <hgroup class="introduce">
         <h5 class="nickname">BCH</h5>
         <a href="mailto:17600280987@163.com" title="17600280987@163.com" class="mail">17600280987@163.com</a>
@@ -161,8 +161,7 @@
 
     
            生命周期钩子函数  在  beforeCreate  钩子函数调用的时候，是获取不到  props  或者  data  中的数据的，因为这些数据的初始化都在  initState  中。 
- 然后会执行  created  钩子函数，在这一步的时候已经可以访问到之前不能访问到的数据，但是这时候组件还没被挂载，所以是看不到的。 
- 接下来会先执行  beforeMount  钩子函数，开始创
+ 
     
     
         <a href="/2018/03/26/vue-lifecycle/" class="post-more waves-effect waves-button">
@@ -202,8 +201,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-           父子组件通信  父组件通过  props  传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过  props  传递数据，子组件不能直接修改  props， 而是必须通过调用父组件函数的方式告知父组件修改数据。 
-   兄弟组件通信  对于这种情况可以通过共同的父组件来管理状态和事件函数。
+           父子组件通信  父组件通过  props  传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件
     
     
         <a href="/2018/03/25/react_fscom/" class="post-more waves-effect waves-button">
@@ -245,8 +243,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-           setState  setState 在 React 中是经常使用的一个 API，但是它存在一些的问题经常会导致初学者出错，核心原因就是因为这个 API 是异步的。首先  setState  的调用并不会马上引起  state  的改变，并且如果你一次调用了多个  setState ，那么结果可能并不如你期待的一样。 
-      1   2   3   4   5   6   7   8 
+           setState  setState 在 React 中是经常使用的一个 API，但是它存在一些的问题经常会导致初学者出错，核心原因就是因为这个 API 是异步的。首先  setState  的
     
     
         <a href="/2018/03/22/setStarte/" class="post-more waves-effect waves-button">
