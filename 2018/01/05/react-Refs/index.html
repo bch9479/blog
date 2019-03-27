@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>react_Refs | 个人博客 | BCH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="theme-color" content="#3F51B5">
+  
+  
+  <meta name="keywords" content="react">
+  <meta name="description" content="React RefsReact 支持一种非常特殊的属性 Ref ，你可以用来绑定到 render() 输出的任何组件上。 这个特殊的属性允许你引用 render() 返回的相应的支撑实例（ backing instance ）。这样就可以确保在任何时间总是拿到正确的实例。 使用方法绑定一个 ref 属性到 render 的返回值上： 1&amp;lt;input ref=&quot;myInput&quot; /&amp;gt; 在">
+<meta name="keywords" content="react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react_Refs">
+<meta property="og:url" content="http://blog.bochunhao.cn/2018/01/05/react-Refs/index.html">
+<meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="React RefsReact 支持一种非常特殊的属性 Ref ，你可以用来绑定到 render() 输出的任何组件上。 这个特殊的属性允许你引用 render() 返回的相应的支撑实例（ backing instance ）。这样就可以确保在任何时间总是拿到正确的实例。 使用方法绑定一个 ref 属性到 render 的返回值上： 1&amp;lt;input ref=&quot;myInput&quot; /&amp;gt; 在">
+<meta property="og:locale" content="Chinese">
+<meta property="og:updated_time" content="2019-03-27T12:48:34.880Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react_Refs">
+<meta name="twitter:description" content="React RefsReact 支持一种非常特殊的属性 Ref ，你可以用来绑定到 render() 输出的任何组件上。 这个特殊的属性允许你引用 render() 返回的相应的支撑实例（ backing instance ）。这样就可以确保在任何时间总是拿到正确的实例。 使用方法绑定一个 ref 属性到 render 的返回值上： 1&amp;lt;input ref=&quot;myInput&quot; /&amp;gt; 在">
+  
+    <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
+  
+  <meta name="summary" content="bch_bk">
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="loading" class="active"></div>
+
+  <nav id="menu" class="hide" >
+   <div class="inner flex-row-vertical">
+  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+      <i class="icon icon-lg icon-close"></i>
+  </a>
+  <div class="brand-wrap">
+    <div class="brand">
+      <a href="/" class="avatar"><img src="/img/loggo.png"></a>
+      <hgroup class="introduce">
+        <h5 class="nickname">BCH</h5>
+        <a href="mailto:17600280987@163.com" title="17600280987@163.com" class="mail">17600280987@163.com</a>
+      </hgroup>
+    </div>
+  </div>
+  <div class="scroll-wrap flex-col">
+    <ul class="nav">
+      
+          <li class="waves-block waves-effect">
+            <a href="/">
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/categories">
+              <i class="icon icon-lg icon-archives"></i>
+              分类
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/tags">
+              <i class="icon icon-lg icon-tags"></i>
+              标签
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://github.com/bch9479/blog" target="_blank">
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://weibo.com/5900743344/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">
+              <i class="icon icon-lg icon-weibo"></i>
+              微博
+            </a>
+          </li>
+      
+    </ul>
+
+    <footer class="footer">
+  <p>个人博客 &copy; 2019</p>
+  <p style="color:#3F51B5;font-size: 16px;font-weight:bolder">
+    不积跬步，无以至千里
+  </p>
+  <p style="color:#3F51B5;font-size: 16px;font-weight:bolder">
+    不积小流，无以成江海
+  </p>
+</footer>
+
+  </div>
+</div>
+
+  </nav>
+  <main id="main">
+    <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">react_Refs</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header">
+  <div class="container">
+    <h1 class="author">react_Refs</h1>
+    <h5 class="subtitle">
+        
+            <time datetime="2018-01-05T12:45:53.000Z" itemprop="datePublished" class="page-time">
+  2018-01-05
+</time>
+
+
+        
+    </h5>
+  </div>
+</header>
+
+    <div class="container body-wrap">
+      <article id="post-react-Refs" class="article article-type-post" itemprop="blogPost">
+  <div class="post-meta flex-row">
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
+
+  </div>
+  <div class="post-body">
+    <aside class="post-widget" id="post-widget">
+       
+      <nav class="post-toc-wrap" id="post-toc">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#React-Refs"><span class="post-toc-number">1.</span> <span class="post-toc-text">React Refs</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#使用方法"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">使用方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#完整实例"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">完整实例</span></a></li></ol></li></ol>
+      </nav>
+      
+    </aside>
+
+    <div class="post-main">
+      <div class="post-content" id="post-content" itemprop="postContent">
+        <h3 id="React-Refs"><a href="#React-Refs" class="headerlink" title="React Refs"></a>React Refs</h3><p>React 支持一种非常特殊的属性 Ref ，你可以用来绑定到 render() 输出的任何组件上。</p>
+<p>这个特殊的属性允许你引用 render() 返回的相应的支撑实例（ backing instance ）。这样就可以确保在任何时间总是拿到正确的实例。</p>
+<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><p>绑定一个 ref 属性到 render 的返回值上：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input ref=<span class="string">"myInput"</span> /&gt;</span><br></pre></td></tr></table></figure>
+<p>在其它代码中，通过 this.refs 获取支撑实例:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var input = this.refs.myInput;</span><br><span class="line">var inputValue = input.value;</span><br><span class="line">var inputRect = input.getBoundingClientRect();</span><br></pre></td></tr></table></figure>
+<h4 id="完整实例"><a href="#完整实例" class="headerlink" title="完整实例"></a>完整实例</h4><p>你可以通过使用 this 来获取当前 React 组件，或使用 ref 来获取组件的引用，实例如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class MyComponent extends React.Component &#123;</span><br><span class="line">  <span class="function"><span class="title">handleClick</span></span>() &#123;</span><br><span class="line">    // 使用原生的 DOM API 获取焦点</span><br><span class="line">    this.refs.myInput.focus();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">render</span></span>() &#123;</span><br><span class="line">    //  当组件插入到 DOM 后，ref 属性添加一个组件的引用于到 this.refs</span><br><span class="line">    <span class="built_in">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ref=<span class="string">"myInput"</span> /&gt;</span><br><span class="line">        &lt;input</span><br><span class="line">          <span class="built_in">type</span>=<span class="string">"button"</span></span><br><span class="line">          value=<span class="string">"点我输入框获取焦点"</span></span><br><span class="line">          onClick=&#123;this.handleClick.bind(this)&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;MyComponent /&gt;,</span><br><span class="line">  document.getElementById(<span class="string">'example'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+ 
+        <div class="post-reward">
+          <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
+        </div>
+        
+
+        <blockquote>
+          <p>
+            本文地址：
+            <a href="http://blog.bochunhao.cn/2018/01/05/react-Refs/" target="_blank" rel="external">http://blog.bochunhao.cn/2018/01/05/react-Refs/</a>
+          </p>
+          <footer>
+            <cite><a href="http://blog.bochunhao.cn" target="_blank" rel="external">@个人博客</a></cite>
+          </footer>
+        </blockquote>
+      </div>
+      
+<nav class="post-nav">
+  
+    <div class="waves-block waves-effect prev fl">
+      <a href="/2018/03/22/setStarte/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">REACT_setState</h4>
+      </a>
+    </div>
+  
+
+  
+</nav>
+
+ 
+
+
+
+    </div>
+  </div>
+</article>
+
+<div id="reward" class="reward-lay">
+    <a class="reward-off" id="rewardOff" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        感谢支持
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/vx.png" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/zfb.png" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+    </div>
+  </main>
+<div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
