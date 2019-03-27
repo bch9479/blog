@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>es6_RegExp | 个人博客 | BCH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="theme-color" content="#3F51B5">
+  
+  
+  <meta name="keywords" content="es6">
+  <meta name="description" content="ES6 正则的扩展RegExp 构造函数在 ES5 中，RegExp 构造函数的参数有两种情况。 第一种情况是，参数是字符串，这时第二个参数表示正则表达式的修饰符（flag）。 123var regex = new RegExp(&apos;xyz&apos;, &apos;i&apos;);// 等价于var regex = /xyz/i; 第二种情况是，参数是一个正则表示式，这时会返回一个原有正则表达式的拷贝。 123var reg">
+<meta name="keywords" content="es6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="es6_RegExp">
+<meta property="og:url" content="http://blog.bochunhao.cn/2019/01/10/es6-RegExp/index.html">
+<meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="ES6 正则的扩展RegExp 构造函数在 ES5 中，RegExp 构造函数的参数有两种情况。 第一种情况是，参数是字符串，这时第二个参数表示正则表达式的修饰符（flag）。 123var regex = new RegExp(&apos;xyz&apos;, &apos;i&apos;);// 等价于var regex = /xyz/i; 第二种情况是，参数是一个正则表示式，这时会返回一个原有正则表达式的拷贝。 123var reg">
+<meta property="og:locale" content="Chinese">
+<meta property="og:updated_time" content="2019-03-27T14:25:00.232Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="es6_RegExp">
+<meta name="twitter:description" content="ES6 正则的扩展RegExp 构造函数在 ES5 中，RegExp 构造函数的参数有两种情况。 第一种情况是，参数是字符串，这时第二个参数表示正则表达式的修饰符（flag）。 123var regex = new RegExp(&apos;xyz&apos;, &apos;i&apos;);// 等价于var regex = /xyz/i; 第二种情况是，参数是一个正则表示式，这时会返回一个原有正则表达式的拷贝。 123var reg">
+  
+    <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
+  
+  <meta name="summary" content="bch_bk">
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="loading" class="active"></div>
+
+  <nav id="menu" class="hide" >
+   <div class="inner flex-row-vertical">
+  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+      <i class="icon icon-lg icon-close"></i>
+  </a>
+  <div class="brand-wrap">
+    <div class="brand">
+      <a href="/" class="avatar"><img src="/img/loggo.png"></a>
+      <hgroup class="introduce">
+        <h5 class="nickname">BCH</h5>
+        <a href="mailto:17600280987@163.com" title="17600280987@163.com" class="mail">17600280987@163.com</a>
+      </hgroup>
+    </div>
+  </div>
+  <div class="scroll-wrap flex-col">
+    <ul class="nav">
+      
+          <li class="waves-block waves-effect">
+            <a href="/">
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/categories">
+              <i class="icon icon-lg icon-archives"></i>
+              分类
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/tags">
+              <i class="icon icon-lg icon-tags"></i>
+              标签
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://github.com/bch9479/blog" target="_blank">
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://weibo.com/5900743344/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">
+              <i class="icon icon-lg icon-weibo"></i>
+              微博
+            </a>
+          </li>
+      
+    </ul>
+
+    <footer class="footer">
+  <p>个人博客 &copy; 2019</p>
+  <p style="color:#3F51B5;font-size: 16px;font-weight:bolder">
+    不积跬步，无以至千里
+  </p>
+  <p style="color:#3F51B5;font-size: 16px;font-weight:bolder">
+    不积小流，无以成江海
+  </p>
+</footer>
+
+  </div>
+</div>
+
+  </nav>
+  <main id="main">
+    <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">es6_RegExp</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header">
+  <div class="container">
+    <h1 class="author">es6_RegExp</h1>
+    <h5 class="subtitle">
+        
+            <time datetime="2019-01-10T14:12:25.000Z" itemprop="datePublished" class="page-time">
+  2019-01-10
+</time>
+
+
+        
+    </h5>
+  </div>
+</header>
+
+    <div class="container body-wrap">
+      <article id="post-es6-RegExp" class="article article-type-post" itemprop="blogPost">
+  <div class="post-meta flex-row">
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
+
+  </div>
+  <div class="post-body">
+    <aside class="post-widget" id="post-widget">
+       
+      <nav class="post-toc-wrap" id="post-toc">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ES6-正则的扩展"><span class="post-toc-number">1.</span> <span class="post-toc-text">ES6 正则的扩展</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#RegExp-构造函数"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">RegExp 构造函数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#字符串的正则方法"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">字符串的正则方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#u-修饰符"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">u 修饰符</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#y-修饰符"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">y 修饰符</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#sticky-属性"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">sticky 属性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#flags-属性"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">flags 属性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#RegExp-escape"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">RegExp.escape()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#s-修饰符：dotAll-模式"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">s 修饰符：dotAll 模式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#后行断言"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">后行断言</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Unicode-属性类"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">Unicode 属性类</span></a></li></ol></li></ol>
+      </nav>
+      
+    </aside>
+
+    <div class="post-main">
+      <div class="post-content" id="post-content" itemprop="postContent">
+        <h3 id="ES6-正则的扩展"><a href="#ES6-正则的扩展" class="headerlink" title="ES6 正则的扩展"></a>ES6 正则的扩展</h3><h4 id="RegExp-构造函数"><a href="#RegExp-构造函数" class="headerlink" title="RegExp 构造函数"></a>RegExp 构造函数</h4><p>在 ES5 中，RegExp 构造函数的参数有两种情况。</p>
+<p>第一种情况是，参数是字符串，这时第二个参数表示正则表达式的修饰符（flag）。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var regex = new RegExp(<span class="string">'xyz'</span>, <span class="string">'i'</span>);</span><br><span class="line">// 等价于</span><br><span class="line">var regex = /xyz/i;</span><br></pre></td></tr></table></figure>
+<p>第二种情况是，参数是一个正则表示式，这时会返回一个原有正则表达式的拷贝。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var regex = new RegExp(/xyz/i);</span><br><span class="line">// 等价于</span><br><span class="line">var regex = /xyz/i;</span><br></pre></td></tr></table></figure>
+<p>但是，ES5 不允许此时使用第二个参数，添加修饰符，否则会报错。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var regex = new RegExp(/xyz/, <span class="string">'i'</span>);</span><br><span class="line">// Uncaught TypeError: Cannot supply flags when constructing one RegExp from another</span><br></pre></td></tr></table></figure>
+<p>ES6 改变了这种行为。如果 RegExp 构造函数第一个参数是一个正则对象，那么可以使用第二个参数指定修饰符。而且，返回的正则表达式会忽略原有的正则表达式的修饰符，只使用新指定的修饰符。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">new RegExp(/abc/ig, <span class="string">'i'</span>).flags</span><br><span class="line">// <span class="string">"i"</span></span><br></pre></td></tr></table></figure>
+<p>上面代码中，原有正则对象的修饰符是 ig，它会被第二个参数 i 覆盖。</p>
+<h4 id="字符串的正则方法"><a href="#字符串的正则方法" class="headerlink" title="字符串的正则方法"></a>字符串的正则方法</h4><p>字符串对象共有 4 个方法，可以使用正则表达式：match()、replace()、search()和 split()。</p>
+<p>ES6 将这 4 个方法，在语言内部全部调用 RegExp 的实例方法，从而做到所有与正则相关的方法，全都定义在 RegExp 对象上。</p>
+<p>1.String.prototype.match 调用 RegExp.prototype[Symbol.match]<br>2.String.prototype.replace 调用 RegExp.prototype[Symbol.replace]<br>3.String.prototype.search 调用 RegExp.prototype[Symbol.search]<br>4.String.prototype.split 调用 RegExp.prototype[Symbol.split]</p>
+<h4 id="u-修饰符"><a href="#u-修饰符" class="headerlink" title="u 修饰符"></a>u 修饰符</h4><p>ES6 对正则表达式添加了 u 修饰符，含义为“Unicode 模式”，用来正确处理大于\uFFFF 的 Unicode 字符。也就是说，会正确处理四个字节的 UTF-16 编码。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/^\uD83D/u.test(<span class="string">'\uD83D\uDC2A'</span>)</span><br><span class="line">// <span class="literal">false</span></span><br><span class="line">/^\uD83D/.<span class="built_in">test</span>(<span class="string">'\uD83D\uDC2A'</span>)</span><br><span class="line">// <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>上面代码中，\uD83D\uDC2A 是一个四个字节的 UTF-16 编码，代表一个字符。但是，ES5 不支持四个字节的 UTF-16 编码，会将其识别为两个字符，导致第二行代码结果为 true。加了 u 修饰符以后，ES6 就会识别其为一个字符，所以第一行代码结果为 false。</p>
+<p>一旦加上 u 修饰符号，就会修改下面这些正则表达式的行为。</p>
+<p>（1）点字符</p>
+<p>点（.）字符在正则表达式中，含义是除了换行符以外的任意单个字符。对于码点大于 0xFFFF 的 Unicode 字符，点字符不能识别，必须加上 u 修饰符。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var s = <span class="string">'𠮷'</span>;</span><br><span class="line">/^.$/.<span class="built_in">test</span>(s) // <span class="literal">false</span></span><br><span class="line">/^.$/u.test(s) // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>上面代码表示，如果不添加 u 修饰符，正则表达式就会认为字符串为两个字符，从而匹配失败。</p>
+<p>（2）Unicode 字符表示法</p>
+<p>ES6 新增了使用大括号表示 Unicode 字符，这种表示法在正则表达式中必须加上 u 修饰符，才能识别。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/\u&#123;61&#125;/.<span class="built_in">test</span>(<span class="string">'a'</span>) // <span class="literal">false</span></span><br><span class="line">/\u&#123;61&#125;/u.test(<span class="string">'a'</span>) // <span class="literal">true</span></span><br><span class="line">/\u&#123;20BB7&#125;/u.test(<span class="string">'𠮷'</span>) // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>上面代码表示，如果不加 u 修饰符，正则表达式无法识别\u{61}这种表示法，只会认为这匹配 61 个连续的 u。</p>
+<p>（3）量词</p>
+<p>使用 u 修饰符后，所有量词都会正确识别码点大于 0xFFFF 的 Unicode 字符。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/a&#123;2&#125;/.<span class="built_in">test</span>(<span class="string">'aa'</span>) // <span class="literal">true</span></span><br><span class="line">/a&#123;2&#125;/u.test(<span class="string">'aa'</span>) // <span class="literal">true</span></span><br><span class="line">/𠮷&#123;2&#125;/.<span class="built_in">test</span>(<span class="string">'𠮷𠮷'</span>) // <span class="literal">false</span></span><br><span class="line">/𠮷&#123;2&#125;/u.test(<span class="string">'𠮷𠮷'</span>) // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>另外，只有在使用 u 修饰符的情况下，Unicode 表达式当中的大括号才会被正确解读，否则会被解读为量词。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/^\u&#123;3&#125;$/.<span class="built_in">test</span>(<span class="string">'uuu'</span>) // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>上面代码中，由于正则表达式没有 u 修饰符，所以大括号被解读为量词。加上 u 修饰符，就会被解读为 Unicode 表达式。</p>
+<p>（4）预定义模式</p>
+<p>u 修饰符也影响到预定义模式，能否正确识别码点大于 0xFFFF 的 Unicode 字符。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/^\S$/.<span class="built_in">test</span>(<span class="string">'𠮷'</span>) // <span class="literal">false</span></span><br><span class="line">/^\S$/u.test(<span class="string">'𠮷'</span>) // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>上面代码的\S 是预定义模式，匹配所有不是空格的字符。只有加了 u 修饰符，它才能正确匹配码点大于 0xFFFF 的 Unicode 字符。</p>
+<p>利用这一点，可以写出一个正确返回字符串长度的函数。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> codePointLength(text) &#123;</span><br><span class="line">  var result = text.match(/[\s\S]/gu);</span><br><span class="line">  <span class="built_in">return</span> result ? result.length : 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var s = <span class="string">'𠮷𠮷'</span>;</span><br><span class="line"></span><br><span class="line">s.length // 4</span><br><span class="line">codePointLength(s) // 2</span><br></pre></td></tr></table></figure>
+<p>（5）i 修饰符</p>
+<p>有些 Unicode 字符的编码不同，但是字型很相近，比如，\u004B 与\u212A 都是大写的 K。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/[a-z]/i.test(<span class="string">'\u212A'</span>) // <span class="literal">false</span></span><br><span class="line">/[a-z]/iu.test(<span class="string">'\u212A'</span>) // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>上面代码中，不加 u 修饰符，就无法识别非规范的 K 字符。</p>
+<h4 id="y-修饰符"><a href="#y-修饰符" class="headerlink" title="y 修饰符"></a>y 修饰符</h4><p>除了 u 修饰符，ES6 还为正则表达式添加了 y 修饰符，叫做“粘连”（sticky）修饰符。</p>
+<p>y 修饰符的作用与 g 修饰符类似，也是全局匹配，后一次匹配都从上一次匹配成功的下一个位置开始。不同之处在于，g 修饰符只要剩余位置中存在匹配就可，而 y 修饰符确保匹配必须从剩余的第一个位置开始，这也就是“粘连”的涵义。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var s = <span class="string">'aaa_aa_a'</span>;</span><br><span class="line">var r1 = /a+/g;</span><br><span class="line">var r2 = /a+/y;</span><br><span class="line"></span><br><span class="line">r1.exec(s) // [<span class="string">"aaa"</span>]</span><br><span class="line">r2.exec(s) // [<span class="string">"aaa"</span>]</span><br><span class="line"></span><br><span class="line">r1.exec(s) // [<span class="string">"aa"</span>]</span><br><span class="line">r2.exec(s) // null</span><br></pre></td></tr></table></figure>
+<p>上面代码有两个正则表达式，一个使用 g 修饰符，另一个使用 y 修饰符。这两个正则表达式各执行了两次，第一次执行的时候，两者行为相同，剩余字符串都是_aa_a。由于 g 修饰没有位置要求，所以第二次执行会返回结果，而 y 修饰符要求匹配必须从头部开始，所以返回 null。</p>
+<p>如果改一下正则表达式，保证每次都能头部匹配，y 修饰符就会返回结果了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var s = <span class="string">'aaa_aa_a'</span>;</span><br><span class="line">var r = /a+_/y;</span><br><span class="line"></span><br><span class="line">r.exec(s) // [<span class="string">"aaa_"</span>]</span><br><span class="line">r.exec(s) // [<span class="string">"aa_"</span>]</span><br></pre></td></tr></table></figure>
+<p>上面代码每次匹配，都是从剩余字符串的头部开始。</p>
+<p>使用 lastIndex 属性，可以更好地说明 y 修饰符。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">const REGEX = /a/g;</span><br><span class="line"></span><br><span class="line">// 指定从2号位置（y）开始匹配</span><br><span class="line">REGEX.lastIndex = 2;</span><br><span class="line"></span><br><span class="line">// 匹配成功</span><br><span class="line">const match = REGEX.exec(<span class="string">'xaya'</span>);</span><br><span class="line"></span><br><span class="line">// 在3号位置匹配成功</span><br><span class="line">match.index // 3</span><br><span class="line"></span><br><span class="line">// 下一次匹配从4号位开始</span><br><span class="line">REGEX.lastIndex // 4</span><br><span class="line"></span><br><span class="line">// 4号位开始匹配失败</span><br><span class="line">REGEX.exec(<span class="string">'xaxa'</span>) // null</span><br></pre></td></tr></table></figure>
+<p>上面代码中，lastIndex 属性指定每次搜索的开始位置，g 修饰符从这个位置开始向后搜索，直到发现匹配为止。</p>
+<p>y 修饰符同样遵守 lastIndex 属性，但是要求必须在 lastIndex 指定的位置发现匹配。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">const REGEX = /a/y;</span><br><span class="line"></span><br><span class="line">// 指定从2号位置开始匹配</span><br><span class="line">REGEX.lastIndex = 2;</span><br><span class="line"></span><br><span class="line">// 不是粘连，匹配失败</span><br><span class="line">REGEX.exec(<span class="string">'xaya'</span>) // null</span><br><span class="line"></span><br><span class="line">// 指定从3号位置开始匹配</span><br><span class="line">REGEX.lastIndex = 3;</span><br><span class="line"></span><br><span class="line">// 3号位置是粘连，匹配成功</span><br><span class="line">const match = REGEX.exec(<span class="string">'xaxa'</span>);</span><br><span class="line">match.index // 3</span><br><span class="line">REGEX.lastIndex // 4</span><br></pre></td></tr></table></figure>
+<p>进一步说，y 修饰符号隐含了头部匹配的标志^。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/b/y.exec(<span class="string">'aba'</span>)</span><br><span class="line">// null</span><br></pre></td></tr></table></figure>
+<p>上面代码由于不能保证头部匹配，所以返回 null。y 修饰符的设计本意，就是让头部匹配的标志^在全局匹配中都有效。</p>
+<p>在 split 方法中使用 y 修饰符，原字符串必须以分隔符开头。这也意味着，只要匹配成功，数组的第一个成员肯定是空字符串。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 没有找到匹配</span><br><span class="line"><span class="string">'x##'</span>.split(/<span class="comment">#/y)</span></span><br><span class="line">// [ <span class="string">'x##'</span> ]</span><br><span class="line"></span><br><span class="line">// 找到两个匹配</span><br><span class="line"><span class="string">'##x'</span>.split(/<span class="comment">#/y)</span></span><br><span class="line">// [ <span class="string">''</span>, <span class="string">''</span>, <span class="string">'x'</span> ]</span><br></pre></td></tr></table></figure>
+<p>后续的分隔符只有紧跟前面的分隔符，才会被识别。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'#x#'</span>.split(/<span class="comment">#/y)</span></span><br><span class="line">// [ <span class="string">''</span>, <span class="string">'x#'</span> ]</span><br><span class="line"></span><br><span class="line"><span class="string">'##'</span>.split(/<span class="comment">#/y)</span></span><br><span class="line">// [ <span class="string">''</span>, <span class="string">''</span>, <span class="string">''</span> ]</span><br></pre></td></tr></table></figure>
+<p>下面是字符串对象的 replace 方法的例子。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const REGEX = /a/gy;</span><br><span class="line"><span class="string">'aaxa'</span>.replace(REGEX, <span class="string">'-'</span>) // <span class="string">'--xa'</span></span><br></pre></td></tr></table></figure>
+<p>上面代码中，最后一个 a 因为不是出现下一次匹配的头部，所以不会被替换。</p>
+<p>单单一个 y 修饰符对 match 方法，只能返回第一个匹配，必须与 g 修饰符联用，才能返回所有匹配。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'a1a2a3'</span>.match(/a\d/y) // [<span class="string">"a1"</span>]</span><br><span class="line"><span class="string">'a1a2a3'</span>.match(/a\d/gy) // [<span class="string">"a1"</span>, <span class="string">"a2"</span>, <span class="string">"a3"</span>]</span><br></pre></td></tr></table></figure>
+<p>y 修饰符的一个应用，是从字符串提取 token（词元），y 修饰符确保了匹配之间不会有漏掉的字符。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">const TOKEN_Y = /\s*(\+|[0-9]+)\s*/y;</span><br><span class="line">const TOKEN_G  = /\s*(\+|[0-9]+)\s*/g;</span><br><span class="line"></span><br><span class="line">tokenize(TOKEN_Y, <span class="string">'3 + 4'</span>)</span><br><span class="line">// [ <span class="string">'3'</span>, <span class="string">'+'</span>, <span class="string">'4'</span> ]</span><br><span class="line">tokenize(TOKEN_G, <span class="string">'3 + 4'</span>)</span><br><span class="line">// [ <span class="string">'3'</span>, <span class="string">'+'</span>, <span class="string">'4'</span> ]</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> tokenize(TOKEN_REGEX, str) &#123;</span><br><span class="line">  <span class="built_in">let</span> result = [];</span><br><span class="line">  <span class="built_in">let</span> match;</span><br><span class="line">  <span class="keyword">while</span> (match = TOKEN_REGEX.exec(str)) &#123;</span><br><span class="line">    result.push(match[1]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，如果字符串里面没有非法字符，y 修饰符与 g 修饰符的提取结果是一样的。但是，一旦出现非法字符，两者的行为就不一样了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tokenize(TOKEN_Y, <span class="string">'3x + 4'</span>)</span><br><span class="line">// [ <span class="string">'3'</span> ]</span><br><span class="line">tokenize(TOKEN_G, <span class="string">'3x + 4'</span>)</span><br><span class="line">// [ <span class="string">'3'</span>, <span class="string">'+'</span>, <span class="string">'4'</span> ]</span><br></pre></td></tr></table></figure>
+<p>上面代码中，g 修饰符会忽略非法字符，而 y 修饰符不会，这样就很容易发现错误。</p>
+<h4 id="sticky-属性"><a href="#sticky-属性" class="headerlink" title="sticky 属性"></a>sticky 属性</h4><p>与 y 修饰符相匹配，ES6 的正则对象多了 sticky 属性，表示是否设置了 y 修饰符。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var r = /hello\d/y;</span><br><span class="line">r.sticky // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h4 id="flags-属性"><a href="#flags-属性" class="headerlink" title="flags 属性"></a>flags 属性</h4><p>ES6 为正则表达式新增了 flags 属性，会返回正则表达式的修饰符。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// ES5的<span class="built_in">source</span>属性</span><br><span class="line">// 返回正则表达式的正文</span><br><span class="line">/abc/ig.source</span><br><span class="line">// <span class="string">"abc"</span></span><br><span class="line"></span><br><span class="line">// ES6的flags属性</span><br><span class="line">// 返回正则表达式的修饰符</span><br><span class="line">/abc/ig.flags</span><br><span class="line">// <span class="string">'gi'</span></span><br></pre></td></tr></table></figure>
+<h4 id="RegExp-escape"><a href="#RegExp-escape" class="headerlink" title="RegExp.escape()"></a>RegExp.escape()</h4><p>字符串必须转义，才能作为正则模式。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> escapeRegExp(str) &#123;</span><br><span class="line">  <span class="built_in">return</span> str.replace(/[\-\[\]\/\&#123;\&#125;\(\)\*\+\?\.\\\^\$\|]/g, <span class="string">'\\$&amp;'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">let</span> str = <span class="string">'/path/to/resource.html?search=query'</span>;</span><br><span class="line">escapeRegExp(str)</span><br><span class="line">// <span class="string">"\/path\/to\/resource\.html\?search=query"</span></span><br></pre></td></tr></table></figure>
+<p>上面代码中，str 是一个正常字符串，必须使用反斜杠对其中的特殊字符转义，才能用来作为一个正则匹配的模式。</p>
+<p>已经有提议将这个需求标准化，作为 RegExp 对象的静态方法 RegExp.escape()，放入 ES7。2015 年 7 月 31 日，TC39 认为，这个方法有安全风险，又不愿这个方法变得过于复杂，没有同意将其列入 ES7，但这不失为一个真实的需求。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">RegExp.escape(<span class="string">'The Quick Brown Fox'</span>);</span><br><span class="line">// <span class="string">"The Quick Brown Fox"</span></span><br><span class="line"></span><br><span class="line">RegExp.escape(<span class="string">'Buy it. use it. break it. fix it.'</span>);</span><br><span class="line">// <span class="string">"Buy it\. use it\. break it\. fix it\."</span></span><br><span class="line"></span><br><span class="line">RegExp.escape(<span class="string">'(*.*)'</span>);</span><br><span class="line">// <span class="string">"\(\*\.\*\)"</span></span><br></pre></td></tr></table></figure>
+<p>字符串转义以后，可以使用 RegExp 构造函数生成正则模式。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = <span class="string">'hello. how are you?'</span>;</span><br><span class="line">var regex = new RegExp(RegExp.escape(str), <span class="string">'g'</span>);</span><br><span class="line">assert.equal(String(regex), <span class="string">'/hello\. how are you\?/g'</span>);</span><br></pre></td></tr></table></figure>
+<p>目前，该方法可以用上文的 escapeRegExp 函数或者垫片模块 regexp.escape 实现。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var escape = require(<span class="string">'regexp.escape'</span>);</span><br><span class="line">escape(<span class="string">'hi. how are you?'</span>);</span><br><span class="line">// <span class="string">"hi\\. how are you\\?"</span></span><br></pre></td></tr></table></figure>
+<h4 id="s-修饰符：dotAll-模式"><a href="#s-修饰符：dotAll-模式" class="headerlink" title="s 修饰符：dotAll 模式"></a>s 修饰符：dotAll 模式</h4><p>正则表达式中，点（.）是一个特殊字符，代表任意的单个字符，但是行终止符（line terminator character）除外。</p>
+<p>以下四个字符属于”行终止符“。</p>
+<pre>
+U+000A 换行符（\n）
+U+000D 回车符（\r）
+U+2028 行分隔符（line separator）
+U+2029 段分隔符（paragraph separator）
+</pre>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/foo.bar/.<span class="built_in">test</span>(<span class="string">'foo\nbar'</span>)</span><br><span class="line">// <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>上面代码中，因为.不匹配\n，所以正则表达式返回 false。</p>
+<p>但是，很多时候我们希望匹配的是任意单个字符，这时有一种变通的写法。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/foo[^]bar/.<span class="built_in">test</span>(<span class="string">'foo\nbar'</span>)</span><br><span class="line">// <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>这种解决方案毕竟不太符合直觉，所以现在有一个提案，引入/s 修饰符，使得.可以匹配任意单个字符。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/foo.bar/s.test(<span class="string">'foo\nbar'</span>) // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>这被称为 dotAll 模式，即点（dot）代表一切字符。所以，正则表达式还引入了一个 dotAll 属性，返回一个布尔值，表示该正则表达式是否处在 dotAll 模式。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const re = /foo.bar/s;</span><br><span class="line">// 另一种写法</span><br><span class="line">// const re = new RegExp(<span class="string">'foo.bar'</span>, <span class="string">'s'</span>);</span><br><span class="line"></span><br><span class="line">re.test(<span class="string">'foo\nbar'</span>) // <span class="literal">true</span></span><br><span class="line">re.dotAll // <span class="literal">true</span></span><br><span class="line">re.flags // <span class="string">'s'</span></span><br></pre></td></tr></table></figure>
+<p>/s 修饰符和多行修饰符/m 不冲突，两者一起使用的情况下，.匹配所有字符，而^和\$匹配每一行的行首和行尾。</p>
+<h4 id="后行断言"><a href="#后行断言" class="headerlink" title="后行断言"></a>后行断言</h4><p>JavaScript 语言的正则表达式，只支持先行断言（lookahead）和先行否定断言（negative lookahead），不支持后行断言（lookbehind）和后行否定断言（negative lookbehind）。</p>
+<p>目前，有一个提案，在 ES7 加入后行断言。V8 引擎 4.9 版已经支持，Chrome 浏览器 49 版打开”experimental JavaScript features“开关（地址栏键入 about:flags），就可以使用这项功能。</p>
+<p>”先行断言“指的是，x 只有在 y 前面才匹配，必须写成/x(?=y)/。比如，只匹配百分号之前的数字，要写成/\d+(?=%)/。”先行否定断言“指的是，x 只有不在 y 前面才匹配，必须写成/x(?!y)/。比如，只匹配不在百分号之前的数字，要写成/\d+(?!%)/。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/\d+(?=%)/.<span class="built_in">exec</span>(<span class="string">'100% of US presidents have been male'</span>)  // [<span class="string">"100"</span>]</span><br><span class="line">/\d+(?!%)/.<span class="built_in">exec</span>(<span class="string">'that’s all 44 of them'</span>)                 // [<span class="string">"44"</span>]</span><br></pre></td></tr></table></figure>
+<p>上面两个字符串，如果互换正则表达式，就会匹配失败。另外，还可以看到，”先行断言“括号之中的部分（(?=%)），是不计入返回结果的。</p>
+<p>“后行断言”正好与”先行断言”相反，x 只有在 y 后面才匹配，必须写成/(?&lt;=y)x/。比如，只匹配美元符号之后的数字，要写成/(?&lt;=\$)\d+/。”后行否定断言“则与”先行否定断言“相反，x 只有不在 y 后面才匹配，必须写成/(?&lt;!y)x/。比如，只匹配不在美元符号后面的数字，要写成/(?&lt;!\$)\d+/。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/(?&lt;=\$)\d+/.<span class="built_in">exec</span>(<span class="string">'Benjamin Franklin is on the $100 bill'</span>)  // [<span class="string">"100"</span>]</span><br><span class="line">/(?&lt;!\$)\d+/.<span class="built_in">exec</span>(<span class="string">'it’s is worth about €90'</span>)                // [<span class="string">"90"</span>]</span><br></pre></td></tr></table></figure>
+<p>上面的例子中，”后行断言”的括号之中的部分（(?&lt;=\$)），也是不计入返回结果。</p>
+<p>“后行断言”的实现，需要先匹配/(?&lt;=y)x/的 x，然后再回到左边，匹配 y 的部分。这种”先右后左”的执行顺序，与所有其他正则操作相反，导致了一些不符合预期的行为。</p>
+<p>首先，”后行断言“的组匹配，与正常情况下结果是不一样的。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/(?&lt;=(\d+)(\d+))$/.<span class="built_in">exec</span>(<span class="string">'1053'</span>) // [<span class="string">""</span>, <span class="string">"1"</span>, <span class="string">"053"</span>]</span><br><span class="line">/^(\d+)(\d+)$/.<span class="built_in">exec</span>(<span class="string">'1053'</span>) // [<span class="string">"1053"</span>, <span class="string">"105"</span>, <span class="string">"3"</span>]</span><br></pre></td></tr></table></figure>
+<p>上面代码中，需要捕捉两个组匹配。没有”后行断言”时，第一个括号是贪婪模式，第二个括号只能捕获一个字符，所以结果是 105 和 3。而”后行断言”时，由于执行顺序是从右到左，第二个括号是贪婪模式，第一个括号只能捕获一个字符，所以结果是 1 和 053。</p>
+<p>其次，”后行断言”的反斜杠引用，也与通常的顺序相反，必须放在对应的那个括号之前。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/(?&lt;=(o)d\1)r/.<span class="built_in">exec</span>(<span class="string">'hodor'</span>)  // null</span><br><span class="line">/(?&lt;=\1d(o))r/.<span class="built_in">exec</span>(<span class="string">'hodor'</span>)  // [<span class="string">"r"</span>, <span class="string">"o"</span>]</span><br></pre></td></tr></table></figure>
+<p>上面代码中，如果后行断言的反斜杠引用（\1）放在括号的后面，就不会得到匹配结果，必须放在前面才可以。</p>
+<h4 id="Unicode-属性类"><a href="#Unicode-属性类" class="headerlink" title="Unicode 属性类"></a>Unicode 属性类</h4><p>目前，有一个提案，引入了一种新的类的写法\p{…}和\P{…}，允许正则表达式匹配符合 Unicode 某种属性的所有字符。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const regexGreekSymbol = /\p&#123;Script=Greek&#125;/u;</span><br><span class="line">regexGreekSymbol.test(<span class="string">'π'</span>) // u</span><br></pre></td></tr></table></figure>
+<p>上面代码中，\p{Script=Greek}指定匹配一个希腊文字母，所以匹配 π 成功。</p>
+<p>Unicode 属性类要指定属性名和属性值。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\p&#123;UnicodePropertyName=UnicodePropertyValue&#125;</span><br></pre></td></tr></table></figure>
+<p>对于某些属性，可以只写属性名。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\p&#123;UnicodePropertyName&#125;</span><br></pre></td></tr></table></figure>
+<p>\P{…}是\p{…}的反向匹配，即匹配不满足条件的字符。</p>
+<p>注意，这两种类只对 Unicode 有效，所以使用的时候一定要加上 u 修饰符。如果不加 u 修饰符，正则表达式使用\p 和\P 会报错，ECMAScript 预留了这两个类。</p>
+<p>由于 Unicode 的各种属性非常多，所以这种新的类的表达能力非常强。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const regex = /^\p&#123;Decimal_Number&#125;+$/u;</span><br><span class="line">regex.test(<span class="string">'𝟏𝟐𝟑𝟜𝟝𝟞𝟩𝟪𝟫𝟬𝟭𝟮𝟯𝟺𝟻𝟼'</span>) // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>上面代码中，属性类指定匹配所有十进制字符，可以看到各种字型的十进制字符都会匹配成功。</p>
+<p>\p{Number}甚至能匹配罗马数字。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 匹配所有数字</span><br><span class="line">const regex = /^\p&#123;Number&#125;+$/u;</span><br><span class="line">regex.test(<span class="string">'²³¹¼½¾'</span>) // <span class="literal">true</span></span><br><span class="line">regex.test(<span class="string">'㉛㉜㉝'</span>) // <span class="literal">true</span></span><br><span class="line">regex.test(<span class="string">'ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫ'</span>) // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>下面是其他一些例子。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 匹配各种文字的所有字母，等同于Unicode版的\w</span><br><span class="line">[\p&#123;Alphabetic&#125;\p&#123;Mark&#125;\p&#123;Decimal_Number&#125;\p&#123;Connector_Punctuation&#125;\p&#123;Join_Control&#125;]</span><br><span class="line"></span><br><span class="line">// 匹配各种文字的所有非字母的字符，等同于Unicode版的\W</span><br><span class="line">[\p&#123;Alphabetic&#125;\p&#123;Mark&#125;\p&#123;Decimal_Number&#125;\p&#123;Connector_Punctuation&#125;\p&#123;Join_Control&#125;]</span><br><span class="line"></span><br><span class="line">// 匹配所有的箭头字符</span><br><span class="line">const regexArrows = /^\p&#123;Block=Arrows&#125;+$/u;</span><br><span class="line">regexArrows.test(<span class="string">'←↑→↓↔↕↖↗↘↙⇏⇐⇑⇒⇓⇔⇕⇖⇗⇘⇙⇧⇩'</span>) // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+ 
+        <div class="post-reward">
+          <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
+        </div>
+        
+
+        <blockquote>
+          <p>
+            本文地址：
+            <a href="http://blog.bochunhao.cn/2019/01/10/es6-RegExp/" target="_blank" rel="external">http://blog.bochunhao.cn/2019/01/10/es6-RegExp/</a>
+          </p>
+          <footer>
+            <cite><a href="http://blog.bochunhao.cn" target="_blank" rel="external">@个人博客</a></cite>
+          </footer>
+        </blockquote>
+      </div>
+      
+<nav class="post-nav">
+  
+    <div class="waves-block waves-effect prev fl">
+      <a href="/2019/01/15/es6-Number/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">es6_Number</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next fr">
+      <a href="/2019/01/05/es6-Unicode/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">es6_Unicode</h4>
+      </a>
+    </div>
+  
+</nav>
+
+ 
+
+
+
+    </div>
+  </div>
+</article>
+
+<div id="reward" class="reward-lay">
+    <a class="reward-off" id="rewardOff" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        感谢支持
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/vx.png" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/zfb.png" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+    </div>
+  </main>
+<div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
