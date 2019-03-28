@@ -1,108 +1,114 @@
 <!DOCTYPE html>
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  
-  <title>react_lifecycle | 个人博客 | BCH</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  <meta name="theme-color" content="#3F51B5">
-  
-  
-  <meta name="keywords" content="react">
-  <meta name="description" content="React 组件生命周期组件的生命周期可分成三个状态：  Mounting：已插入真实 DOM Updating：正在被重新渲染 Unmounting：已移出真实 DOM   生命周期的方法有：componentWillMount在渲染前调用,在客户端也在服务端。 componentDidMount在第一次渲染后调用，只在客户端。之后组件已经生成了对应的 DOM 结构，可以通过 this.getD">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>react_lifecycle | 个人博客 | BCH</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="react">
+    <meta name="description" content="React 组件生命周期组件的生命周期可分成三个状态：  Mounting：已插入真实 DOM Updating：正在被重新渲染 Unmounting：已移出真实 DOM   生命周期的方法有：componentWillMount在渲染前调用,在客户端也在服务端。 componentDidMount在第一次渲染后调用，只在客户端。之后组件已经生成了对应的 DOM 结构，可以通过 this.getD">
 <meta name="keywords" content="react">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react_lifecycle">
 <meta property="og:url" content="http://blog.bochunhao.cn/2018/03/27/react-lifecycle/index.html">
 <meta property="og:site_name" content="个人博客">
 <meta property="og:description" content="React 组件生命周期组件的生命周期可分成三个状态：  Mounting：已插入真实 DOM Updating：正在被重新渲染 Unmounting：已移出真实 DOM   生命周期的方法有：componentWillMount在渲染前调用,在客户端也在服务端。 componentDidMount在第一次渲染后调用，只在客户端。之后组件已经生成了对应的 DOM 结构，可以通过 this.getD">
-<meta property="og:locale" content="Chinese">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-27T12:48:14.797Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react_lifecycle">
 <meta name="twitter:description" content="React 组件生命周期组件的生命周期可分成三个状态：  Mounting：已插入真实 DOM Updating：正在被重新渲染 Unmounting：已移出真实 DOM   生命周期的方法有：componentWillMount在渲染前调用,在客户端也在服务端。 componentDidMount在第一次渲染后调用，只在客户端。之后组件已经生成了对应的 DOM 结构，可以通过 this.getD">
-  
-    <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
-  
-  <meta name="summary" content="bch_bk">
-  <link rel="shortcut icon" href="/img/favicon.ico">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
-<body>
-  <div id="loading" class="active"></div>
+    
+        <link rel="alternate" type="application/atom+xml" title="个人博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
 
-  <nav id="menu" class="hide" >
-   <div class="inner flex-row-vertical">
-  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
-      <i class="icon icon-lg icon-close"></i>
-  </a>
-  <div class="brand-wrap">
-    <div class="brand">
-      <a href="/" class="avatar"><img src="/img/loggo.png"></a>
-      <hgroup class="introduce">
-        <h5 class="nickname">BCH</h5>
-        <a href="mailto:17600280987@163.com" title="17600280987@163.com" class="mail">17600280987@163.com</a>
-      </hgroup>
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/loggo.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">BCH</h5>
+          <a href="mailto:17600280987@163.com" title="17600280987@163.com" class="mail">17600280987@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-archives"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/bch9479/blog" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://weibo.com/5900743344/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+      </ul>
     </div>
   </div>
-  <div class="scroll-wrap flex-col">
-    <ul class="nav">
-      
-          <li class="waves-block waves-effect">
-            <a href="/">
-              <i class="icon icon-lg icon-home"></i>
-              主页
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/categories">
-              <i class="icon icon-lg icon-archives"></i>
-              分类
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/tags">
-              <i class="icon icon-lg icon-tags"></i>
-              标签
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="https://github.com/bch9479/blog" target="_blank">
-              <i class="icon icon-lg icon-github"></i>
-              Github
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="https://weibo.com/5900743344/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">
-              <i class="icon icon-lg icon-weibo"></i>
-              微博
-            </a>
-          </li>
-      
-    </ul>
+</aside>
 
-    <footer class="footer">
-  <p>个人博客 &copy; 2019</p>
-  <p style="color:#3F51B5;font-size: 16px;font-weight:bolder">
-    不积跬步，无以至千里
-  </p>
-  <p style="color:#3F51B5;font-size: 16px;font-weight:bolder">
-    不积小流，无以成江海
-  </p>
-</footer>
-
-  </div>
-</div>
-
-  </nav>
-  <main id="main">
-    <header class="top-header" id="header">
+    <main id="main">
+        <header class="top-header" id="header">
     <div class="flex-row">
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
@@ -113,49 +119,69 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
         </div>
         
         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
     </div>
 </header>
-<header class="content-header">
-  <div class="container">
-    <h1 class="author">react_lifecycle</h1>
-    <h5 class="subtitle">
-        
-            <time datetime="2018-03-27T12:40:10.000Z" itemprop="datePublished" class="page-time">
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">react_lifecycle</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-03-27T12:40:10.000Z" itemprop="datePublished" class="page-time">
   2018-03-27
 </time>
 
 
-        
-    </h5>
-  </div>
+            
+        </h5>
+    </div>
+
+    
+
+
 </header>
 
-    <div class="container body-wrap">
-      <article id="post-react-lifecycle" class="article article-type-post" itemprop="blogPost">
-  <div class="post-meta flex-row">
-    
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
 
-  </div>
-  <div class="post-body">
-    <aside class="post-widget" id="post-widget">
-       
-      <nav class="post-toc-wrap" id="post-toc">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#React-组件生命周期"><span class="post-toc-number">1.</span> <span class="post-toc-text">React 组件生命周期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#生命周期的方法有："><span class="post-toc-number">1.1.</span> <span class="post-toc-text">生命周期的方法有：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#componentWillMount"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">componentWillMount</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#componentDidMount"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">componentDidMount</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#componentWillReceiveProps"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">componentWillReceiveProps</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#shouldComponentUpdate"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">shouldComponentUpdate</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#componentWillUpdate"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">componentWillUpdate</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#componentDidUpdate"><span class="post-toc-number">1.1.6.</span> <span class="post-toc-text">componentDidUpdate</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#componentWillUnmount"><span class="post-toc-number">1.1.7.</span> <span class="post-toc-text">componentWillUnmount</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实例"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">实例</span></a></li></ol></li></ol>
-      </nav>
-      
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#React-组件生命周期"><span class="post-toc-number">1.</span> <span class="post-toc-text">React 组件生命周期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#生命周期的方法有："><span class="post-toc-number">1.1.</span> <span class="post-toc-text">生命周期的方法有：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#componentWillMount"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">componentWillMount</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#componentDidMount"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">componentDidMount</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#componentWillReceiveProps"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">componentWillReceiveProps</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#shouldComponentUpdate"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">shouldComponentUpdate</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#componentWillUpdate"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">componentWillUpdate</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#componentDidUpdate"><span class="post-toc-number">1.1.6.</span> <span class="post-toc-text">componentDidUpdate</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#componentWillUnmount"><span class="post-toc-number">1.1.7.</span> <span class="post-toc-text">componentWillUnmount</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实例"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">实例</span></a></li></ol></li></ol>
+        </nav>
     </aside>
 
-    <div class="post-main">
-      <div class="post-content" id="post-content" itemprop="postContent">
-        <h3 id="React-组件生命周期"><a href="#React-组件生命周期" class="headerlink" title="React 组件生命周期"></a>React 组件生命周期</h3><p>组件的生命周期可分成三个状态：</p>
+
+<article id="post-react-lifecycle" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">react_lifecycle</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-03-27 20:40:10" datetime="2018-03-27T12:40:10.000Z" itemprop="datePublished">2018-03-27</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="React-组件生命周期"><a href="#React-组件生命周期" class="headerlink" title="React 组件生命周期"></a>React 组件生命周期</h3><p>组件的生命周期可分成三个状态：</p>
 <pre>
 Mounting：已插入真实 DOM
 Updating：正在被重新渲染
@@ -173,26 +199,86 @@ Unmounting：已移出真实 DOM
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">class Hello extends React.Component &#123;</span><br><span class="line"></span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">      super(props);</span><br><span class="line">      this.state = &#123;opacity: 1.0&#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">componentDidMount</span></span>() &#123;</span><br><span class="line">    this.timer = setInterval(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">      var opacity = this.state.opacity;</span><br><span class="line">      opacity -= .05;</span><br><span class="line">      <span class="keyword">if</span> (opacity &lt; 0.1) &#123;</span><br><span class="line">        opacity = 1.0;</span><br><span class="line">      &#125;</span><br><span class="line">      this.setState(&#123;</span><br><span class="line">        opacity: opacity</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;.<span class="built_in">bind</span>(this), 100);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">render</span></span> () &#123;</span><br><span class="line">    <span class="built_in">return</span> (</span><br><span class="line">      &lt;div style=&#123;&#123;opacity: this.state.opacity&#125;&#125;&gt;</span><br><span class="line">        Hello &#123;this.props.name&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;Hello name=<span class="string">"world"</span>/&gt;,</span><br><span class="line">  document.body</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 <p>以下实例初始化 state ， setNewnumber 用于更新 state。所有生命周期在 Content 组件中。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">class Button extends React.Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">      super(props);</span><br><span class="line">      this.state = &#123;data: 0&#125;;</span><br><span class="line">      this.setNewNumber = this.setNewNumber.bind(this);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">setNewNumber</span></span>() &#123;</span><br><span class="line">    this.setState(&#123;data: this.state.data + 1&#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">render</span></span>() &#123;</span><br><span class="line">      <span class="built_in">return</span> (</span><br><span class="line">         &lt;div&gt;</span><br><span class="line">            &lt;button onClick = &#123;this.setNewNumber&#125;&gt;INCREMENT&lt;/button&gt;</span><br><span class="line">            &lt;Content myNumber = &#123;this.state.data&#125;&gt;&lt;/Content&gt;</span><br><span class="line">         &lt;/div&gt;</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Content extends React.Component &#123;</span><br><span class="line">  <span class="function"><span class="title">componentWillMount</span></span>() &#123;</span><br><span class="line">      console.log(<span class="string">'Component WILL MOUNT!'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">componentDidMount</span></span>() &#123;</span><br><span class="line">       console.log(<span class="string">'Component DID MOUNT!'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  componentWillReceiveProps(newProps) &#123;</span><br><span class="line">        console.log(<span class="string">'Component WILL RECEIVE PROPS!'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  shouldComponentUpdate(newProps, newState) &#123;</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  componentWillUpdate(nextProps, nextState) &#123;</span><br><span class="line">        console.log(<span class="string">'Component WILL UPDATE!'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  componentDidUpdate(prevProps, prevState) &#123;</span><br><span class="line">        console.log(<span class="string">'Component DID UPDATE!'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">componentWillUnmount</span></span>() &#123;</span><br><span class="line">         console.log(<span class="string">'Component WILL UNMOUNT!'</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">render</span></span>() &#123;</span><br><span class="line">      <span class="built_in">return</span> (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">          &lt;h3&gt;&#123;this.props.myNumber&#125;&lt;/h3&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">   &lt;div&gt;</span><br><span class="line">      &lt;Button /&gt;</span><br><span class="line">   &lt;/div&gt;,</span><br><span class="line">  document.getElementById(<span class="string">'example'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
- 
-        <div class="post-reward">
-          <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
-        </div>
-        
 
-        <blockquote>
-          <p>
-            本文地址：
-            <a href="http://blog.bochunhao.cn/2018/03/27/react-lifecycle/" target="_blank" rel="external">http://blog.bochunhao.cn/2018/03/27/react-lifecycle/</a>
-          </p>
-          <footer>
-            <cite><a href="http://blog.bochunhao.cn" target="_blank" rel="external">@个人博客</a></cite>
-          </footer>
-        </blockquote>
-      </div>
-      
-<nav class="post-nav">
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://blog.bochunhao.cn">
+            <img src="/img/loggo.png" alt="BCH">
+            BCH
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.bochunhao.cn/2018/03/27/react-lifecycle/&title=《react_lifecycle》 — 个人博客&pic=http://blog.bochunhao.cn/img/loggo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.bochunhao.cn/2018/03/27/react-lifecycle/&title=《react_lifecycle》 — 个人博客&source=bch_bk" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.bochunhao.cn/2018/03/27/react-lifecycle/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《react_lifecycle》 — 个人博客&url=http://blog.bochunhao.cn/2018/03/27/react-lifecycle/&via=http://blog.bochunhao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.bochunhao.cn/2018/03/27/react-lifecycle/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
   
-    <div class="waves-block waves-effect prev fl">
+    <div class="waves-block waves-effect prev">
       <a href="/2018/04/02/vue-mixin-mixins/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
         <h4 class="title">vue_mixin_mixins</h4>
@@ -201,7 +287,7 @@ Unmounting：已移出真实 DOM
   
 
   
-    <div class="waves-block waves-effect next fr">
+    <div class="waves-block waves-effect next">
       <a href="/2018/03/26/vue-lifecycle/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
         <h4 class="title">vue_lifecycle</h4>
@@ -210,56 +296,137 @@ Unmounting：已移出真实 DOM
   
 </nav>
 
- 
+
+
+    
 
 
 
-    </div>
-  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </article>
 
-<div id="reward" class="reward-lay">
-    <a class="reward-off" id="rewardOff" href="javascript:;"><i class="icon icon-close"></i></a>
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <h3 class="reward-title">
         <i class="icon icon-quote-left"></i>
         感谢支持
         <i class="icon icon-quote-right"></i>
     </h3>
-    <ul class="reward-items">
+    <div class="reward-content">
         
-        <li>
-            <img src="/img/vx.png" title="微信打赏二维码" alt="微信打赏二维码">
-            <p>微信</p>
-        </li>
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/vx.png" alt="打赏二维码">
+        </div>
         
-
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/vx.png" data-alipay="/img/zfb.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
         
-        <li>
-            <img src="/img/zfb.png" title="支付宝打赏二维码" alt="支付宝打赏二维码">
-            <p>支付宝</p>
-        </li>
-        
-    </ul>
+    </div>
 </div>
 
 
-    </div>
-  </main>
-<div class="mask" id="mask"></div>
+
+</div>
+
+        <footer class="footer">
+    <p>个人博客 &copy; 2019</p>
+    <p style="color:#fff;font-size: 16px;font-weight:bolder">
+        不积跬步，无以至千里
+    </p>
+    <p style="color:#fff;font-size: 16px;font-weight:bolder">
+        不积小流，无以成江海
+    </p>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
-<script src="/js/main.js"></script>
 
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.bochunhao.cn/2018/03/27/react-lifecycle/&title=《react_lifecycle》 — 个人博客&pic=http://blog.bochunhao.cn/img/loggo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.bochunhao.cn/2018/03/27/react-lifecycle/&title=《react_lifecycle》 — 个人博客&source=bch_bk" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.bochunhao.cn/2018/03/27/react-lifecycle/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《react_lifecycle》 — 个人博客&url=http://blog.bochunhao.cn/2018/03/27/react-lifecycle/&via=http://blog.bochunhao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.bochunhao.cn/2018/03/27/react-lifecycle/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJ0lEQVR42u3aS27DMAwFwN7/0um2QBH1kXQKSBqvjDixNV4w/OjrKz5eP453V39/M/9+8pQHDgwMjG0Zr+WxXtz6kesl5ufrtWFgYNzD6IXFfHEJNb8DBgYGRjUgVhO+XvDFwMDAmDPyq0kCioGBgdErYicNsuSeSfH8QC2OgYGxISPvuv//+UfmGxgYGFsxXsWj1zir/ra8KgwMjKMZ1fZ9tdzNx5lJUf3HejAwMI5m9HKtpEBNHlYdITycMmJgYGzCeKCNtXzkJBwX2nwYGBjXMPI4tl5ur60/+sfAwMC4gFE9rw4gJyljVOJiYGAcypgvLl/Qsy8IAwPjHkaehFXTu7ygrW4Fe5ueYmBgHMqolp3JTXtBc3JPDAyMsxmT/lUeWCcJZXObBQYGxqGMwrBw/KsEXP0EAwPjbMY8gE7CdK/yjvaMYGBgHMFIFldt6CcbMvLxZLlMxcDAOJoxaYdVy84cHK0EAwPjaMYkBJcnpYPytRyIMTAwjmPMU7p80b0BZ1IkY2Bg3MmYb4CovqDJnTEwMG5gJOEv+TwPmoV9H8lLwcDAOJTxiYlovv1rPmaIYjYGBsbmjF6wqzbUJiOBwp4RDAyMoxmTIJsPGvM31wv0GBgYNzB6qdtkANlL+96+GgwMDIxqmz4ecCaJYDQoxcDAwGgF3x41KWsfC7gYGBhbMaobLPImWm/bWRmMgYFxNCMvHZMAXW3DVWcXo6EmBgbGfoxveo6Jh2apQH0AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
     <ul class="search-result" id="search-result"></ul>
 </div>
-<script type="text/template" id="search-tpl">
+<template id="search-tpl">
 <li class="item">
-    <a href="/{path}" class="waves-block waves-effect">
+    <a href="{path}" class="waves-block waves-effect">
         <div class="title ellipsis" title="{title}">{title}</div>
         <div class="flex-row flex-middle">
             <div class="tags ellipsis">
@@ -269,15 +436,35 @@ Unmounting：已移出真实 DOM
         </div>
     </a>
 </li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '薄纯浩';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '变身！';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
 </script>
-
-<script src="/js/search.js"></script>
-
-
-
-
-
-
 
 
 

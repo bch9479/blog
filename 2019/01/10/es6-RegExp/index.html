@@ -1,108 +1,114 @@
 <!DOCTYPE html>
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  
-  <title>es6_RegExp | 个人博客 | BCH</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  <meta name="theme-color" content="#3F51B5">
-  
-  
-  <meta name="keywords" content="es6">
-  <meta name="description" content="ES6 正则的扩展RegExp 构造函数在 ES5 中，RegExp 构造函数的参数有两种情况。 第一种情况是，参数是字符串，这时第二个参数表示正则表达式的修饰符（flag）。 123var regex = new RegExp(&apos;xyz&apos;, &apos;i&apos;);// 等价于var regex = /xyz/i; 第二种情况是，参数是一个正则表示式，这时会返回一个原有正则表达式的拷贝。 123var reg">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>es6_RegExp | 个人博客 | BCH</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="es6">
+    <meta name="description" content="ES6 正则的扩展RegExp 构造函数在 ES5 中，RegExp 构造函数的参数有两种情况。 第一种情况是，参数是字符串，这时第二个参数表示正则表达式的修饰符（flag）。 123var regex = new RegExp(&apos;xyz&apos;, &apos;i&apos;);// 等价于var regex = /xyz/i; 第二种情况是，参数是一个正则表示式，这时会返回一个原有正则表达式的拷贝。 123var reg">
 <meta name="keywords" content="es6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="es6_RegExp">
 <meta property="og:url" content="http://blog.bochunhao.cn/2019/01/10/es6-RegExp/index.html">
 <meta property="og:site_name" content="个人博客">
 <meta property="og:description" content="ES6 正则的扩展RegExp 构造函数在 ES5 中，RegExp 构造函数的参数有两种情况。 第一种情况是，参数是字符串，这时第二个参数表示正则表达式的修饰符（flag）。 123var regex = new RegExp(&apos;xyz&apos;, &apos;i&apos;);// 等价于var regex = /xyz/i; 第二种情况是，参数是一个正则表示式，这时会返回一个原有正则表达式的拷贝。 123var reg">
-<meta property="og:locale" content="Chinese">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-27T14:25:00.232Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6_RegExp">
 <meta name="twitter:description" content="ES6 正则的扩展RegExp 构造函数在 ES5 中，RegExp 构造函数的参数有两种情况。 第一种情况是，参数是字符串，这时第二个参数表示正则表达式的修饰符（flag）。 123var regex = new RegExp(&apos;xyz&apos;, &apos;i&apos;);// 等价于var regex = /xyz/i; 第二种情况是，参数是一个正则表示式，这时会返回一个原有正则表达式的拷贝。 123var reg">
-  
-    <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
-  
-  <meta name="summary" content="bch_bk">
-  <link rel="shortcut icon" href="/img/favicon.ico">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
-<body>
-  <div id="loading" class="active"></div>
+    
+        <link rel="alternate" type="application/atom+xml" title="个人博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
 
-  <nav id="menu" class="hide" >
-   <div class="inner flex-row-vertical">
-  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
-      <i class="icon icon-lg icon-close"></i>
-  </a>
-  <div class="brand-wrap">
-    <div class="brand">
-      <a href="/" class="avatar"><img src="/img/loggo.png"></a>
-      <hgroup class="introduce">
-        <h5 class="nickname">BCH</h5>
-        <a href="mailto:17600280987@163.com" title="17600280987@163.com" class="mail">17600280987@163.com</a>
-      </hgroup>
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/loggo.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">BCH</h5>
+          <a href="mailto:17600280987@163.com" title="17600280987@163.com" class="mail">17600280987@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-archives"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/bch9479/blog" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://weibo.com/5900743344/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+      </ul>
     </div>
   </div>
-  <div class="scroll-wrap flex-col">
-    <ul class="nav">
-      
-          <li class="waves-block waves-effect">
-            <a href="/">
-              <i class="icon icon-lg icon-home"></i>
-              主页
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/categories">
-              <i class="icon icon-lg icon-archives"></i>
-              分类
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/tags">
-              <i class="icon icon-lg icon-tags"></i>
-              标签
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="https://github.com/bch9479/blog" target="_blank">
-              <i class="icon icon-lg icon-github"></i>
-              Github
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="https://weibo.com/5900743344/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">
-              <i class="icon icon-lg icon-weibo"></i>
-              微博
-            </a>
-          </li>
-      
-    </ul>
+</aside>
 
-    <footer class="footer">
-  <p>个人博客 &copy; 2019</p>
-  <p style="color:#3F51B5;font-size: 16px;font-weight:bolder">
-    不积跬步，无以至千里
-  </p>
-  <p style="color:#3F51B5;font-size: 16px;font-weight:bolder">
-    不积小流，无以成江海
-  </p>
-</footer>
-
-  </div>
-</div>
-
-  </nav>
-  <main id="main">
-    <header class="top-header" id="header">
+    <main id="main">
+        <header class="top-header" id="header">
     <div class="flex-row">
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
@@ -113,49 +119,69 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
         </div>
         
         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
     </div>
 </header>
-<header class="content-header">
-  <div class="container">
-    <h1 class="author">es6_RegExp</h1>
-    <h5 class="subtitle">
-        
-            <time datetime="2019-01-10T14:12:25.000Z" itemprop="datePublished" class="page-time">
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">es6_RegExp</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-10T14:12:25.000Z" itemprop="datePublished" class="page-time">
   2019-01-10
 </time>
 
 
-        
-    </h5>
-  </div>
+            
+        </h5>
+    </div>
+
+    
+
+
 </header>
 
-    <div class="container body-wrap">
-      <article id="post-es6-RegExp" class="article article-type-post" itemprop="blogPost">
-  <div class="post-meta flex-row">
-    
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
 
-  </div>
-  <div class="post-body">
-    <aside class="post-widget" id="post-widget">
-       
-      <nav class="post-toc-wrap" id="post-toc">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ES6-正则的扩展"><span class="post-toc-number">1.</span> <span class="post-toc-text">ES6 正则的扩展</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#RegExp-构造函数"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">RegExp 构造函数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#字符串的正则方法"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">字符串的正则方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#u-修饰符"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">u 修饰符</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#y-修饰符"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">y 修饰符</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#sticky-属性"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">sticky 属性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#flags-属性"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">flags 属性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#RegExp-escape"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">RegExp.escape()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#s-修饰符：dotAll-模式"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">s 修饰符：dotAll 模式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#后行断言"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">后行断言</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Unicode-属性类"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">Unicode 属性类</span></a></li></ol></li></ol>
-      </nav>
-      
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ES6-正则的扩展"><span class="post-toc-number">1.</span> <span class="post-toc-text">ES6 正则的扩展</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#RegExp-构造函数"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">RegExp 构造函数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#字符串的正则方法"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">字符串的正则方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#u-修饰符"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">u 修饰符</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#y-修饰符"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">y 修饰符</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#sticky-属性"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">sticky 属性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#flags-属性"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">flags 属性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#RegExp-escape"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">RegExp.escape()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#s-修饰符：dotAll-模式"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">s 修饰符：dotAll 模式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#后行断言"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">后行断言</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Unicode-属性类"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">Unicode 属性类</span></a></li></ol></li></ol>
+        </nav>
     </aside>
 
-    <div class="post-main">
-      <div class="post-content" id="post-content" itemprop="postContent">
-        <h3 id="ES6-正则的扩展"><a href="#ES6-正则的扩展" class="headerlink" title="ES6 正则的扩展"></a>ES6 正则的扩展</h3><h4 id="RegExp-构造函数"><a href="#RegExp-构造函数" class="headerlink" title="RegExp 构造函数"></a>RegExp 构造函数</h4><p>在 ES5 中，RegExp 构造函数的参数有两种情况。</p>
+
+<article id="post-es6-RegExp" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">es6_RegExp</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-10 22:12:25" datetime="2019-01-10T14:12:25.000Z" itemprop="datePublished">2019-01-10</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="ES6-正则的扩展"><a href="#ES6-正则的扩展" class="headerlink" title="ES6 正则的扩展"></a>ES6 正则的扩展</h3><h4 id="RegExp-构造函数"><a href="#RegExp-构造函数" class="headerlink" title="RegExp 构造函数"></a>RegExp 构造函数</h4><p>在 ES5 中，RegExp 构造函数的参数有两种情况。</p>
 <p>第一种情况是，参数是字符串，这时第二个参数表示正则表达式的修饰符（flag）。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var regex = new RegExp(<span class="string">'xyz'</span>, <span class="string">'i'</span>);</span><br><span class="line">// 等价于</span><br><span class="line">var regex = /xyz/i;</span><br></pre></td></tr></table></figure>
 <p>第二种情况是，参数是一个正则表示式，这时会返回一个原有正则表达式的拷贝。</p>
@@ -287,26 +313,86 @@ U+2029 段分隔符（paragraph separator）
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 匹配所有数字</span><br><span class="line">const regex = /^\p&#123;Number&#125;+$/u;</span><br><span class="line">regex.test(<span class="string">'²³¹¼½¾'</span>) // <span class="literal">true</span></span><br><span class="line">regex.test(<span class="string">'㉛㉜㉝'</span>) // <span class="literal">true</span></span><br><span class="line">regex.test(<span class="string">'ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫ'</span>) // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p>下面是其他一些例子。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 匹配各种文字的所有字母，等同于Unicode版的\w</span><br><span class="line">[\p&#123;Alphabetic&#125;\p&#123;Mark&#125;\p&#123;Decimal_Number&#125;\p&#123;Connector_Punctuation&#125;\p&#123;Join_Control&#125;]</span><br><span class="line"></span><br><span class="line">// 匹配各种文字的所有非字母的字符，等同于Unicode版的\W</span><br><span class="line">[\p&#123;Alphabetic&#125;\p&#123;Mark&#125;\p&#123;Decimal_Number&#125;\p&#123;Connector_Punctuation&#125;\p&#123;Join_Control&#125;]</span><br><span class="line"></span><br><span class="line">// 匹配所有的箭头字符</span><br><span class="line">const regexArrows = /^\p&#123;Block=Arrows&#125;+$/u;</span><br><span class="line">regexArrows.test(<span class="string">'←↑→↓↔↕↖↗↘↙⇏⇐⇑⇒⇓⇔⇕⇖⇗⇘⇙⇧⇩'</span>) // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
- 
-        <div class="post-reward">
-          <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
-        </div>
-        
 
-        <blockquote>
-          <p>
-            本文地址：
-            <a href="http://blog.bochunhao.cn/2019/01/10/es6-RegExp/" target="_blank" rel="external">http://blog.bochunhao.cn/2019/01/10/es6-RegExp/</a>
-          </p>
-          <footer>
-            <cite><a href="http://blog.bochunhao.cn" target="_blank" rel="external">@个人博客</a></cite>
-          </footer>
-        </blockquote>
-      </div>
-      
-<nav class="post-nav">
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://blog.bochunhao.cn">
+            <img src="/img/loggo.png" alt="BCH">
+            BCH
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.bochunhao.cn/2019/01/10/es6-RegExp/&title=《es6_RegExp》 — 个人博客&pic=http://blog.bochunhao.cn/img/loggo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.bochunhao.cn/2019/01/10/es6-RegExp/&title=《es6_RegExp》 — 个人博客&source=bch_bk" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.bochunhao.cn/2019/01/10/es6-RegExp/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《es6_RegExp》 — 个人博客&url=http://blog.bochunhao.cn/2019/01/10/es6-RegExp/&via=http://blog.bochunhao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.bochunhao.cn/2019/01/10/es6-RegExp/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
   
-    <div class="waves-block waves-effect prev fl">
+    <div class="waves-block waves-effect prev">
       <a href="/2019/01/15/es6-Number/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
         <h4 class="title">es6_Number</h4>
@@ -315,7 +401,7 @@ U+2029 段分隔符（paragraph separator）
   
 
   
-    <div class="waves-block waves-effect next fr">
+    <div class="waves-block waves-effect next">
       <a href="/2019/01/05/es6-Unicode/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
         <h4 class="title">es6_Unicode</h4>
@@ -324,56 +410,137 @@ U+2029 段分隔符（paragraph separator）
   
 </nav>
 
- 
+
+
+    
 
 
 
-    </div>
-  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </article>
 
-<div id="reward" class="reward-lay">
-    <a class="reward-off" id="rewardOff" href="javascript:;"><i class="icon icon-close"></i></a>
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <h3 class="reward-title">
         <i class="icon icon-quote-left"></i>
         感谢支持
         <i class="icon icon-quote-right"></i>
     </h3>
-    <ul class="reward-items">
+    <div class="reward-content">
         
-        <li>
-            <img src="/img/vx.png" title="微信打赏二维码" alt="微信打赏二维码">
-            <p>微信</p>
-        </li>
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/vx.png" alt="打赏二维码">
+        </div>
         
-
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/vx.png" data-alipay="/img/zfb.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
         
-        <li>
-            <img src="/img/zfb.png" title="支付宝打赏二维码" alt="支付宝打赏二维码">
-            <p>支付宝</p>
-        </li>
-        
-    </ul>
+    </div>
 </div>
 
 
-    </div>
-  </main>
-<div class="mask" id="mask"></div>
+
+</div>
+
+        <footer class="footer">
+    <p>个人博客 &copy; 2019</p>
+    <p style="color:#fff;font-size: 16px;font-weight:bolder">
+        不积跬步，无以至千里
+    </p>
+    <p style="color:#fff;font-size: 16px;font-weight:bolder">
+        不积小流，无以成江海
+    </p>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
-<script src="/js/main.js"></script>
 
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.bochunhao.cn/2019/01/10/es6-RegExp/&title=《es6_RegExp》 — 个人博客&pic=http://blog.bochunhao.cn/img/loggo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.bochunhao.cn/2019/01/10/es6-RegExp/&title=《es6_RegExp》 — 个人博客&source=bch_bk" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.bochunhao.cn/2019/01/10/es6-RegExp/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《es6_RegExp》 — 个人博客&url=http://blog.bochunhao.cn/2019/01/10/es6-RegExp/&via=http://blog.bochunhao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.bochunhao.cn/2019/01/10/es6-RegExp/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACI0lEQVR42u3aQW7DMAwEQP//0+21QFB7SaoFLI1PgdvEGh8Irqjriq+v8XX/a5/3r7+4MDAwXstIHt+78/P+5+f738nXhoGBcQ7jtwo2+Z+HB99+K38uBgYGRvWnq61h0ixiYGBg9BjVqJksEQMDA+OekYTYvO3Lo2m+Abcsi2NgYLyQkZfL///8J/MNDAyMVzF6Y8hq+EyWNRqOYmBgbM3oPSbfOLsv2avYGBgYezPm5TXn5U1neWsPAwPjAEb+18lWVxVc2LDDwMDYmpEPGnuN3aqBwTV/ZxgYGFsw8nLWO8JVjbtJGMbAwDiHkTeIaw9V3AfjckuKgYGxKeO+ROYt43xzrXf86yGLY2BgbMdYe2yiOkgYDUoxMDAOY0yGndUomzSd5dMiGBgY2zHyFq16GGJeXqt3MDAw9mZMSt79t5Lom5Oi0QUGBsamjLwg9saN1RCbzzQwMDBOY1QD7SRwVpvL6MVhYGBszZhvjfVI+UGN6howMDD2Y/Q2/atbaflye4EZAwPjBEa17K4t0Pl1TSo9BgbGyxnVUeWqpVcPnD0MLzEwMLZj9IpdNXwmhT4fcy6r2RgYGC9h5Fe+9CT0VgeZvQEnBgbGToy8yPZKdrXVS9aAgYFxJmPeujUzdLHtezgzgoGBgdHKjJPRZnnTDQMDA6N4OKNXdqthGAMD4xxGPgxIwmcVvOClYGBgbM2YN3kLImjc440aVgwMjPcxvgE/XWC+8mIlgwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
     <ul class="search-result" id="search-result"></ul>
 </div>
-<script type="text/template" id="search-tpl">
+<template id="search-tpl">
 <li class="item">
-    <a href="/{path}" class="waves-block waves-effect">
+    <a href="{path}" class="waves-block waves-effect">
         <div class="title ellipsis" title="{title}">{title}</div>
         <div class="flex-row flex-middle">
             <div class="tags ellipsis">
@@ -383,15 +550,35 @@ U+2029 段分隔符（paragraph separator）
         </div>
     </a>
 </li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '薄纯浩';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '变身！';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
 </script>
-
-<script src="/js/search.js"></script>
-
-
-
-
-
-
 
 
 

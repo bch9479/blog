@@ -1,108 +1,114 @@
 <!DOCTYPE html>
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  
-  <title>es6_Unicode | 个人博客 | BCH</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  <meta name="theme-color" content="#3F51B5">
-  
-  
-  <meta name="keywords" content="es6">
-  <meta name="description" content="ES6 字符串的扩展ES6 加强了对 Unicode 的支持，并且扩展了字符串对象。 字符的 Unicode 表示法JavaScript 允许采用\uxxxx 形式表示一个字符，其中“xxxx”表示字符的码点。 12&quot;\u0061&quot;// &quot;a&quot; 但是，这种表示法只限于\u0000——\uFFFF 之间的字符。超出这个范围的字符，必须用两个双字节的形式表达。 12345&quot;\uD842\uDFB7&quot;/">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>es6_Unicode | 个人博客 | BCH</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="es6">
+    <meta name="description" content="ES6 字符串的扩展ES6 加强了对 Unicode 的支持，并且扩展了字符串对象。 字符的 Unicode 表示法JavaScript 允许采用\uxxxx 形式表示一个字符，其中“xxxx”表示字符的码点。 12&quot;\u0061&quot;// &quot;a&quot; 但是，这种表示法只限于\u0000——\uFFFF 之间的字符。超出这个范围的字符，必须用两个双字节的形式表达。 12345&quot;\uD842\uDFB7&quot;/">
 <meta name="keywords" content="es6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="es6_Unicode">
 <meta property="og:url" content="http://blog.bochunhao.cn/2019/01/05/es6-Unicode/index.html">
 <meta property="og:site_name" content="个人博客">
 <meta property="og:description" content="ES6 字符串的扩展ES6 加强了对 Unicode 的支持，并且扩展了字符串对象。 字符的 Unicode 表示法JavaScript 允许采用\uxxxx 形式表示一个字符，其中“xxxx”表示字符的码点。 12&quot;\u0061&quot;// &quot;a&quot; 但是，这种表示法只限于\u0000——\uFFFF 之间的字符。超出这个范围的字符，必须用两个双字节的形式表达。 12345&quot;\uD842\uDFB7&quot;/">
-<meta property="og:locale" content="Chinese">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-27T14:11:37.027Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6_Unicode">
 <meta name="twitter:description" content="ES6 字符串的扩展ES6 加强了对 Unicode 的支持，并且扩展了字符串对象。 字符的 Unicode 表示法JavaScript 允许采用\uxxxx 形式表示一个字符，其中“xxxx”表示字符的码点。 12&quot;\u0061&quot;// &quot;a&quot; 但是，这种表示法只限于\u0000——\uFFFF 之间的字符。超出这个范围的字符，必须用两个双字节的形式表达。 12345&quot;\uD842\uDFB7&quot;/">
-  
-    <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
-  
-  <meta name="summary" content="bch_bk">
-  <link rel="shortcut icon" href="/img/favicon.ico">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
-<body>
-  <div id="loading" class="active"></div>
+    
+        <link rel="alternate" type="application/atom+xml" title="个人博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
 
-  <nav id="menu" class="hide" >
-   <div class="inner flex-row-vertical">
-  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
-      <i class="icon icon-lg icon-close"></i>
-  </a>
-  <div class="brand-wrap">
-    <div class="brand">
-      <a href="/" class="avatar"><img src="/img/loggo.png"></a>
-      <hgroup class="introduce">
-        <h5 class="nickname">BCH</h5>
-        <a href="mailto:17600280987@163.com" title="17600280987@163.com" class="mail">17600280987@163.com</a>
-      </hgroup>
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/loggo.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">BCH</h5>
+          <a href="mailto:17600280987@163.com" title="17600280987@163.com" class="mail">17600280987@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-archives"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/bch9479/blog" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://weibo.com/5900743344/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+      </ul>
     </div>
   </div>
-  <div class="scroll-wrap flex-col">
-    <ul class="nav">
-      
-          <li class="waves-block waves-effect">
-            <a href="/">
-              <i class="icon icon-lg icon-home"></i>
-              主页
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/categories">
-              <i class="icon icon-lg icon-archives"></i>
-              分类
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/tags">
-              <i class="icon icon-lg icon-tags"></i>
-              标签
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="https://github.com/bch9479/blog" target="_blank">
-              <i class="icon icon-lg icon-github"></i>
-              Github
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="https://weibo.com/5900743344/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">
-              <i class="icon icon-lg icon-weibo"></i>
-              微博
-            </a>
-          </li>
-      
-    </ul>
+</aside>
 
-    <footer class="footer">
-  <p>个人博客 &copy; 2019</p>
-  <p style="color:#3F51B5;font-size: 16px;font-weight:bolder">
-    不积跬步，无以至千里
-  </p>
-  <p style="color:#3F51B5;font-size: 16px;font-weight:bolder">
-    不积小流，无以成江海
-  </p>
-</footer>
-
-  </div>
-</div>
-
-  </nav>
-  <main id="main">
-    <header class="top-header" id="header">
+    <main id="main">
+        <header class="top-header" id="header">
     <div class="flex-row">
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
@@ -113,49 +119,69 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
         </div>
         
         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
     </div>
 </header>
-<header class="content-header">
-  <div class="container">
-    <h1 class="author">es6_Unicode</h1>
-    <h5 class="subtitle">
-        
-            <time datetime="2019-01-05T13:54:32.000Z" itemprop="datePublished" class="page-time">
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">es6_Unicode</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-05T13:54:32.000Z" itemprop="datePublished" class="page-time">
   2019-01-05
 </time>
 
 
-        
-    </h5>
-  </div>
+            
+        </h5>
+    </div>
+
+    
+
+
 </header>
 
-    <div class="container body-wrap">
-      <article id="post-es6-Unicode" class="article article-type-post" itemprop="blogPost">
-  <div class="post-meta flex-row">
-    
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
 
-  </div>
-  <div class="post-body">
-    <aside class="post-widget" id="post-widget">
-       
-      <nav class="post-toc-wrap" id="post-toc">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ES6-字符串的扩展"><span class="post-toc-number">1.</span> <span class="post-toc-text">ES6 字符串的扩展</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#字符的-Unicode-表示法"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">字符的 Unicode 表示法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#codePointAt"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">codePointAt()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#String-fromCodePoint"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">String.fromCodePoint()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#字符串的遍历器接口"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">字符串的遍历器接口</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#at"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">at()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#normalize"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">normalize()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#includes-startsWith-endsWith"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">includes(), startsWith(), endsWith()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#repeat"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">repeat()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#padStart-，padEnd"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">padStart()，padEnd()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#模板字符串"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">模板字符串</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实例：模板编译"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">实例：模板编译</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#标签模板"><span class="post-toc-number">1.12.</span> <span class="post-toc-text">标签模板</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#String-raw"><span class="post-toc-number">1.13.</span> <span class="post-toc-text">String.raw()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#模板字符串的限制"><span class="post-toc-number">1.14.</span> <span class="post-toc-text">模板字符串的限制</span></a></li></ol></li></ol>
-      </nav>
-      
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ES6-字符串的扩展"><span class="post-toc-number">1.</span> <span class="post-toc-text">ES6 字符串的扩展</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#字符的-Unicode-表示法"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">字符的 Unicode 表示法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#codePointAt"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">codePointAt()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#String-fromCodePoint"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">String.fromCodePoint()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#字符串的遍历器接口"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">字符串的遍历器接口</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#at"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">at()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#normalize"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">normalize()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#includes-startsWith-endsWith"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">includes(), startsWith(), endsWith()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#repeat"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">repeat()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#padStart-，padEnd"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">padStart()，padEnd()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#模板字符串"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">模板字符串</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实例：模板编译"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">实例：模板编译</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#标签模板"><span class="post-toc-number">1.12.</span> <span class="post-toc-text">标签模板</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#String-raw"><span class="post-toc-number">1.13.</span> <span class="post-toc-text">String.raw()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#模板字符串的限制"><span class="post-toc-number">1.14.</span> <span class="post-toc-text">模板字符串的限制</span></a></li></ol></li></ol>
+        </nav>
     </aside>
 
-    <div class="post-main">
-      <div class="post-content" id="post-content" itemprop="postContent">
-        <h3 id="ES6-字符串的扩展"><a href="#ES6-字符串的扩展" class="headerlink" title="ES6 字符串的扩展"></a>ES6 字符串的扩展</h3><p>ES6 加强了对 Unicode 的支持，并且扩展了字符串对象。</p>
+
+<article id="post-es6-Unicode" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">es6_Unicode</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-05 21:54:32" datetime="2019-01-05T13:54:32.000Z" itemprop="datePublished">2019-01-05</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="ES6-字符串的扩展"><a href="#ES6-字符串的扩展" class="headerlink" title="ES6 字符串的扩展"></a>ES6 字符串的扩展</h3><p>ES6 加强了对 Unicode 的支持，并且扩展了字符串对象。</p>
 <h4 id="字符的-Unicode-表示法"><a href="#字符的-Unicode-表示法" class="headerlink" title="字符的 Unicode 表示法"></a>字符的 Unicode 表示法</h4><p>JavaScript 允许采用\uxxxx 形式表示一个字符，其中“xxxx”表示字符的码点。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"\u0061"</span></span><br><span class="line">// <span class="string">"a"</span></span><br></pre></td></tr></table></figure>
 <p>但是，这种表示法只限于\u0000——\uFFFF 之间的字符。超出这个范围的字符，必须用两个双字节的形式表达。</p>
@@ -341,26 +367,86 @@
 <p>上面代码中，模板字符串原本是应该报错的，但是由于放松了对字符串转义的限制，所以不报错了，JavaScript 引擎将第一个字符设置为 undefined，但是 raw 属性依然可以得到原始字符串，因此 tag 函数还是可以对原字符串进行处理。</p>
 <p>注意，这种对字符串转义的放松，只在标签模板解析字符串时生效，不是标签模板的场合，依然会报错。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> bad = `bad escape sequence: \unicode`; // 报错</span><br></pre></td></tr></table></figure>
- 
-        <div class="post-reward">
-          <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
-        </div>
-        
 
-        <blockquote>
-          <p>
-            本文地址：
-            <a href="http://blog.bochunhao.cn/2019/01/05/es6-Unicode/" target="_blank" rel="external">http://blog.bochunhao.cn/2019/01/05/es6-Unicode/</a>
-          </p>
-          <footer>
-            <cite><a href="http://blog.bochunhao.cn" target="_blank" rel="external">@个人博客</a></cite>
-          </footer>
-        </blockquote>
-      </div>
-      
-<nav class="post-nav">
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://blog.bochunhao.cn">
+            <img src="/img/loggo.png" alt="BCH">
+            BCH
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.bochunhao.cn/2019/01/05/es6-Unicode/&title=《es6_Unicode》 — 个人博客&pic=http://blog.bochunhao.cn/img/loggo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.bochunhao.cn/2019/01/05/es6-Unicode/&title=《es6_Unicode》 — 个人博客&source=bch_bk" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.bochunhao.cn/2019/01/05/es6-Unicode/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《es6_Unicode》 — 个人博客&url=http://blog.bochunhao.cn/2019/01/05/es6-Unicode/&via=http://blog.bochunhao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.bochunhao.cn/2019/01/05/es6-Unicode/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
   
-    <div class="waves-block waves-effect prev fl">
+    <div class="waves-block waves-effect prev">
       <a href="/2019/01/10/es6-RegExp/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
         <h4 class="title">es6_RegExp</h4>
@@ -369,7 +455,7 @@
   
 
   
-    <div class="waves-block waves-effect next fr">
+    <div class="waves-block waves-effect next">
       <a href="/2018/12/31/es6-Destructuring/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
         <h4 class="title">es6_Destructuring</h4>
@@ -378,56 +464,137 @@
   
 </nav>
 
- 
+
+
+    
 
 
 
-    </div>
-  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </article>
 
-<div id="reward" class="reward-lay">
-    <a class="reward-off" id="rewardOff" href="javascript:;"><i class="icon icon-close"></i></a>
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <h3 class="reward-title">
         <i class="icon icon-quote-left"></i>
         感谢支持
         <i class="icon icon-quote-right"></i>
     </h3>
-    <ul class="reward-items">
+    <div class="reward-content">
         
-        <li>
-            <img src="/img/vx.png" title="微信打赏二维码" alt="微信打赏二维码">
-            <p>微信</p>
-        </li>
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/vx.png" alt="打赏二维码">
+        </div>
         
-
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/vx.png" data-alipay="/img/zfb.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
         
-        <li>
-            <img src="/img/zfb.png" title="支付宝打赏二维码" alt="支付宝打赏二维码">
-            <p>支付宝</p>
-        </li>
-        
-    </ul>
+    </div>
 </div>
 
 
-    </div>
-  </main>
-<div class="mask" id="mask"></div>
+
+</div>
+
+        <footer class="footer">
+    <p>个人博客 &copy; 2019</p>
+    <p style="color:#fff;font-size: 16px;font-weight:bolder">
+        不积跬步，无以至千里
+    </p>
+    <p style="color:#fff;font-size: 16px;font-weight:bolder">
+        不积小流，无以成江海
+    </p>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
-<script src="/js/main.js"></script>
 
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.bochunhao.cn/2019/01/05/es6-Unicode/&title=《es6_Unicode》 — 个人博客&pic=http://blog.bochunhao.cn/img/loggo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.bochunhao.cn/2019/01/05/es6-Unicode/&title=《es6_Unicode》 — 个人博客&source=bch_bk" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.bochunhao.cn/2019/01/05/es6-Unicode/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《es6_Unicode》 — 个人博客&url=http://blog.bochunhao.cn/2019/01/05/es6-Unicode/&via=http://blog.bochunhao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.bochunhao.cn/2019/01/05/es6-Unicode/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKklEQVR42u3ay26DMBAF0Pz/T9NtpQpyr20qYQ6rqCXgk8VoXp9PfB2/rr9/P7vz73+v77n+1oILAwPjsYzj8lr1O509M/l8fTYMDIz3MM5efB1Y888tOD8bBgYGRhsQr+9Z9UNgYGBgtI/LD9EmoBgYGBhtEdu+rAVfw5bV4hgYGA9kzBSWd3++Zb6BgYHxKMZRXjPjzHzAUJ8KAwNja8ZYYtcWrque8GX5AwMD45WMfMErL0qTJwwueWBgYGzKaMvFvCk2vzxRtPwwMDC2ZuSHaBcs/nPkgIGB8QbGl+IwSPva5Ykk3cybehgYGHszxppf7QJEmzgmQR8DA+M9jKRl3xaxyYtnRqenwRcDA2NTRl6+jsHaBYvBpQ0MDIytGW2zfqyJNg+L0kQMDIxNGTON+5kwnQwvi79gYGBszcgDbpIg5k/IG2r1sgUGBsamjLpcjEvQtsW/Kn3EwMDYiZGncTMLW2NJZPEtDAyMrRn5IWZGlflGRJtKfvILAwPj4Yy86da23toAWkwzZnqHGBgYj2WMlZ3tuHFs8FAvW2BgYGzKGFvMyqlTJWgS4jEwMDZlHOU1EzTbcULR4MPAwNiaMRPsxppx87w2xGNgYOzByINsQkqedsdPhoGB8QbGHalbMoBchcTAwMDIi8l2GNm+5UtFjoGBgREncEliN0NdEHAxMDAeyMiHATPFbb401t6PgYGxNyMvHZOgPHbo5I0LhpoYGBjPY/wAWQ1Bz3JV80gAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
     <ul class="search-result" id="search-result"></ul>
 </div>
-<script type="text/template" id="search-tpl">
+<template id="search-tpl">
 <li class="item">
-    <a href="/{path}" class="waves-block waves-effect">
+    <a href="{path}" class="waves-block waves-effect">
         <div class="title ellipsis" title="{title}">{title}</div>
         <div class="flex-row flex-middle">
             <div class="tags ellipsis">
@@ -437,15 +604,35 @@
         </div>
     </a>
 </li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '薄纯浩';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '变身！';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
 </script>
-
-<script src="/js/search.js"></script>
-
-
-
-
-
-
 
 
 

@@ -1,108 +1,114 @@
 <!DOCTYPE html>
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  
-  <title>REACT_组件通信 | 个人博客 | BCH</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  <meta name="theme-color" content="#3F51B5">
-  
-  
-  <meta name="keywords" content="react">
-  <meta name="description" content="父子组件通信父组件通过  props  传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过  props  传递数据，子组件不能直接修改  props， 而是必须通过调用父组件函数的方式告知父组件修改数据。 兄弟组件通信对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>REACT_组件通信 | 个人博客 | BCH</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="react">
+    <meta name="description" content="父子组件通信父组件通过  props  传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过  props  传递数据，子组件不能直接修改  props， 而是必须通过调用父组件函数的方式告知父组件修改数据。 兄弟组件通信对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件">
 <meta name="keywords" content="react">
 <meta property="og:type" content="article">
 <meta property="og:title" content="REACT_组件通信">
 <meta property="og:url" content="http://blog.bochunhao.cn/2018/03/25/react_fscom/index.html">
 <meta property="og:site_name" content="个人博客">
 <meta property="og:description" content="父子组件通信父组件通过  props  传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过  props  传递数据，子组件不能直接修改  props， 而是必须通过调用父组件函数的方式告知父组件修改数据。 兄弟组件通信对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件">
-<meta property="og:locale" content="Chinese">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-26T08:32:56.317Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="REACT_组件通信">
 <meta name="twitter:description" content="父子组件通信父组件通过  props  传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过  props  传递数据，子组件不能直接修改  props， 而是必须通过调用父组件函数的方式告知父组件修改数据。 兄弟组件通信对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件">
-  
-    <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
-  
-  <meta name="summary" content="bch_bk">
-  <link rel="shortcut icon" href="/img/favicon.ico">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
-<body>
-  <div id="loading" class="active"></div>
+    
+        <link rel="alternate" type="application/atom+xml" title="个人博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
 
-  <nav id="menu" class="hide" >
-   <div class="inner flex-row-vertical">
-  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
-      <i class="icon icon-lg icon-close"></i>
-  </a>
-  <div class="brand-wrap">
-    <div class="brand">
-      <a href="/" class="avatar"><img src="/img/loggo.png"></a>
-      <hgroup class="introduce">
-        <h5 class="nickname">BCH</h5>
-        <a href="mailto:17600280987@163.com" title="17600280987@163.com" class="mail">17600280987@163.com</a>
-      </hgroup>
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/loggo.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">BCH</h5>
+          <a href="mailto:17600280987@163.com" title="17600280987@163.com" class="mail">17600280987@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-archives"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/bch9479/blog" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://weibo.com/5900743344/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+      </ul>
     </div>
   </div>
-  <div class="scroll-wrap flex-col">
-    <ul class="nav">
-      
-          <li class="waves-block waves-effect">
-            <a href="/">
-              <i class="icon icon-lg icon-home"></i>
-              主页
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/categories">
-              <i class="icon icon-lg icon-archives"></i>
-              分类
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/tags">
-              <i class="icon icon-lg icon-tags"></i>
-              标签
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="https://github.com/bch9479/blog" target="_blank">
-              <i class="icon icon-lg icon-github"></i>
-              Github
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="https://weibo.com/5900743344/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">
-              <i class="icon icon-lg icon-weibo"></i>
-              微博
-            </a>
-          </li>
-      
-    </ul>
+</aside>
 
-    <footer class="footer">
-  <p>个人博客 &copy; 2019</p>
-  <p style="color:#3F51B5;font-size: 16px;font-weight:bolder">
-    不积跬步，无以至千里
-  </p>
-  <p style="color:#3F51B5;font-size: 16px;font-weight:bolder">
-    不积小流，无以成江海
-  </p>
-</footer>
-
-  </div>
-</div>
-
-  </nav>
-  <main id="main">
-    <header class="top-header" id="header">
+    <main id="main">
+        <header class="top-header" id="header">
     <div class="flex-row">
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
@@ -113,72 +119,152 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
         </div>
         
         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
     </div>
 </header>
-<header class="content-header">
-  <div class="container">
-    <h1 class="author">REACT_组件通信</h1>
-    <h5 class="subtitle">
-        
-            <time datetime="2018-03-25T14:25:58.000Z" itemprop="datePublished" class="page-time">
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">REACT_组件通信</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-03-25T14:25:58.000Z" itemprop="datePublished" class="page-time">
   2018-03-25
 </time>
 
 
-        
-    </h5>
-  </div>
+            
+        </h5>
+    </div>
+
+    
+
+
 </header>
 
-    <div class="container body-wrap">
-      <article id="post-react_fscom" class="article article-type-post" itemprop="blogPost">
-  <div class="post-meta flex-row">
-    
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
 
-  </div>
-  <div class="post-body">
-    <aside class="post-widget" id="post-widget">
-       
-      <nav class="post-toc-wrap" id="post-toc">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#父子组件通信"><span class="post-toc-number">1.</span> <span class="post-toc-text">父子组件通信</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#兄弟组件通信"><span class="post-toc-number">2.</span> <span class="post-toc-text">兄弟组件通信</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#跨多层次组件通信"><span class="post-toc-number">3.</span> <span class="post-toc-text">跨多层次组件通信</span></a></li></ol>
-      </nav>
-      
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#父子组件通信"><span class="post-toc-number">1.</span> <span class="post-toc-text">父子组件通信</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#兄弟组件通信"><span class="post-toc-number">2.</span> <span class="post-toc-text">兄弟组件通信</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#跨多层次组件通信"><span class="post-toc-number">3.</span> <span class="post-toc-text">跨多层次组件通信</span></a></li></ol>
+        </nav>
     </aside>
 
-    <div class="post-main">
-      <div class="post-content" id="post-content" itemprop="postContent">
-        <h3 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h3><p>父组件通过  props  传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过  props  传递数据，子组件不能直接修改  props， 而是必须通过调用父组件函数的方式告知父组件修改数据。</p>
+
+<article id="post-react_fscom" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">REACT_组件通信</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-03-25 22:25:58" datetime="2018-03-25T14:25:58.000Z" itemprop="datePublished">2018-03-25</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h3><p>父组件通过  props  传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过  props  传递数据，子组件不能直接修改  props， 而是必须通过调用父组件函数的方式告知父组件修改数据。</p>
 <h3 id="兄弟组件通信"><a href="#兄弟组件通信" class="headerlink" title="兄弟组件通信"></a>兄弟组件通信</h3><p>对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件调用父组件传递过来的事件函数修改父组件中的状态，然后父组件将状态传递给另一个兄弟组件。</p>
 <h3 id="跨多层次组件通信"><a href="#跨多层次组件通信" class="headerlink" title="跨多层次组件通信"></a>跨多层次组件通信</h3><p>如果你使用 16.3 以上版本的话，对于这种情况可以使用 Context API。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">// 创建 Context，可以在开始就传入值</span><br><span class="line">const StateContext = React.createContext()</span><br><span class="line">class Parent extends React.Component &#123;</span><br><span class="line">  <span class="function"><span class="title">render</span></span> () &#123;</span><br><span class="line">    <span class="built_in">return</span> (</span><br><span class="line">      // value 就是传入 Context 中的值</span><br><span class="line">      &lt;StateContext.Provider value=<span class="string">'yck'</span>&gt;</span><br><span class="line">        &lt;Child /&gt;</span><br><span class="line">      &lt;/StateContext.Provider&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Child extends React.Component &#123;</span><br><span class="line">  <span class="function"><span class="title">render</span></span> () &#123;</span><br><span class="line">    <span class="built_in">return</span> (</span><br><span class="line">      &lt;ThemeContext.Consumer&gt;</span><br><span class="line">        // 取出值</span><br><span class="line">        &#123;context =&gt; (</span><br><span class="line">          name is &#123; context &#125;</span><br><span class="line">        )&#125;</span><br><span class="line">      &lt;/ThemeContext.Consumer&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
- 
-        <div class="post-reward">
-          <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
-        </div>
-        
 
-        <blockquote>
-          <p>
-            本文地址：
-            <a href="http://blog.bochunhao.cn/2018/03/25/react_fscom/" target="_blank" rel="external">http://blog.bochunhao.cn/2018/03/25/react_fscom/</a>
-          </p>
-          <footer>
-            <cite><a href="http://blog.bochunhao.cn" target="_blank" rel="external">@个人博客</a></cite>
-          </footer>
-        </blockquote>
-      </div>
-      
-<nav class="post-nav">
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://blog.bochunhao.cn">
+            <img src="/img/loggo.png" alt="BCH">
+            BCH
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.bochunhao.cn/2018/03/25/react_fscom/&title=《REACT_组件通信》 — 个人博客&pic=http://blog.bochunhao.cn/img/loggo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.bochunhao.cn/2018/03/25/react_fscom/&title=《REACT_组件通信》 — 个人博客&source=bch_bk" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.bochunhao.cn/2018/03/25/react_fscom/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《REACT_组件通信》 — 个人博客&url=http://blog.bochunhao.cn/2018/03/25/react_fscom/&via=http://blog.bochunhao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.bochunhao.cn/2018/03/25/react_fscom/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
   
-    <div class="waves-block waves-effect prev fl">
+    <div class="waves-block waves-effect prev">
       <a href="/2018/03/26/vue-lifecycle/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
         <h4 class="title">vue_lifecycle</h4>
@@ -187,7 +273,7 @@
   
 
   
-    <div class="waves-block waves-effect next fr">
+    <div class="waves-block waves-effect next">
       <a href="/2018/03/22/setStarte/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
         <h4 class="title">REACT_setState</h4>
@@ -196,56 +282,137 @@
   
 </nav>
 
- 
+
+
+    
 
 
 
-    </div>
-  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </article>
 
-<div id="reward" class="reward-lay">
-    <a class="reward-off" id="rewardOff" href="javascript:;"><i class="icon icon-close"></i></a>
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <h3 class="reward-title">
         <i class="icon icon-quote-left"></i>
         感谢支持
         <i class="icon icon-quote-right"></i>
     </h3>
-    <ul class="reward-items">
+    <div class="reward-content">
         
-        <li>
-            <img src="/img/vx.png" title="微信打赏二维码" alt="微信打赏二维码">
-            <p>微信</p>
-        </li>
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/vx.png" alt="打赏二维码">
+        </div>
         
-
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/vx.png" data-alipay="/img/zfb.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
         
-        <li>
-            <img src="/img/zfb.png" title="支付宝打赏二维码" alt="支付宝打赏二维码">
-            <p>支付宝</p>
-        </li>
-        
-    </ul>
+    </div>
 </div>
 
 
-    </div>
-  </main>
-<div class="mask" id="mask"></div>
+
+</div>
+
+        <footer class="footer">
+    <p>个人博客 &copy; 2019</p>
+    <p style="color:#fff;font-size: 16px;font-weight:bolder">
+        不积跬步，无以至千里
+    </p>
+    <p style="color:#fff;font-size: 16px;font-weight:bolder">
+        不积小流，无以成江海
+    </p>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
-<script src="/js/main.js"></script>
 
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.bochunhao.cn/2018/03/25/react_fscom/&title=《REACT_组件通信》 — 个人博客&pic=http://blog.bochunhao.cn/img/loggo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.bochunhao.cn/2018/03/25/react_fscom/&title=《REACT_组件通信》 — 个人博客&source=bch_bk" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.bochunhao.cn/2018/03/25/react_fscom/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《REACT_组件通信》 — 个人博客&url=http://blog.bochunhao.cn/2018/03/25/react_fscom/&via=http://blog.bochunhao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.bochunhao.cn/2018/03/25/react_fscom/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJUlEQVR42u3aS27DMAwFwNz/0um2QFr7kVQWkserIDEUzobgR69X/Lw/nsmbv7///Hx9/ujBwMDYlvG+fKqM63CTM6/f+TcGDAyMBzDytFgNopc589gwMDAwekkwKfgSPAYGBsY84VaDyAtQDAwMjF4Tu2pglyTxL/biGBgYGzImjeW3P39lv4GBgbEV41188kFbsgxYFhUGBsbRjDzB5SXaddu5ap2AgYHxHEaeNJMrF9XLGfm47QaGgYHxGEZzHN/iVVekN2tRDAyMoxm9gX41Wedj/VGgGBgYRzMm18LyBeQkNSfRYmBgnM3oXX3oNat565ufj4GBcTYjOaLHrsLy0/6IEAMD42jG2jQ6H41Nik4MDIyzGdXQ165Ck/eT8R8GBsapjOqAvtpwJsVlArj5BgMD42hGPnDv7UWrK4EF5SYGBsZxjF5jmS8dkysazcRafQkDA2NbRvVaQ2+glifZahNbrnMxMDA2ZyR/lrS1ecLNT4iQGBgYD2DkybFXuvXSbqEaxMDAeACjmmrzBJovLyfnYGBgPIGRj9KqQ7S16XXUi2NgYGzIeBef6nCtt1TIW9xo/4mBgbE5Y1nOjhPxnDe5/IGBgbEvo3clqzpE6w3mMDAwMHpNbG/oX902lttgDAwMjEUta/Wq2c3aMvkBAwPjkYxkDJcXl5MEvWC/gYGBsRUjXwYkQ7f5hK9cjGJgYBzNmByaLwnyIHprAwwMjEMZP9Cv2xmuIdasAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
     <ul class="search-result" id="search-result"></ul>
 </div>
-<script type="text/template" id="search-tpl">
+<template id="search-tpl">
 <li class="item">
-    <a href="/{path}" class="waves-block waves-effect">
+    <a href="{path}" class="waves-block waves-effect">
         <div class="title ellipsis" title="{title}">{title}</div>
         <div class="flex-row flex-middle">
             <div class="tags ellipsis">
@@ -255,15 +422,35 @@
         </div>
     </a>
 </li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '薄纯浩';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '变身！';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
 </script>
-
-<script src="/js/search.js"></script>
-
-
-
-
-
-
 
 
 

@@ -1,108 +1,114 @@
 <!DOCTYPE html>
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  
-  <title>es6_Number | 个人博客 | BCH</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  <meta name="theme-color" content="#3F51B5">
-  
-  
-  <meta name="keywords" content="es6">
-  <meta name="description" content="ES6 数值的扩展二进制和八进制表示法ES6 提供了二进制和八进制数值的新的写法，分别用前缀 0b（或 0B）和 0o（或 0O）表示。 120b111110111 === 503 // true0o767 === 503 // true 从 ES5 开始，在严格模式之中，八进制就不再允许使用前缀 0 表示，ES6 进一步明确，要使用前缀 0o 表示。 12345678910// 非严格模式(fu">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>es6_Number | 个人博客 | BCH</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="es6">
+    <meta name="description" content="ES6 数值的扩展二进制和八进制表示法ES6 提供了二进制和八进制数值的新的写法，分别用前缀 0b（或 0B）和 0o（或 0O）表示。 120b111110111 === 503 // true0o767 === 503 // true 从 ES5 开始，在严格模式之中，八进制就不再允许使用前缀 0 表示，ES6 进一步明确，要使用前缀 0o 表示。 12345678910// 非严格模式(fu">
 <meta name="keywords" content="es6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="es6_Number">
 <meta property="og:url" content="http://blog.bochunhao.cn/2019/01/15/es6-Number/index.html">
 <meta property="og:site_name" content="个人博客">
 <meta property="og:description" content="ES6 数值的扩展二进制和八进制表示法ES6 提供了二进制和八进制数值的新的写法，分别用前缀 0b（或 0B）和 0o（或 0O）表示。 120b111110111 === 503 // true0o767 === 503 // true 从 ES5 开始，在严格模式之中，八进制就不再允许使用前缀 0 表示，ES6 进一步明确，要使用前缀 0o 表示。 12345678910// 非严格模式(fu">
-<meta property="og:locale" content="Chinese">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-27T14:49:32.017Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6_Number">
 <meta name="twitter:description" content="ES6 数值的扩展二进制和八进制表示法ES6 提供了二进制和八进制数值的新的写法，分别用前缀 0b（或 0B）和 0o（或 0O）表示。 120b111110111 === 503 // true0o767 === 503 // true 从 ES5 开始，在严格模式之中，八进制就不再允许使用前缀 0 表示，ES6 进一步明确，要使用前缀 0o 表示。 12345678910// 非严格模式(fu">
-  
-    <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
-  
-  <meta name="summary" content="bch_bk">
-  <link rel="shortcut icon" href="/img/favicon.ico">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
-<body>
-  <div id="loading" class="active"></div>
+    
+        <link rel="alternate" type="application/atom+xml" title="个人博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
 
-  <nav id="menu" class="hide" >
-   <div class="inner flex-row-vertical">
-  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
-      <i class="icon icon-lg icon-close"></i>
-  </a>
-  <div class="brand-wrap">
-    <div class="brand">
-      <a href="/" class="avatar"><img src="/img/loggo.png"></a>
-      <hgroup class="introduce">
-        <h5 class="nickname">BCH</h5>
-        <a href="mailto:17600280987@163.com" title="17600280987@163.com" class="mail">17600280987@163.com</a>
-      </hgroup>
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/loggo.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">BCH</h5>
+          <a href="mailto:17600280987@163.com" title="17600280987@163.com" class="mail">17600280987@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-archives"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/bch9479/blog" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://weibo.com/5900743344/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+      </ul>
     </div>
   </div>
-  <div class="scroll-wrap flex-col">
-    <ul class="nav">
-      
-          <li class="waves-block waves-effect">
-            <a href="/">
-              <i class="icon icon-lg icon-home"></i>
-              主页
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/categories">
-              <i class="icon icon-lg icon-archives"></i>
-              分类
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/tags">
-              <i class="icon icon-lg icon-tags"></i>
-              标签
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="https://github.com/bch9479/blog" target="_blank">
-              <i class="icon icon-lg icon-github"></i>
-              Github
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="https://weibo.com/5900743344/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">
-              <i class="icon icon-lg icon-weibo"></i>
-              微博
-            </a>
-          </li>
-      
-    </ul>
+</aside>
 
-    <footer class="footer">
-  <p>个人博客 &copy; 2019</p>
-  <p style="color:#3F51B5;font-size: 16px;font-weight:bolder">
-    不积跬步，无以至千里
-  </p>
-  <p style="color:#3F51B5;font-size: 16px;font-weight:bolder">
-    不积小流，无以成江海
-  </p>
-</footer>
-
-  </div>
-</div>
-
-  </nav>
-  <main id="main">
-    <header class="top-header" id="header">
+    <main id="main">
+        <header class="top-header" id="header">
     <div class="flex-row">
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
@@ -113,49 +119,69 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
         </div>
         
         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
     </div>
 </header>
-<header class="content-header">
-  <div class="container">
-    <h1 class="author">es6_Number</h1>
-    <h5 class="subtitle">
-        
-            <time datetime="2019-01-15T14:26:00.000Z" itemprop="datePublished" class="page-time">
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">es6_Number</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-15T14:26:00.000Z" itemprop="datePublished" class="page-time">
   2019-01-15
 </time>
 
 
-        
-    </h5>
-  </div>
+            
+        </h5>
+    </div>
+
+    
+
+
 </header>
 
-    <div class="container body-wrap">
-      <article id="post-es6-Number" class="article article-type-post" itemprop="blogPost">
-  <div class="post-meta flex-row">
-    
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
 
-  </div>
-  <div class="post-body">
-    <aside class="post-widget" id="post-widget">
-       
-      <nav class="post-toc-wrap" id="post-toc">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ES6-数值的扩展"><span class="post-toc-number">1.</span> <span class="post-toc-text">ES6 数值的扩展</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二进制和八进制表示法"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">二进制和八进制表示法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Number-isFinite-Number-isNaN"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Number.isFinite(), Number.isNaN()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Number-parseInt-Number-parseFloat"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Number.parseInt(), Number.parseFloat()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Number-isInteger"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Number.isInteger()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Number-EPSILON"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Number.EPSILON</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安全整数和-Number-isSafeInteger"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">安全整数和 Number.isSafeInteger()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Math-对象的扩展"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">Math 对象的扩展</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Math-trunc"><span class="post-toc-number">1.7.1.</span> <span class="post-toc-text">Math.trunc()</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Math-sign"><span class="post-toc-number">1.7.2.</span> <span class="post-toc-text">Math.sign()</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Math-cbrt"><span class="post-toc-number">1.7.3.</span> <span class="post-toc-text">Math.cbrt()</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Math-clz32"><span class="post-toc-number">1.7.4.</span> <span class="post-toc-text">Math.clz32()</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Math-imul"><span class="post-toc-number">1.7.5.</span> <span class="post-toc-text">Math.imul()</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Math-fround"><span class="post-toc-number">1.7.6.</span> <span class="post-toc-text">Math.fround()</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Math-hypot"><span class="post-toc-number">1.7.7.</span> <span class="post-toc-text">Math.hypot()</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对数方法"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">对数方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三角函数方法"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">三角函数方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#指数运算符"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">指数运算符</span></a></li></ol></li></ol>
-      </nav>
-      
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ES6-数值的扩展"><span class="post-toc-number">1.</span> <span class="post-toc-text">ES6 数值的扩展</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二进制和八进制表示法"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">二进制和八进制表示法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Number-isFinite-Number-isNaN"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Number.isFinite(), Number.isNaN()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Number-parseInt-Number-parseFloat"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Number.parseInt(), Number.parseFloat()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Number-isInteger"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Number.isInteger()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Number-EPSILON"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Number.EPSILON</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安全整数和-Number-isSafeInteger"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">安全整数和 Number.isSafeInteger()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Math-对象的扩展"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">Math 对象的扩展</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Math-trunc"><span class="post-toc-number">1.7.1.</span> <span class="post-toc-text">Math.trunc()</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Math-sign"><span class="post-toc-number">1.7.2.</span> <span class="post-toc-text">Math.sign()</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Math-cbrt"><span class="post-toc-number">1.7.3.</span> <span class="post-toc-text">Math.cbrt()</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Math-clz32"><span class="post-toc-number">1.7.4.</span> <span class="post-toc-text">Math.clz32()</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Math-imul"><span class="post-toc-number">1.7.5.</span> <span class="post-toc-text">Math.imul()</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Math-fround"><span class="post-toc-number">1.7.6.</span> <span class="post-toc-text">Math.fround()</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Math-hypot"><span class="post-toc-number">1.7.7.</span> <span class="post-toc-text">Math.hypot()</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对数方法"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">对数方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三角函数方法"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">三角函数方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#指数运算符"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">指数运算符</span></a></li></ol></li></ol>
+        </nav>
     </aside>
 
-    <div class="post-main">
-      <div class="post-content" id="post-content" itemprop="postContent">
-        <h3 id="ES6-数值的扩展"><a href="#ES6-数值的扩展" class="headerlink" title="ES6 数值的扩展"></a>ES6 数值的扩展</h3><h4 id="二进制和八进制表示法"><a href="#二进制和八进制表示法" class="headerlink" title="二进制和八进制表示法"></a>二进制和八进制表示法</h4><p>ES6 提供了二进制和八进制数值的新的写法，分别用前缀 0b（或 0B）和 0o（或 0O）表示。</p>
+
+<article id="post-es6-Number" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">es6_Number</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-15 22:26:00" datetime="2019-01-15T14:26:00.000Z" itemprop="datePublished">2019-01-15</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="ES6-数值的扩展"><a href="#ES6-数值的扩展" class="headerlink" title="ES6 数值的扩展"></a>ES6 数值的扩展</h3><h4 id="二进制和八进制表示法"><a href="#二进制和八进制表示法" class="headerlink" title="二进制和八进制表示法"></a>二进制和八进制表示法</h4><p>ES6 提供了二进制和八进制数值的新的写法，分别用前缀 0b（或 0B）和 0o（或 0O）表示。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0b111110111 === 503 // <span class="literal">true</span></span><br><span class="line">0o767 === 503 // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p>从 ES5 开始，在严格模式之中，八进制就不再允许使用前缀 0 表示，ES6 进一步明确，要使用前缀 0o 表示。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 非严格模式</span><br><span class="line">(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">  console.log(0o11 === 011);</span><br><span class="line">&#125;)() // <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">// 严格模式</span><br><span class="line">(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">  <span class="string">'use strict'</span>;</span><br><span class="line">  console.log(0o11 === 011);</span><br><span class="line">&#125;)() // Uncaught SyntaxError: Octal literals are not allowed <span class="keyword">in</span> strict mode.</span><br></pre></td></tr></table></figure>
@@ -285,28 +311,88 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2 ** 2 // 4</span><br><span class="line">2 ** 3 // 8</span><br></pre></td></tr></table></figure>
 <p>指数运算符可以与等号结合，形成一个新的赋值运算符（**=）。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> a = 2;</span><br><span class="line">a **= 2;</span><br><span class="line">// 等同于 a = a * a;</span><br><span class="line"></span><br><span class="line"><span class="built_in">let</span> b = 3;</span><br><span class="line">b **= 3;</span><br><span class="line">// 等同于 b = b * b * b;</span><br></pre></td></tr></table></figure>
- 
-        <div class="post-reward">
-          <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
+
         </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://blog.bochunhao.cn">
+            <img src="/img/loggo.png" alt="BCH">
+            BCH
+        </a>
+    </footer>
+</blockquote>
+
         
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
 
-        <blockquote>
-          <p>
-            本文地址：
-            <a href="http://blog.bochunhao.cn/2019/01/15/es6-Number/" target="_blank" rel="external">http://blog.bochunhao.cn/2019/01/15/es6-Number/</a>
-          </p>
-          <footer>
-            <cite><a href="http://blog.bochunhao.cn" target="_blank" rel="external">@个人博客</a></cite>
-          </footer>
-        </blockquote>
-      </div>
-      
-<nav class="post-nav">
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.bochunhao.cn/2019/01/15/es6-Number/&title=《es6_Number》 — 个人博客&pic=http://blog.bochunhao.cn/img/loggo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.bochunhao.cn/2019/01/15/es6-Number/&title=《es6_Number》 — 个人博客&source=bch_bk" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.bochunhao.cn/2019/01/15/es6-Number/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《es6_Number》 — 个人博客&url=http://blog.bochunhao.cn/2019/01/15/es6-Number/&via=http://blog.bochunhao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.bochunhao.cn/2019/01/15/es6-Number/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
-    <div class="waves-block waves-effect next fr">
+    <div class="waves-block waves-effect next">
       <a href="/2019/01/10/es6-RegExp/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
         <h4 class="title">es6_RegExp</h4>
@@ -315,56 +401,137 @@
   
 </nav>
 
- 
+
+
+    
 
 
 
-    </div>
-  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </article>
 
-<div id="reward" class="reward-lay">
-    <a class="reward-off" id="rewardOff" href="javascript:;"><i class="icon icon-close"></i></a>
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <h3 class="reward-title">
         <i class="icon icon-quote-left"></i>
         感谢支持
         <i class="icon icon-quote-right"></i>
     </h3>
-    <ul class="reward-items">
+    <div class="reward-content">
         
-        <li>
-            <img src="/img/vx.png" title="微信打赏二维码" alt="微信打赏二维码">
-            <p>微信</p>
-        </li>
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/vx.png" alt="打赏二维码">
+        </div>
         
-
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/vx.png" data-alipay="/img/zfb.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
         
-        <li>
-            <img src="/img/zfb.png" title="支付宝打赏二维码" alt="支付宝打赏二维码">
-            <p>支付宝</p>
-        </li>
-        
-    </ul>
+    </div>
 </div>
 
 
-    </div>
-  </main>
-<div class="mask" id="mask"></div>
+
+</div>
+
+        <footer class="footer">
+    <p>个人博客 &copy; 2019</p>
+    <p style="color:#fff;font-size: 16px;font-weight:bolder">
+        不积跬步，无以至千里
+    </p>
+    <p style="color:#fff;font-size: 16px;font-weight:bolder">
+        不积小流，无以成江海
+    </p>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
-<script src="/js/main.js"></script>
 
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.bochunhao.cn/2019/01/15/es6-Number/&title=《es6_Number》 — 个人博客&pic=http://blog.bochunhao.cn/img/loggo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.bochunhao.cn/2019/01/15/es6-Number/&title=《es6_Number》 — 个人博客&source=bch_bk" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.bochunhao.cn/2019/01/15/es6-Number/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《es6_Number》 — 个人博客&url=http://blog.bochunhao.cn/2019/01/15/es6-Number/&via=http://blog.bochunhao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.bochunhao.cn/2019/01/15/es6-Number/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACM0lEQVR42u3ay27CQAwFUP7/p6nUVVFFuLahapyTVYQCmTMLM37cbvF1/75+3lev41/7/cu3T1wYGBinZSSvP37Z8fPHb3n2TL42DAyM6zDyIPvsBXlInWzH088xMDAwggNc9WiYUzEwMDB6AbcampMtwMDAwDhmJElsHkCTmliS3H4kF8fAwDgho9cY+Jv7j/c3MDAw/j1j0oZMgumkeFdYFQYGxmrGcbsxj2y9Rua7fhMDA+M6jLwQ1iv9VwfOyoNiGBgYqxkJJn++2hiopq8vVoiBgbGOkR8B57FuEkZffBcDA2M1Y5LKVgcj8mNfvh0YGBhXYPQW0Uti8wGOpAD3cI+BgbGa0SuNTca/euE+GlDDwMBYysiHtKqDFJNGQjl8Y2BgrGbkC5oX1/IDaHWDMDAwrsOoBsp5s7NX8itUDTEwMBYxqglnvje9Elsz4GJgYCxl5IX7vOj23iNj9F4MDIwLMJKAWwVPDpr5H8BDwMXAwFjKOF50XsSfNDUnjYQoA8bAwDg5I7fmTc28JFdti0ZHQwwMjKWM3kJ7r8+T2MLfAAYGxmpG8oVqmjppGDTLbRgYGKsZ9+LVq8NPkFFrAQMDYzUjv/KAmC80T5jnQyEYGBhnZ+RBNg+OScMgbzyUp9swMDCWMt5bOOsBRgEdAwMDI1joZLBsPsyBgYGB0RveqgbZ6gBH82iIgYFxWkbeDOg1NZOtyduo5UYmBgbGyRmTBLJXxO9hqqkyBgbGCsYXwzWodu0apiMAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
     <ul class="search-result" id="search-result"></ul>
 </div>
-<script type="text/template" id="search-tpl">
+<template id="search-tpl">
 <li class="item">
-    <a href="/{path}" class="waves-block waves-effect">
+    <a href="{path}" class="waves-block waves-effect">
         <div class="title ellipsis" title="{title}">{title}</div>
         <div class="flex-row flex-middle">
             <div class="tags ellipsis">
@@ -374,15 +541,35 @@
         </div>
     </a>
 </li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '薄纯浩';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '变身！';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
 </script>
-
-<script src="/js/search.js"></script>
-
-
-
-
-
-
 
 
 

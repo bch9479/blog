@@ -1,108 +1,114 @@
 <!DOCTYPE html>
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  
-  <title>webpack | 个人博客 | BCH</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  <meta name="theme-color" content="#3F51B5">
-  
-  
-  <meta name="keywords" content="webpack">
-  <meta name="description" content="Webpack 性能优化有哪些方式可以减少 Webpack 的打包时间  有哪些方式可以让 Webpack 打出来的包更小  减少 Webpack 打包时间优化 Loader对于 Loader 来说，影响打包效率首当其冲必属 Babel 了。因为 Babel 会将代码转为字符串生成 AST，然后对 AST 继续进行转变最后再生成新的代码，项目越大，转换代码越多，效率就越低。当然了，我们是有办法优化">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>webpack | 个人博客 | BCH</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="webpack">
+    <meta name="description" content="Webpack 性能优化有哪些方式可以减少 Webpack 的打包时间  有哪些方式可以让 Webpack 打出来的包更小  减少 Webpack 打包时间优化 Loader对于 Loader 来说，影响打包效率首当其冲必属 Babel 了。因为 Babel 会将代码转为字符串生成 AST，然后对 AST 继续进行转变最后再生成新的代码，项目越大，转换代码越多，效率就越低。当然了，我们是有办法优化">
 <meta name="keywords" content="webpack">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack">
 <meta property="og:url" content="http://blog.bochunhao.cn/2018/10/03/webpack/index.html">
 <meta property="og:site_name" content="个人博客">
 <meta property="og:description" content="Webpack 性能优化有哪些方式可以减少 Webpack 的打包时间  有哪些方式可以让 Webpack 打出来的包更小  减少 Webpack 打包时间优化 Loader对于 Loader 来说，影响打包效率首当其冲必属 Babel 了。因为 Babel 会将代码转为字符串生成 AST，然后对 AST 继续进行转变最后再生成新的代码，项目越大，转换代码越多，效率就越低。当然了，我们是有办法优化">
-<meta property="og:locale" content="Chinese">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-26T08:38:59.134Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack">
 <meta name="twitter:description" content="Webpack 性能优化有哪些方式可以减少 Webpack 的打包时间  有哪些方式可以让 Webpack 打出来的包更小  减少 Webpack 打包时间优化 Loader对于 Loader 来说，影响打包效率首当其冲必属 Babel 了。因为 Babel 会将代码转为字符串生成 AST，然后对 AST 继续进行转变最后再生成新的代码，项目越大，转换代码越多，效率就越低。当然了，我们是有办法优化">
-  
-    <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
-  
-  <meta name="summary" content="bch_bk">
-  <link rel="shortcut icon" href="/img/favicon.ico">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
-<body>
-  <div id="loading" class="active"></div>
+    
+        <link rel="alternate" type="application/atom+xml" title="个人博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
 
-  <nav id="menu" class="hide" >
-   <div class="inner flex-row-vertical">
-  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
-      <i class="icon icon-lg icon-close"></i>
-  </a>
-  <div class="brand-wrap">
-    <div class="brand">
-      <a href="/" class="avatar"><img src="/img/loggo.png"></a>
-      <hgroup class="introduce">
-        <h5 class="nickname">BCH</h5>
-        <a href="mailto:17600280987@163.com" title="17600280987@163.com" class="mail">17600280987@163.com</a>
-      </hgroup>
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/loggo.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">BCH</h5>
+          <a href="mailto:17600280987@163.com" title="17600280987@163.com" class="mail">17600280987@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-archives"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/bch9479/blog" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://weibo.com/5900743344/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+      </ul>
     </div>
   </div>
-  <div class="scroll-wrap flex-col">
-    <ul class="nav">
-      
-          <li class="waves-block waves-effect">
-            <a href="/">
-              <i class="icon icon-lg icon-home"></i>
-              主页
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/categories">
-              <i class="icon icon-lg icon-archives"></i>
-              分类
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/tags">
-              <i class="icon icon-lg icon-tags"></i>
-              标签
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="https://github.com/bch9479/blog" target="_blank">
-              <i class="icon icon-lg icon-github"></i>
-              Github
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="https://weibo.com/5900743344/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">
-              <i class="icon icon-lg icon-weibo"></i>
-              微博
-            </a>
-          </li>
-      
-    </ul>
+</aside>
 
-    <footer class="footer">
-  <p>个人博客 &copy; 2019</p>
-  <p style="color:#3F51B5;font-size: 16px;font-weight:bolder">
-    不积跬步，无以至千里
-  </p>
-  <p style="color:#3F51B5;font-size: 16px;font-weight:bolder">
-    不积小流，无以成江海
-  </p>
-</footer>
-
-  </div>
-</div>
-
-  </nav>
-  <main id="main">
-    <header class="top-header" id="header">
+    <main id="main">
+        <header class="top-header" id="header">
     <div class="flex-row">
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
@@ -113,49 +119,69 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
         </div>
         
         
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
     </div>
 </header>
-<header class="content-header">
-  <div class="container">
-    <h1 class="author">webpack</h1>
-    <h5 class="subtitle">
-        
-            <time datetime="2018-10-03T06:45:23.000Z" itemprop="datePublished" class="page-time">
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">webpack</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-03T06:45:23.000Z" itemprop="datePublished" class="page-time">
   2018-10-03
 </time>
 
 
-        
-    </h5>
-  </div>
+            
+        </h5>
+    </div>
+
+    
+
+
 </header>
 
-    <div class="container body-wrap">
-      <article id="post-webpack" class="article article-type-post" itemprop="blogPost">
-  <div class="post-meta flex-row">
-    
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
 
-  </div>
-  <div class="post-body">
-    <aside class="post-widget" id="post-widget">
-       
-      <nav class="post-toc-wrap" id="post-toc">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Webpack-性能优化"><span class="post-toc-number">1.</span> <span class="post-toc-text">Webpack 性能优化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#减少-Webpack-打包时间"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">减少 Webpack 打包时间</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#优化-Loader"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">优化 Loader</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#首先我们可以优化-Loader-的文件搜索范围"><span class="post-toc-number">1.1.1.1.</span> <span class="post-toc-text">首先我们可以优化 Loader 的文件搜索范围</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#对于-Babel-来说，我们肯定是希望只作用在-JS-代码上的，然后-node-modules-中使用的代码都是编译过的，所以我们也完全没有必要再去处理一遍。"><span class="post-toc-number">1.1.1.2.</span> <span class="post-toc-text">对于 Babel 来说，我们肯定是希望只作用在 JS 代码上的，然后 node_modules 中使用的代码都是编译过的，所以我们也完全没有必要再去处理一遍。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#当然这样做还不够，我们还可以将-Babel-编译过的文件缓存起来，下次只需要编译更改过的代码文件即可，这样可以大幅度加快打包时间"><span class="post-toc-number">1.1.1.3.</span> <span class="post-toc-text">当然这样做还不够，我们还可以将 Babel 编译过的文件缓存起来，下次只需要编译更改过的代码文件即可，这样可以大幅度加快打包时间</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#HappyPack"><span class="post-toc-number">2.</span> <span class="post-toc-text">HappyPack</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#HappyPack-可以将-Loader-的同步执行转换为并行的，这样就能充分利用系统资源来加快打包效率了"><span class="post-toc-number">2.0.0.1.</span> <span class="post-toc-text">HappyPack 可以将 Loader 的同步执行转换为并行的，这样就能充分利用系统资源来加快打包效率了</span></a></li></ol></li></ol><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DllPlugin"><span class="post-toc-number">3.</span> <span class="post-toc-text">DllPlugin</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#DllPlugin-可以将特定的类库提前打包然后引入。这种方式可以极大的减少打包类库的次数，只有当类库更新版本才有需要重新打包，并且也实现了将公共代码抽离成单独文件的优化方案。"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">DllPlugin 可以将特定的类库提前打包然后引入。这种方式可以极大的减少打包类库的次数，只有当类库更新版本才有需要重新打包，并且也实现了将公共代码抽离成单独文件的优化方案。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#接下来我们就来学习如何使用-DllPlugin"><span class="post-toc-number">3.0.1.1.</span> <span class="post-toc-text">接下来我们就来学习如何使用 DllPlugin</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#然后我们需要执行这个配置文件生成依赖文件，接下来我们需要使用-DllReferencePlugin-将依赖文件引入项目中"><span class="post-toc-number">3.0.1.2.</span> <span class="post-toc-text">然后我们需要执行这个配置文件生成依赖文件，接下来我们需要使用 DllReferencePlugin 将依赖文件引入项目中</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#代码压缩"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">代码压缩</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一些小的优化点"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">一些小的优化点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#resolve-extensions："><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">resolve.extensions：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#resolve-alias："><span class="post-toc-number">3.2.2.</span> <span class="post-toc-text">resolve.alias：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#module-noParse："><span class="post-toc-number">3.2.3.</span> <span class="post-toc-text">module.noParse：</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#减少-Webpack-打包后的文件体积"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">减少 Webpack 打包后的文件体积</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#按需加载"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">按需加载</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Scope-Hoisting"><span class="post-toc-number">3.4.1.</span> <span class="post-toc-text">Scope Hoisting</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Tree-Shaking"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">Tree Shaking</span></a></li>
-      </nav>
-      
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Webpack-性能优化"><span class="post-toc-number">1.</span> <span class="post-toc-text">Webpack 性能优化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#减少-Webpack-打包时间"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">减少 Webpack 打包时间</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#优化-Loader"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">优化 Loader</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#首先我们可以优化-Loader-的文件搜索范围"><span class="post-toc-number">1.1.1.1.</span> <span class="post-toc-text">首先我们可以优化 Loader 的文件搜索范围</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#对于-Babel-来说，我们肯定是希望只作用在-JS-代码上的，然后-node-modules-中使用的代码都是编译过的，所以我们也完全没有必要再去处理一遍。"><span class="post-toc-number">1.1.1.2.</span> <span class="post-toc-text">对于 Babel 来说，我们肯定是希望只作用在 JS 代码上的，然后 node_modules 中使用的代码都是编译过的，所以我们也完全没有必要再去处理一遍。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#当然这样做还不够，我们还可以将-Babel-编译过的文件缓存起来，下次只需要编译更改过的代码文件即可，这样可以大幅度加快打包时间"><span class="post-toc-number">1.1.1.3.</span> <span class="post-toc-text">当然这样做还不够，我们还可以将 Babel 编译过的文件缓存起来，下次只需要编译更改过的代码文件即可，这样可以大幅度加快打包时间</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#HappyPack"><span class="post-toc-number">2.</span> <span class="post-toc-text">HappyPack</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#HappyPack-可以将-Loader-的同步执行转换为并行的，这样就能充分利用系统资源来加快打包效率了"><span class="post-toc-number">2.0.0.1.</span> <span class="post-toc-text">HappyPack 可以将 Loader 的同步执行转换为并行的，这样就能充分利用系统资源来加快打包效率了</span></a></li></ol></li></ol><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DllPlugin"><span class="post-toc-number">3.</span> <span class="post-toc-text">DllPlugin</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#DllPlugin-可以将特定的类库提前打包然后引入。这种方式可以极大的减少打包类库的次数，只有当类库更新版本才有需要重新打包，并且也实现了将公共代码抽离成单独文件的优化方案。"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">DllPlugin 可以将特定的类库提前打包然后引入。这种方式可以极大的减少打包类库的次数，只有当类库更新版本才有需要重新打包，并且也实现了将公共代码抽离成单独文件的优化方案。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#接下来我们就来学习如何使用-DllPlugin"><span class="post-toc-number">3.0.1.1.</span> <span class="post-toc-text">接下来我们就来学习如何使用 DllPlugin</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#然后我们需要执行这个配置文件生成依赖文件，接下来我们需要使用-DllReferencePlugin-将依赖文件引入项目中"><span class="post-toc-number">3.0.1.2.</span> <span class="post-toc-text">然后我们需要执行这个配置文件生成依赖文件，接下来我们需要使用 DllReferencePlugin 将依赖文件引入项目中</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#代码压缩"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">代码压缩</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一些小的优化点"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">一些小的优化点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#resolve-extensions："><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">resolve.extensions：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#resolve-alias："><span class="post-toc-number">3.2.2.</span> <span class="post-toc-text">resolve.alias：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#module-noParse："><span class="post-toc-number">3.2.3.</span> <span class="post-toc-text">module.noParse：</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#减少-Webpack-打包后的文件体积"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">减少 Webpack 打包后的文件体积</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#按需加载"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">按需加载</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Scope-Hoisting"><span class="post-toc-number">3.4.1.</span> <span class="post-toc-text">Scope Hoisting</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Tree-Shaking"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">Tree Shaking</span></a></li>
+        </nav>
     </aside>
 
-    <div class="post-main">
-      <div class="post-content" id="post-content" itemprop="postContent">
-        <h3 id="Webpack-性能优化"><a href="#Webpack-性能优化" class="headerlink" title="Webpack 性能优化"></a>Webpack 性能优化</h3><pre>有哪些方式可以减少 Webpack 的打包时间
+
+<article id="post-webpack" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">webpack</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-03 14:45:23" datetime="2018-10-03T06:45:23.000Z" itemprop="datePublished">2018-10-03</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="Webpack-性能优化"><a href="#Webpack-性能优化" class="headerlink" title="Webpack 性能优化"></a>Webpack 性能优化</h3><pre>有哪些方式可以减少 Webpack 的打包时间
 
 有哪些方式可以让 Webpack 打出来的包更小</pre>
 
@@ -191,26 +217,86 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// test.js</span><br><span class="line"><span class="built_in">export</span> const a = 1</span><br><span class="line"><span class="built_in">export</span> const b = 2</span><br><span class="line">// index.js</span><br><span class="line">import &#123; a &#125; from <span class="string">'./test.js'</span></span><br></pre></td></tr></table></figure>
 <p>对于以上情况，test 文件中的变量 b 如果没有在项目中使用到的话，就不会被打包到文件中。</p>
 <p>如果你使用 Webpack 4 的话，开启生产环境就会自动启动这个优化功能。</p>
- 
-        <div class="post-reward">
-          <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
-        </div>
-        
 
-        <blockquote>
-          <p>
-            本文地址：
-            <a href="http://blog.bochunhao.cn/2018/10/03/webpack/" target="_blank" rel="external">http://blog.bochunhao.cn/2018/10/03/webpack/</a>
-          </p>
-          <footer>
-            <cite><a href="http://blog.bochunhao.cn" target="_blank" rel="external">@个人博客</a></cite>
-          </footer>
-        </blockquote>
-      </div>
-      
-<nav class="post-nav">
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://blog.bochunhao.cn">
+            <img src="/img/loggo.png" alt="BCH">
+            BCH
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.bochunhao.cn/2018/10/03/webpack/&title=《webpack》 — 个人博客&pic=http://blog.bochunhao.cn/img/loggo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.bochunhao.cn/2018/10/03/webpack/&title=《webpack》 — 个人博客&source=bch_bk" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.bochunhao.cn/2018/10/03/webpack/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《webpack》 — 个人博客&url=http://blog.bochunhao.cn/2018/10/03/webpack/&via=http://blog.bochunhao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.bochunhao.cn/2018/10/03/webpack/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
   
-    <div class="waves-block waves-effect prev fl">
+    <div class="waves-block waves-effect prev">
       <a href="/2018/10/26/mvvm/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
         <h4 class="title">mvvm</h4>
@@ -219,7 +305,7 @@
   
 
   
-    <div class="waves-block waves-effect next fr">
+    <div class="waves-block waves-effect next">
       <a href="/2018/09/11/vue-data/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
         <h4 class="title">vue_data</h4>
@@ -228,56 +314,137 @@
   
 </nav>
 
- 
+
+
+    
 
 
 
-    </div>
-  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </article>
 
-<div id="reward" class="reward-lay">
-    <a class="reward-off" id="rewardOff" href="javascript:;"><i class="icon icon-close"></i></a>
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <h3 class="reward-title">
         <i class="icon icon-quote-left"></i>
         感谢支持
         <i class="icon icon-quote-right"></i>
     </h3>
-    <ul class="reward-items">
+    <div class="reward-content">
         
-        <li>
-            <img src="/img/vx.png" title="微信打赏二维码" alt="微信打赏二维码">
-            <p>微信</p>
-        </li>
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/vx.png" alt="打赏二维码">
+        </div>
         
-
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/vx.png" data-alipay="/img/zfb.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
         
-        <li>
-            <img src="/img/zfb.png" title="支付宝打赏二维码" alt="支付宝打赏二维码">
-            <p>支付宝</p>
-        </li>
-        
-    </ul>
+    </div>
 </div>
 
 
-    </div>
-  </main>
-<div class="mask" id="mask"></div>
+
+</div>
+
+        <footer class="footer">
+    <p>个人博客 &copy; 2019</p>
+    <p style="color:#fff;font-size: 16px;font-weight:bolder">
+        不积跬步，无以至千里
+    </p>
+    <p style="color:#fff;font-size: 16px;font-weight:bolder">
+        不积小流，无以成江海
+    </p>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
-<script src="/js/main.js"></script>
 
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.bochunhao.cn/2018/10/03/webpack/&title=《webpack》 — 个人博客&pic=http://blog.bochunhao.cn/img/loggo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.bochunhao.cn/2018/10/03/webpack/&title=《webpack》 — 个人博客&source=bch_bk" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.bochunhao.cn/2018/10/03/webpack/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《webpack》 — 个人博客&url=http://blog.bochunhao.cn/2018/10/03/webpack/&via=http://blog.bochunhao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.bochunhao.cn/2018/10/03/webpack/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACI0lEQVR42u3aMZKEMAwF0bn/pdl0E0x/CQJb7YiaosCPQCPJ+v3wuv4tfufd/Xf38LcUlwwZMrZlXMu1fsH6lesn8Ov13mTIkDGHQTbB4x5Hrj8N2ZsMGTJk3N2TBtM0NMuQIUNGh0EK1DWepKEyZMiQ0Xk0eihIBNfF6oe1uAwZMjZkdErTr68/Od+QIUPGVowrXCQ4kiDLjzbRrmTIkHE0o5bY8SL23Sc8HCrIkCFjDKMWHHlRWhvIQMmiDBkyBjM4tTY8UUs944ArQ4aMbRlpCz49Hkjb+ukbf/y7ypAhY3NG2ognbbj0l7QYliFDxmRGOtZQa9X1P5kMGTLmMGojF6RM/eKocv1eGTJkTGDwhhdp3Beb+42dyJAh42xG+koeRjsw3pKTIUPG2YzaqMS7GyUJ38MvMmTIGMbg7fjOeARv87WGLWTIkHEcg8Qucl0bv0iPJWTIkDGNkbb1g/q4UbIGpbIMGTKOZvCRi04ArQXcdCcyZMiYwKiFSJIgkuZarfV223STIUPGAEa63c5wBg/KwbCFDBkyhjH6oZaDO6WyDBkyTmVc4UqPBHjbrli4ypAhYwCjE2Q7oZmkhuQ6hsmQIWNbxndBtn8gysEyZMiYwCDp2gtNsfY/wMOwhQwZMmTgw8hacpmGddQ1lCFDxkgGKVD7yWXajJMhQ8YEBk/yyBbT5C8temXIkDGNwUtH1PYCx41pmpimjzJkyDiI8QexN7wqESco0AAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
     <ul class="search-result" id="search-result"></ul>
 </div>
-<script type="text/template" id="search-tpl">
+<template id="search-tpl">
 <li class="item">
-    <a href="/{path}" class="waves-block waves-effect">
+    <a href="{path}" class="waves-block waves-effect">
         <div class="title ellipsis" title="{title}">{title}</div>
         <div class="flex-row flex-middle">
             <div class="tags ellipsis">
@@ -287,15 +454,35 @@
         </div>
     </a>
 </li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '薄纯浩';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '变身！';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
 </script>
-
-<script src="/js/search.js"></script>
-
-
-
-
-
-
 
 
 
