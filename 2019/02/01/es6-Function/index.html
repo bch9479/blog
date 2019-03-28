@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>es6_Function | 个人博客 | BCH</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="es6">
+    <meta name="description" content="函数的扩展函数参数的默认值基本用法在 ES6 之前，不能直接为函数的参数指定默认值，只能采用变通的方法。 12345678function log(x, y) &amp;#123;  y = y || &apos;World&apos;;  console.log(x, y);&amp;#125;log(&apos;Hello&apos;) // Hello Worldlog(&apos;Hello&apos;, &apos;China&apos;) // Hello Chinalog(&apos;H">
+<meta name="keywords" content="es6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="es6_Function">
+<meta property="og:url" content="http://blog.bochunhao.cn/2019/02/01/es6-Function/index.html">
+<meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="函数的扩展函数参数的默认值基本用法在 ES6 之前，不能直接为函数的参数指定默认值，只能采用变通的方法。 12345678function log(x, y) &amp;#123;  y = y || &apos;World&apos;;  console.log(x, y);&amp;#125;log(&apos;Hello&apos;) // Hello Worldlog(&apos;Hello&apos;, &apos;China&apos;) // Hello Chinalog(&apos;H">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-28T16:17:51.803Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="es6_Function">
+<meta name="twitter:description" content="函数的扩展函数参数的默认值基本用法在 ES6 之前，不能直接为函数的参数指定默认值，只能采用变通的方法。 12345678function log(x, y) &amp;#123;  y = y || &apos;World&apos;;  console.log(x, y);&amp;#125;log(&apos;Hello&apos;) // Hello Worldlog(&apos;Hello&apos;, &apos;China&apos;) // Hello Chinalog(&apos;H">
+    
+        <link rel="alternate" type="application/atom+xml" title="个人博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/loggo.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">BCH</h5>
+          <a href="mailto:17600280987@163.com" title="17600280987@163.com" class="mail">17600280987@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-archives"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/bch9479/blog" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://weibo.com/5900743344/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">es6_Function</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">es6_Function</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-02-01T15:44:01.000Z" itemprop="datePublished" class="page-time">
+  2019-02-01
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数的扩展"><span class="post-toc-number">1.</span> <span class="post-toc-text">函数的扩展</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#函数参数的默认值"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">函数参数的默认值</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#基本用法"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">基本用法</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#与解构赋值默认值结合使用"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">与解构赋值默认值结合使用</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#参数默认值的位置"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">参数默认值的位置</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#函数的-length-属性"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">函数的 length 属性</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#作用域"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">作用域</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#应用"><span class="post-toc-number">1.1.6.</span> <span class="post-toc-text">应用</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#rest-参数"><span class="post-toc-number">1.1.7.</span> <span class="post-toc-text">rest 参数</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#扩展运算符"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">扩展运算符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#含义"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">含义</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#替代数组的-apply-方法"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">替代数组的 apply 方法</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#扩展运算符的应用"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">扩展运算符的应用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#合并数组"><span class="post-toc-number">1.2.3.1.</span> <span class="post-toc-text">合并数组</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#与解构赋值结合"><span class="post-toc-number">1.2.3.2.</span> <span class="post-toc-text">与解构赋值结合</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#函数的返回值"><span class="post-toc-number">1.2.3.3.</span> <span class="post-toc-text">函数的返回值</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#字符串"><span class="post-toc-number">1.2.3.4.</span> <span class="post-toc-text">字符串</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#实现了-Iterator-接口的对象"><span class="post-toc-number">1.2.3.5.</span> <span class="post-toc-text">实现了 Iterator 接口的对象</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Map-和-Set-结构，Generator-函数"><span class="post-toc-number">1.2.3.6.</span> <span class="post-toc-text">Map 和 Set 结构，Generator 函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#严格模式"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">严格模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#name-属性"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">name 属性</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#箭头函数"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">箭头函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#基本用法-1"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">基本用法</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#使用注意点"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">使用注意点</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#嵌套的箭头函数"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">嵌套的箭头函数</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#绑定-this"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">绑定 this</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#尾调用优化"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">尾调用优化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#什么是尾调用？"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">什么是尾调用？</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#尾调用优化-1"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">尾调用优化</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#尾递归"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">尾递归</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#递归函数的改写"><span class="post-toc-number">1.4.4.</span> <span class="post-toc-text">递归函数的改写</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#严格模式-1"><span class="post-toc-number">1.4.5.</span> <span class="post-toc-text">严格模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#尾递归优化的实现"><span class="post-toc-number">1.4.6.</span> <span class="post-toc-text">尾递归优化的实现</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#函数参数的尾逗号"><span class="post-toc-number">1.4.7.</span> <span class="post-toc-text">函数参数的尾逗号</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-es6-Function" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">es6_Function</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-02-01 23:44:01" datetime="2019-02-01T15:44:01.000Z" itemprop="datePublished">2019-02-01</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="函数的扩展"><a href="#函数的扩展" class="headerlink" title="函数的扩展"></a>函数的扩展</h3><h4 id="函数参数的默认值"><a href="#函数参数的默认值" class="headerlink" title="函数参数的默认值"></a>函数参数的默认值</h4><h5 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h5><p>在 ES6 之前，不能直接为函数的参数指定默认值，只能采用变通的方法。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="built_in">log</span>(x, y) &#123;</span><br><span class="line">  y = y || <span class="string">'World'</span>;</span><br><span class="line">  console.log(x, y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">log</span>(<span class="string">'Hello'</span>) // Hello World</span><br><span class="line"><span class="built_in">log</span>(<span class="string">'Hello'</span>, <span class="string">'China'</span>) // Hello China</span><br><span class="line"><span class="built_in">log</span>(<span class="string">'Hello'</span>, <span class="string">''</span>) // Hello World</span><br></pre></td></tr></table></figure>
+<p>上面代码检查函数 log 的参数 y 有没有赋值，如果没有，则指定默认值为 World。这种写法的缺点在于，如果参数 y 赋值了，但是对应的布尔值为 false，则该赋值不起作用。就像上面代码的最后一行，参数 y 等于空字符，结果被改为默认值。</p>
+<p>为了避免这个问题，通常需要先判断一下参数 y 是否被赋值，如果没有，再等于默认值。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (typeof y === <span class="string">'undefined'</span>) &#123;</span><br><span class="line">  y = <span class="string">'World'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ES6 允许为函数的参数设置默认值，即直接写在参数定义的后面。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="built_in">log</span>(x, y = <span class="string">'World'</span>) &#123;</span><br><span class="line">  console.log(x, y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">log</span>(<span class="string">'Hello'</span>) // Hello World</span><br><span class="line"><span class="built_in">log</span>(<span class="string">'Hello'</span>, <span class="string">'China'</span>) // Hello China</span><br><span class="line"><span class="built_in">log</span>(<span class="string">'Hello'</span>, <span class="string">''</span>) // Hello</span><br></pre></td></tr></table></figure>
+<p>可以看到，ES6 的写法比 ES5 简洁许多，而且非常自然。下面是另一个例子。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> Point(x = 0, y = 0) &#123;</span><br><span class="line">  this.x = x;</span><br><span class="line">  this.y = y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var p = new Point();</span><br><span class="line">p // &#123; x: 0, y: 0 &#125;</span><br></pre></td></tr></table></figure>
+<p>除了简洁，ES6 的写法还有两个好处：首先，阅读代码的人，可以立刻意识到哪些参数是可以省略的，不用查看函数体或文档；其次，有利于将来的代码优化，即使未来的版本在对外接口中，彻底拿掉这个参数，也不会导致以前的代码无法运行。</p>
+<p>参数变量是默认声明的，所以不能用 let 或 const 再次声明。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> foo(x = 5) &#123;</span><br><span class="line">  <span class="built_in">let</span> x = 1; // error</span><br><span class="line">  const x = 2; // error</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，参数变量 x 是默认声明的，在函数体中，不能用 let 或 const 再次声明，否则会报错。</p>
+<h5 id="与解构赋值默认值结合使用"><a href="#与解构赋值默认值结合使用" class="headerlink" title="与解构赋值默认值结合使用"></a>与解构赋值默认值结合使用</h5><p>参数默认值可以与解构赋值的默认值，结合起来使用。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> foo(&#123;x, y = 5&#125;) &#123;</span><br><span class="line">  console.log(x, y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(&#123;&#125;) // undefined, 5</span><br><span class="line">foo(&#123;x: 1&#125;) // 1, 5</span><br><span class="line">foo(&#123;x: 1, y: 2&#125;) // 1, 2</span><br><span class="line">foo() // TypeError: Cannot <span class="built_in">read</span> property <span class="string">'x'</span> of undefined</span><br></pre></td></tr></table></figure>
+<p>上面代码使用了对象的解构赋值默认值，而没有使用函数参数的默认值。只有当函数 foo 的参数是一个对象时，变量 x 和 y 才会通过解构赋值而生成。如果函数 foo 调用时参数不是对象，变量 x 和 y 就不会生成，从而报错。如果参数对象没有 y 属性，y 的默认值 5 才会生效。</p>
+<p>下面是另一个对象的解构赋值默认值的例子。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> fetch(url, &#123; body = <span class="string">''</span>, method = <span class="string">'GET'</span>, headers = &#123;&#125; &#125;) &#123;</span><br><span class="line">  console.log(method);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fetch(<span class="string">'http://example.com'</span>, &#123;&#125;)</span><br><span class="line">// <span class="string">"GET"</span></span><br><span class="line"></span><br><span class="line">fetch(<span class="string">'http://example.com'</span>)</span><br><span class="line">// 报错</span><br></pre></td></tr></table></figure>
+<p>上面代码中，如果函数 fetch 的第二个参数是一个对象，就可以为它的三个属性设置默认值。</p>
+<p>上面的写法不能省略第二个参数，如果结合函数参数的默认值，就可以省略第二个参数。这时，就出现了双重默认值。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> fetch(url, &#123; method = <span class="string">'GET'</span> &#125; = &#123;&#125;) &#123;</span><br><span class="line">  console.log(method);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fetch(<span class="string">'http://example.com'</span>)</span><br><span class="line">// <span class="string">"GET"</span></span><br></pre></td></tr></table></figure>
+<p>上面代码中，函数 fetch 没有第二个参数时，函数参数的默认值就会生效，然后才是解构赋值的默认值生效，变量 method 才会取到默认值 GET。</p>
+<p>再请问下面两种写法有什么差别？</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 写法一</span><br><span class="line"><span class="keyword">function</span> m1(&#123;x = 0, y = 0&#125; = &#123;&#125;) &#123;</span><br><span class="line">  <span class="built_in">return</span> [x, y];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 写法二</span><br><span class="line"><span class="keyword">function</span> m2(&#123;x, y&#125; = &#123; x: 0, y: 0 &#125;) &#123;</span><br><span class="line">  <span class="built_in">return</span> [x, y];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面两种写法都对函数的参数设定了默认值，区别是写法一函数参数的默认值是空对象，但是设置了对象解构赋值的默认值；写法二函数参数的默认值是一个有具体属性的对象，但是没有设置对象解构赋值的默认值。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// 函数没有参数的情况</span><br><span class="line">m1() // [0, 0]</span><br><span class="line">m2() // [0, 0]</span><br><span class="line"></span><br><span class="line">// x和y都有值的情况</span><br><span class="line">m1(&#123;x: 3, y: 8&#125;) // [3, 8]</span><br><span class="line">m2(&#123;x: 3, y: 8&#125;) // [3, 8]</span><br><span class="line"></span><br><span class="line">// x有值，y无值的情况</span><br><span class="line">m1(&#123;x: 3&#125;) // [3, 0]</span><br><span class="line">m2(&#123;x: 3&#125;) // [3, undefined]</span><br><span class="line"></span><br><span class="line">// x和y都无值的情况</span><br><span class="line">m1(&#123;&#125;) // [0, 0];</span><br><span class="line">m2(&#123;&#125;) // [undefined, undefined]</span><br><span class="line"></span><br><span class="line">m1(&#123;z: 3&#125;) // [0, 0]</span><br><span class="line">m2(&#123;z: 3&#125;) // [undefined, undefined]</span><br></pre></td></tr></table></figure>
+<h5 id="参数默认值的位置"><a href="#参数默认值的位置" class="headerlink" title="参数默认值的位置"></a>参数默认值的位置</h5><p>通常情况下，定义了默认值的参数，应该是函数的尾参数。因为这样比较容易看出来，到底省略了哪些参数。如果非尾部的参数设置默认值，实际上这个参数是没法省略的。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 例一</span><br><span class="line"><span class="keyword">function</span> f(x = 1, y) &#123;</span><br><span class="line">  <span class="built_in">return</span> [x, y];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f() // [1, undefined]</span><br><span class="line">f(2) // [2, undefined])</span><br><span class="line">f(, 1) // 报错</span><br><span class="line">f(undefined, 1) // [1, 1]</span><br><span class="line"></span><br><span class="line">// 例二</span><br><span class="line"><span class="keyword">function</span> f(x, y = 5, z) &#123;</span><br><span class="line">  <span class="built_in">return</span> [x, y, z];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f() // [undefined, 5, undefined]</span><br><span class="line">f(1) // [1, 5, undefined]</span><br><span class="line">f(1, ,2) // 报错</span><br><span class="line">f(1, undefined, 2) // [1, 5, 2]</span><br></pre></td></tr></table></figure>
+<p>上面代码中，有默认值的参数都不是尾参数。这时，无法只省略该参数，而不省略它后面的参数，除非显式输入 undefined。</p>
+<p>如果传入 undefined，将触发该参数等于默认值，null 则没有这个效果。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> foo(x = 5, y = 6) &#123;</span><br><span class="line">  console.log(x, y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(undefined, null)</span><br><span class="line">// 5 null</span><br></pre></td></tr></table></figure>
+<p>上面代码中，x 参数对应 undefined，结果触发了默认值，y 参数等于 null，就没有触发默认值。</p>
+<h5 id="函数的-length-属性"><a href="#函数的-length-属性" class="headerlink" title="函数的 length 属性"></a>函数的 length 属性</h5><p>指定了默认值以后，函数的 length 属性，将返回没有指定默认值的参数个数。也就是说，指定了默认值后，length 属性将失真。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span> (a) &#123;&#125;).length // 1</span><br><span class="line">(<span class="keyword">function</span> (a = 5) &#123;&#125;).length // 0</span><br><span class="line">(<span class="keyword">function</span> (a, b, c = 5) &#123;&#125;).length // 2</span><br></pre></td></tr></table></figure>
+<p>上面代码中，length 属性的返回值，等于函数的参数个数减去指定了默认值的参数个数。比如，上面最后一个函数，定义了 3 个参数，其中有一个参数 c 指定了默认值，因此 length 属性等于 3 减去 1，最后得到 2。</p>
+<p>这是因为 length 属性的含义是，该函数预期传入的参数个数。某个参数指定默认值以后，预期传入的参数个数就不包括这个参数了。同理，rest 参数也不会计入 length 属性。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span>(...args) &#123;&#125;).length // 0</span><br></pre></td></tr></table></figure>
+<p>如果设置了默认值的参数不是尾参数，那么 length 属性也不再计入后面的参数了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span> (a = 0, b, c) &#123;&#125;).length // 0</span><br><span class="line">(<span class="keyword">function</span> (a, b = 1, c) &#123;&#125;).length // 1</span><br></pre></td></tr></table></figure>
+<h5 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h5><p>一个需要注意的地方是，如果参数默认值是一个变量，则该变量所处的作用域，与其他变量的作用域规则是一样的，即先是当前函数的作用域，然后才是全局作用域。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var x = 1;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> f(x, y = x) &#123;</span><br><span class="line">  console.log(y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f(2) // 2</span><br></pre></td></tr></table></figure>
+<p>上面代码中，参数 y 的默认值等于 x。调用时，由于函数作用域内部的变量 x 已经生成，所以 y 等于参数 x，而不是全局变量 x。</p>
+<p>如果调用时，函数作用域内部的变量 x 没有生成，结果就会不一样。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> x = 1;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> f(y = x) &#123;</span><br><span class="line">  <span class="built_in">let</span> x = 2;</span><br><span class="line">  console.log(y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f() // 1</span><br></pre></td></tr></table></figure>
+<p>上面代码中，函数调用时，y 的默认值变量 x 尚未在函数内部生成，所以 x 指向全局变量。</p>
+<p>如果此时，全局变量 x 不存在，就会报错。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> f(y = x) &#123;</span><br><span class="line">  <span class="built_in">let</span> x = 2;</span><br><span class="line">  console.log(y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f() // ReferenceError: x is not defined</span><br></pre></td></tr></table></figure>
+<p>下面这样写，也会报错。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var x = 1;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> foo(x = x) &#123;</span><br><span class="line">  // ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo() // ReferenceError: x is not defined</span><br></pre></td></tr></table></figure>
+<p>上面代码中，函数 foo 的参数 x 的默认值也是 x。这时，默认值 x 的作用域是函数作用域，而不是全局作用域。由于在函数作用域中，存在变量 x，但是默认值在 x 赋值之前先执行了，所以这时属于暂时性死区（参见《let 和 const 命令》一章），任何对 x 的操作都会报错。</p>
+<p>如果参数的默认值是一个函数，该函数的作用域是其声明时所在的作用域。请看下面的例子。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> foo = <span class="string">'outer'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> bar(func = x =&gt; foo) &#123;</span><br><span class="line">  <span class="built_in">let</span> foo = <span class="string">'inner'</span>;</span><br><span class="line">  console.log(func()); // outer</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar();</span><br></pre></td></tr></table></figure>
+<p>上面代码中，函数 bar 的参数 func 的默认值是一个匿名函数，返回值为变量 foo。这个匿名函数声明时，bar 函数的作用域还没有形成，所以匿名函数里面的 foo 指向外层作用域的 foo，输出 outer。</p>
+<p>如果写成下面这样，就会报错。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> bar(func = () =&gt; foo) &#123;</span><br><span class="line">  <span class="built_in">let</span> foo = <span class="string">'inner'</span>;</span><br><span class="line">  console.log(func());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar() // ReferenceError: foo is not defined</span><br></pre></td></tr></table></figure>
+<p>上面代码中，匿名函数里面的 foo 指向函数外层，但是函数外层并没有声明 foo，所以就报错了。</p>
+<p>下面是一个更复杂的例子。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var x = 1;</span><br><span class="line"><span class="keyword">function</span> foo(x, y = <span class="function"><span class="title">function</span></span>() &#123; x = 2; &#125;) &#123;</span><br><span class="line">  var x = 3;</span><br><span class="line">  y();</span><br><span class="line">  console.log(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo() // 3</span><br></pre></td></tr></table></figure>
+<p>上面代码中，函数 foo 的参数 y 的默认值是一个匿名函数。函数 foo 调用时，它的参数 x 的值为 undefined，所以 y 函数内部的 x 一开始是 undefined，后来被重新赋值 2。但是，函数 foo 内部重新声明了一个 x，值为 3，这两个 x 是不一样的，互相不产生影响，因此最后输出 3。</p>
+<p>如果将 var x = 3 的 var 去除，两个 x 就是一样的，最后输出的就是 2。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var x = 1;</span><br><span class="line"><span class="keyword">function</span> foo(x, y = <span class="function"><span class="title">function</span></span>() &#123; x = 2; &#125;) &#123;</span><br><span class="line">  x = 3;</span><br><span class="line">  y();</span><br><span class="line">  console.log(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo() // 2</span><br></pre></td></tr></table></figure>
+<h5 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h5><p>利用参数默认值，可以指定某一个参数不得省略，如果省略就抛出一个错误。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">throwIfMissing</span></span>() &#123;</span><br><span class="line">  throw new Error(<span class="string">'Missing parameter'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> foo(mustBeProvided = throwIfMissing()) &#123;</span><br><span class="line">  <span class="built_in">return</span> mustBeProvided;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo()</span><br><span class="line">// Error: Missing parameter</span><br></pre></td></tr></table></figure>
+<p>上面代码的 foo 函数，如果调用的时候没有参数，就会调用默认值 throwIfMissing 函数，从而抛出一个错误。</p>
+<p>从上面代码还可以看到，参数 mustBeProvided 的默认值等于 throwIfMissing 函数的运行结果（即函数名之后有一对圆括号），这表明参数的默认值不是在定义时执行，而是在运行时执行（即如果参数已经赋值，默认值中的函数就不会运行），这与 python 语言不一样。</p>
+<p>另外，可以将参数默认值设为 undefined，表明这个参数是可以省略的。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> foo(optional = undefined) &#123; ··· &#125;</span><br></pre></td></tr></table></figure>
+<h5 id="rest-参数"><a href="#rest-参数" class="headerlink" title="rest 参数"></a>rest 参数</h5><p>ES6 引入 rest 参数（形式为“…变量名”），用于获取函数的多余参数，这样就不需要使用 arguments 对象了。rest 参数搭配的变量是一个数组，该变量将多余的参数放入数组中。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> add(...values) &#123;</span><br><span class="line">  <span class="built_in">let</span> sum = 0;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (var val of values) &#123;</span><br><span class="line">    sum += val;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add(2, 5, 3) // 10</span><br></pre></td></tr></table></figure>
+<p>上面代码的 add 函数是一个求和函数，利用 rest 参数，可以向该函数传入任意数目的参数。</p>
+<p>下面是一个 rest 参数代替 arguments 变量的例子。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// arguments变量的写法</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">sortNumbers</span></span>() &#123;</span><br><span class="line">  <span class="built_in">return</span> Array.prototype.slice.call(arguments).sort();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// rest参数的写法</span><br><span class="line">const sortNumbers = (...numbers) =&gt; numbers.sort();</span><br></pre></td></tr></table></figure>
+<p>上面代码的两种写法，比较后可以发现，rest 参数的写法更自然也更简洁。</p>
+<p>rest 参数中的变量代表一个数组，所以数组特有的方法都可以用于这个变量。下面是一个利用 rest 参数改写数组 push 方法的例子。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> push(array, ...items) &#123;</span><br><span class="line">  items.forEach(<span class="keyword">function</span>(item) &#123;</span><br><span class="line">    array.push(item);</span><br><span class="line">    console.log(item);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var a = [];</span><br><span class="line">push(a, 1, 2, 3)</span><br></pre></td></tr></table></figure>
+<p>注意，rest 参数之后不能再有其他参数（即只能是最后一个参数），否则会报错。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 报错</span><br><span class="line"><span class="keyword">function</span> f(a, ...b, c) &#123;</span><br><span class="line">  // ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>函数的 length 属性，不包括 rest 参数。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span>(a) &#123;&#125;).length  // 1</span><br><span class="line">(<span class="keyword">function</span>(...a) &#123;&#125;).length  // 0</span><br><span class="line">(<span class="keyword">function</span>(a, ...b) &#123;&#125;).length  // 1</span><br></pre></td></tr></table></figure>
+<h4 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h4><h5 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h5><p>扩展运算符（spread）是三个点（…）。它好比 rest 参数的逆运算，将一个数组转为用逗号分隔的参数序列。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">console.log(...[1, 2, 3])</span><br><span class="line">// 1 2 3</span><br><span class="line"></span><br><span class="line">console.log(1, ...[2, 3, 4], 5)</span><br><span class="line">// 1 2 3 4 5</span><br><span class="line"></span><br><span class="line">[...document.querySelectorAll(<span class="string">'div'</span>)]</span><br><span class="line">// [&lt;div&gt;, &lt;div&gt;, &lt;div&gt;]</span><br></pre></td></tr></table></figure>
+<p>该运算符主要用于函数调用。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> push(array, ...items) &#123;</span><br><span class="line">  array.push(...items);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> add(x, y) &#123;</span><br><span class="line">  <span class="built_in">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var numbers = [4, 38];</span><br><span class="line">add(...numbers) // 42</span><br></pre></td></tr></table></figure>
+<p>上面代码中，array.push(…items)和 add(…numbers)这两行，都是函数的调用，它们的都使用了扩展运算符。该运算符将一个数组，变为参数序列。</p>
+<p>扩展运算符与正常的函数参数可以结合使用，非常灵活。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> f(v, w, x, y, z) &#123; &#125;</span><br><span class="line">var args = [0, 1];</span><br><span class="line">f(-1, ...args, 2, ...[3]);</span><br></pre></td></tr></table></figure>
+<h5 id="替代数组的-apply-方法"><a href="#替代数组的-apply-方法" class="headerlink" title="替代数组的 apply 方法"></a>替代数组的 apply 方法</h5><p>由于扩展运算符可以展开数组，所以不再需要 apply 方法，将数组转为函数的参数了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// ES5的写法</span><br><span class="line"><span class="keyword">function</span> f(x, y, z) &#123;</span><br><span class="line">  // ...</span><br><span class="line">&#125;</span><br><span class="line">var args = [0, 1, 2];</span><br><span class="line">f.apply(null, args);</span><br><span class="line"></span><br><span class="line">// ES6的写法</span><br><span class="line"><span class="keyword">function</span> f(x, y, z) &#123;</span><br><span class="line">  // ...</span><br><span class="line">&#125;</span><br><span class="line">var args = [0, 1, 2];</span><br><span class="line">f(...args);</span><br></pre></td></tr></table></figure>
+<p>下面是扩展运算符取代 apply 方法的一个实际的例子，应用 Math.max 方法，简化求出一个数组最大元素的写法。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// ES5的写法</span><br><span class="line">Math.max.apply(null, [14, 3, 77])</span><br><span class="line"></span><br><span class="line">// ES6的写法</span><br><span class="line">Math.max(...[14, 3, 77])</span><br><span class="line"></span><br><span class="line">// 等同于</span><br><span class="line">Math.max(14, 3, 77);</span><br></pre></td></tr></table></figure>
+<p>上面代码表示，由于 JavaScript 不提供求数组最大元素的函数，所以只能套用 Math.max 函数，将数组转为一个参数序列，然后求最大值。有了扩展运算符以后，就可以直接用 Math.max 了。</p>
+<p>另一个例子是通过 push 函数，将一个数组添加到另一个数组的尾部。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// ES5的写法</span><br><span class="line">var arr1 = [0, 1, 2];</span><br><span class="line">var arr2 = [3, 4, 5];</span><br><span class="line">Array.prototype.push.apply(arr1, arr2);</span><br><span class="line"></span><br><span class="line">// ES6的写法</span><br><span class="line">var arr1 = [0, 1, 2];</span><br><span class="line">var arr2 = [3, 4, 5];</span><br><span class="line">arr1.push(...arr2);</span><br></pre></td></tr></table></figure>
+<p>上面代码的 ES5 写法中，push 方法的参数不能是数组，所以只好通过 apply 方法变通使用 push 方法。有了扩展运算符，就可以直接将数组传入 push 方法。</p>
+<p>下面是另外一个例子。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// ES5</span><br><span class="line">new (Date.bind.apply(Date, [null, 2015, 1, 1]))</span><br><span class="line">// ES6</span><br><span class="line">new Date(...[2015, 1, 1]);</span><br></pre></td></tr></table></figure>
+<h5 id="扩展运算符的应用"><a href="#扩展运算符的应用" class="headerlink" title="扩展运算符的应用"></a>扩展运算符的应用</h5><h6 id="合并数组"><a href="#合并数组" class="headerlink" title="合并数组"></a>合并数组</h6><p>扩展运算符提供了数组合并的新写法。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// ES5</span><br><span class="line">[1, 2].concat(more)</span><br><span class="line">// ES6</span><br><span class="line">[1, 2, ...more]</span><br><span class="line"></span><br><span class="line">var arr1 = [<span class="string">'a'</span>, <span class="string">'b'</span>];</span><br><span class="line">var arr2 = [<span class="string">'c'</span>];</span><br><span class="line">var arr3 = [<span class="string">'d'</span>, <span class="string">'e'</span>];</span><br><span class="line"></span><br><span class="line">// ES5的合并数组</span><br><span class="line">arr1.concat(arr2, arr3);</span><br><span class="line">// [ <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span> ]</span><br><span class="line"></span><br><span class="line">// ES6的合并数组</span><br><span class="line">[...arr1, ...arr2, ...arr3]</span><br><span class="line">// [ <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span> ]</span><br></pre></td></tr></table></figure>
+<h6 id="与解构赋值结合"><a href="#与解构赋值结合" class="headerlink" title="与解构赋值结合"></a>与解构赋值结合</h6><p>扩展运算符可以与解构赋值结合起来，用于生成数组。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// ES5</span><br><span class="line">a = list[0], rest = list.slice(1)</span><br><span class="line">// ES6</span><br><span class="line">[a, ...rest] = list</span><br></pre></td></tr></table></figure>
+<p>下面是另外一些例子。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const [first, ...rest] = [1, 2, 3, 4, 5];</span><br><span class="line">first // 1</span><br><span class="line">rest  // [2, 3, 4, 5]</span><br><span class="line"></span><br><span class="line">const [first, ...rest] = [];</span><br><span class="line">first // undefined</span><br><span class="line">rest  // []:</span><br><span class="line"></span><br><span class="line">const [first, ...rest] = [<span class="string">"foo"</span>];</span><br><span class="line">first  // <span class="string">"foo"</span></span><br><span class="line">rest   // []</span><br></pre></td></tr></table></figure>
+<p>如果将扩展运算符用于数组赋值，只能放在参数的最后一位，否则会报错。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const [...butLast, last] = [1, 2, 3, 4, 5];</span><br><span class="line">// 报错</span><br><span class="line"></span><br><span class="line">const [first, ...middle, last] = [1, 2, 3, 4, 5];</span><br><span class="line">// 报错</span><br></pre></td></tr></table></figure>
+<h6 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h6><p>JavaScript 的函数只能返回一个值，如果需要返回多个值，只能返回数组或对象。扩展运算符提供了解决这个问题的一种变通方法。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var dateFields = readDateFields(database);</span><br><span class="line">var d = new Date(...dateFields);</span><br></pre></td></tr></table></figure>
+<p>上面代码从数据库取出一行数据，通过扩展运算符，直接将其传入构造函数 Date。</p>
+<h6 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h6><p>扩展运算符还可以将字符串转为真正的数组。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[...<span class="string">'hello'</span>]</span><br><span class="line">// [ <span class="string">"h"</span>, <span class="string">"e"</span>, <span class="string">"l"</span>, <span class="string">"l"</span>, <span class="string">"o"</span> ]</span><br></pre></td></tr></table></figure>
+<p>上面的写法，有一个重要的好处，那就是能够正确识别 32 位的 Unicode 字符。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'x\uD83D\uDE80y'</span>.length // 4</span><br><span class="line">[...<span class="string">'x\uD83D\uDE80y'</span>].length // 3</span><br></pre></td></tr></table></figure>
+<p>上面代码的第一种写法，JavaScript 会将 32 位 Unicode 字符，识别为 2 个字符，采用扩展运算符就没有这个问题。因此，正确返回字符串长度的函数，可以像下面这样写。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> length(str) &#123;</span><br><span class="line">  <span class="built_in">return</span> [...str].length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">length(<span class="string">'x\uD83D\uDE80y'</span>) // 3</span><br></pre></td></tr></table></figure>
+<p>凡是涉及到操作 32 位 Unicode 字符的函数，都有这个问题。因此，最好都用扩展运算符改写。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> str = <span class="string">'x\uD83D\uDE80y'</span>;</span><br><span class="line"></span><br><span class="line">str.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>)</span><br><span class="line">// <span class="string">'y\uDE80\uD83Dx'</span></span><br><span class="line"></span><br><span class="line">[...str].reverse().join(<span class="string">''</span>)</span><br><span class="line">// <span class="string">'y\uD83D\uDE80x'</span></span><br></pre></td></tr></table></figure>
+<p>上面代码中，如果不用扩展运算符，字符串的 reverse 操作就不正确。</p>
+<h6 id="实现了-Iterator-接口的对象"><a href="#实现了-Iterator-接口的对象" class="headerlink" title="实现了 Iterator 接口的对象"></a>实现了 Iterator 接口的对象</h6><p>任何 Iterator 接口的对象，都可以用扩展运算符转为真正的数组。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var nodeList = document.querySelectorAll(<span class="string">'div'</span>);</span><br><span class="line">var array = [...nodeList];</span><br></pre></td></tr></table></figure>
+<p>上面代码中，querySelectorAll 方法返回的是一个 nodeList 对象。它不是数组，而是一个类似数组的对象。这时，扩展运算符可以将其转为真正的数组，原因就在于 NodeList 对象实现了 Iterator 接口。</p>
+<p>对于那些没有部署 Iterator 接口的类似数组的对象，扩展运算符就无法将其转为真正的数组。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arrayLike = &#123;</span><br><span class="line">  <span class="string">'0'</span>: <span class="string">'a'</span>,</span><br><span class="line">  <span class="string">'1'</span>: <span class="string">'b'</span>,</span><br><span class="line">  <span class="string">'2'</span>: <span class="string">'c'</span>,</span><br><span class="line">  length: 3</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// TypeError: Cannot spread non-iterable object.</span><br><span class="line"><span class="built_in">let</span> arr = [...arrayLike];</span><br></pre></td></tr></table></figure>
+<p>上面代码中，arrayLike 是一个类似数组的对象，但是没有部署 Iterator 接口，扩展运算符就会报错。这时，可以改为使用 Array.from 方法将 arrayLike 转为真正的数组。</p>
+<h6 id="Map-和-Set-结构，Generator-函数"><a href="#Map-和-Set-结构，Generator-函数" class="headerlink" title="Map 和 Set 结构，Generator 函数"></a>Map 和 Set 结构，Generator 函数</h6><p>扩展运算符内部调用的是数据结构的 Iterator 接口，因此只要具有 Iterator 接口的对象，都可以使用扩展运算符，比如 Map 结构。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> map = new Map([</span><br><span class="line">  [1, <span class="string">'one'</span>],</span><br><span class="line">  [2, <span class="string">'two'</span>],</span><br><span class="line">  [3, <span class="string">'three'</span>],</span><br><span class="line">]);</span><br><span class="line"></span><br><span class="line"><span class="built_in">let</span> arr = [...map.keys()]; // [1, 2, 3]</span><br></pre></td></tr></table></figure>
+<p>Generator 函数运行后，返回一个遍历器对象，因此也可以使用扩展运算符。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var go = <span class="keyword">function</span>*()&#123;</span><br><span class="line">  yield 1;</span><br><span class="line">  yield 2;</span><br><span class="line">  yield 3;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">[...go()] // [1, 2, 3]</span><br></pre></td></tr></table></figure>
+<p>上面代码中，变量 go 是一个 Generator 函数，执行后返回的是一个遍历器对象，对这个遍历器对象执行扩展运算符，就会将内部遍历得到的值，转为一个数组。</p>
+<p>如果对没有 iterator 接口的对象，使用扩展运算符，将会报错。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;a: 1, b: 2&#125;;</span><br><span class="line"><span class="built_in">let</span> arr = [...obj]; // TypeError: Cannot spread non-iterable object</span><br></pre></td></tr></table></figure>
+<h5 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h5><p>从 ES5 开始，函数内部可以设定为严格模式。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> doSomething(a, b) &#123;</span><br><span class="line">  <span class="string">'use strict'</span>;</span><br><span class="line">  // code</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>《ECMAScript 2016 标准》做了一点修改，规定只要函数参数使用了默认值、解构赋值、或者扩展运算符，那么函数内部就不能显式设定为严格模式，否则会报错。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// 报错</span><br><span class="line"><span class="keyword">function</span> doSomething(a, b = a) &#123;</span><br><span class="line">  <span class="string">'use strict'</span>;</span><br><span class="line">  // code</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 报错</span><br><span class="line">const doSomething = <span class="keyword">function</span> (&#123;a, b&#125;) &#123;</span><br><span class="line">  <span class="string">'use strict'</span>;</span><br><span class="line">  // code</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 报错</span><br><span class="line">const doSomething = (...a) =&gt; &#123;</span><br><span class="line">  <span class="string">'use strict'</span>;</span><br><span class="line">  // code</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const obj = &#123;</span><br><span class="line">  // 报错</span><br><span class="line">  doSomething(&#123;a, b&#125;) &#123;</span><br><span class="line">    <span class="string">'use strict'</span>;</span><br><span class="line">    // code</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这样规定的原因是，函数内部的严格模式，同时适用于函数体代码和函数参数代码。但是，函数执行的时候，先执行函数参数代码，然后再执行函数体代码。这样就有一个不合理的地方，只有从函数体代码之中，才能知道参数代码是否应该以严格模式执行，但是参数代码却应该先于函数体代码执行。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 报错</span><br><span class="line"><span class="keyword">function</span> doSomething(value = 070) &#123;</span><br><span class="line">  <span class="string">'use strict'</span>;</span><br><span class="line">  <span class="built_in">return</span> value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，参数 value 的默认值是八进制数 070，但是严格模式下不能用前缀 0 表示八进制，所以应该报错。但是实际上，JavaScript 引擎会先成功执行 value = 070，然后进入函数体内部，发现需要用严格模式执行，这时才会报错。</p>
+<p>虽然可以先解析函数体代码，再执行参数代码，但是这样无疑就增加了复杂性。因此，标准索性禁止了这种用法，只要参数使用了默认值、解构赋值、或者扩展运算符，就不能显式指定严格模式。</p>
+<p>两种方法可以规避这种限制。第一种是设定全局性的严格模式，这是合法的。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'use strict'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> doSomething(a, b = a) &#123;</span><br><span class="line">  // code</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第二种是把函数包在一个无参数的立即执行函数里面。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const doSomething = (<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">  <span class="string">'use strict'</span>;</span><br><span class="line">  <span class="built_in">return</span> <span class="keyword">function</span>(value = 42) &#123;</span><br><span class="line">    <span class="built_in">return</span> value;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
+<h5 id="name-属性"><a href="#name-属性" class="headerlink" title="name 属性"></a>name 属性</h5><p>函数的 name 属性，返回该函数的函数名。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>() &#123;&#125;</span><br><span class="line">foo.name // <span class="string">"foo"</span></span><br></pre></td></tr></table></figure>
+<p>这个属性早就被浏览器广泛支持，但是直到 ES6，才将其写入了标准。</p>
+<p>需要注意的是，ES6 对这个属性的行为做出了一些修改。如果将一个匿名函数赋值给一个变量，ES5 的 name 属性，会返回空字符串，而 ES6 的 name 属性会返回实际的函数名。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var func1 = <span class="function"><span class="title">function</span></span> () &#123;&#125;;</span><br><span class="line"></span><br><span class="line">// ES5</span><br><span class="line">func1.name // <span class="string">""</span></span><br><span class="line"></span><br><span class="line">// ES6</span><br><span class="line">func1.name // <span class="string">"func1"</span></span><br></pre></td></tr></table></figure>
+<p>上面代码中，变量 func1 等于一个匿名函数，ES5 和 ES6 的 name 属性返回的值不一样。</p>
+<p>如果将一个具名函数赋值给一个变量，则 ES5 和 ES6 的 name 属性都返回这个具名函数原本的名字。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const bar = <span class="keyword">function</span> <span class="function"><span class="title">baz</span></span>() &#123;&#125;;</span><br><span class="line"></span><br><span class="line">// ES5</span><br><span class="line">bar.name // <span class="string">"baz"</span></span><br><span class="line"></span><br><span class="line">// ES6</span><br><span class="line">bar.name // <span class="string">"baz"</span></span><br></pre></td></tr></table></figure>
+<p>Function 构造函数返回的函数实例，name 属性的值为“anonymous”。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(new Function).name // <span class="string">"anonymous"</span></span><br></pre></td></tr></table></figure>
+<p>bind 返回的函数，name 属性值会加上“bound ”前缀。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>() &#123;&#125;;</span><br><span class="line">foo.bind(&#123;&#125;).name // <span class="string">"bound foo"</span></span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="title">function</span></span>()&#123;&#125;).<span class="built_in">bind</span>(&#123;&#125;).name // <span class="string">"bound "</span></span><br></pre></td></tr></table></figure>
+<h4 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4><h5 id="基本用法-1"><a href="#基本用法-1" class="headerlink" title="基本用法"></a>基本用法</h5><p>ES6 允许使用“箭头”（=&gt;）定义函数。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var f = v =&gt; v;</span><br></pre></td></tr></table></figure>
+<p>上面的箭头函数等同于：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var f = <span class="keyword">function</span>(v) &#123;</span><br><span class="line">  <span class="built_in">return</span> v;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>如果箭头函数不需要参数或需要多个参数，就使用一个圆括号代表参数部分。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var f = () =&gt; 5;</span><br><span class="line">// 等同于</span><br><span class="line">var f = <span class="function"><span class="title">function</span></span> () &#123; <span class="built_in">return</span> 5 &#125;;</span><br><span class="line"></span><br><span class="line">var sum = (num1, num2) =&gt; num1 + num2;</span><br><span class="line">// 等同于</span><br><span class="line">var sum = <span class="keyword">function</span>(num1, num2) &#123;</span><br><span class="line">  <span class="built_in">return</span> num1 + num2;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>如果箭头函数的代码块部分多于一条语句，就要使用大括号将它们括起来，并且使用 return 语句返回。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var sum = (num1, num2) =&gt; &#123; <span class="built_in">return</span> num1 + num2; &#125;</span><br></pre></td></tr></table></figure>
+<p>由于大括号被解释为代码块，所以如果箭头函数直接返回一个对象，必须在对象外面加上括号。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var getTempItem = id =&gt; (&#123; id: id, name: <span class="string">"Temp"</span> &#125;);</span><br></pre></td></tr></table></figure>
+<p>箭头函数可以与变量解构结合使用。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const full = (&#123; first, last &#125;) =&gt; first + <span class="string">' '</span> + last;</span><br><span class="line"></span><br><span class="line">// 等同于</span><br><span class="line"><span class="keyword">function</span> full(person) &#123;</span><br><span class="line">  <span class="built_in">return</span> person.first + <span class="string">' '</span> + person.last;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>箭头函数使得表达更加简洁。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const isEven = n =&gt; n % 2 == 0;</span><br><span class="line">const square = n =&gt; n * n;</span><br></pre></td></tr></table></figure>
+<p>上面代码只用了两行，就定义了两个简单的工具函数。如果不用箭头函数，可能就要占用多行，而且还不如现在这样写醒目。</p>
+<p>箭头函数的一个用处是简化回调函数。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 正常函数写法</span><br><span class="line">[1,2,3].map(<span class="keyword">function</span> (x) &#123;</span><br><span class="line">  <span class="built_in">return</span> x * x;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 箭头函数写法</span><br><span class="line">[1,2,3].map(x =&gt; x * x);</span><br><span class="line">另一个例子是</span><br><span class="line"></span><br><span class="line">// 正常函数写法</span><br><span class="line">var result = values.sort(<span class="keyword">function</span> (a, b) &#123;</span><br><span class="line">  <span class="built_in">return</span> a - b;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 箭头函数写法</span><br><span class="line">var result = values.sort((a, b) =&gt; a - b);</span><br></pre></td></tr></table></figure>
+<p>下面是 rest 参数与箭头函数结合的例子。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const numbers = (...nums) =&gt; nums;</span><br><span class="line"></span><br><span class="line">numbers(1, 2, 3, 4, 5)</span><br><span class="line">// [1,2,3,4,5]</span><br><span class="line"></span><br><span class="line">const headAndTail = (head, ...tail) =&gt; [head, tail];</span><br><span class="line"></span><br><span class="line">headAndTail(1, 2, 3, 4, 5)</span><br><span class="line">// [1,[2,3,4,5]]</span><br></pre></td></tr></table></figure>
+<h5 id="使用注意点"><a href="#使用注意点" class="headerlink" title="使用注意点"></a>使用注意点</h5><p>箭头函数有几个使用注意点。</p>
+<p>（1）函数体内的 this 对象，就是定义时所在的对象，而不是使用时所在的对象。</p>
+<p>（2）不可以当作构造函数，也就是说，不可以使用 new 命令，否则会抛出一个错误。</p>
+<p>（3）不可以使用 arguments 对象，该对象在函数体内不存在。如果要用，可以用 Rest 参数代替。</p>
+<p>（4）不可以使用 yield 命令，因此箭头函数不能用作 Generator 函数。</p>
+<p>上面四点中，第一点尤其值得注意。this 对象的指向是可变的，但是在箭头函数中，它是固定的。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>() &#123;</span><br><span class="line">  setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(<span class="string">'id:'</span>, this.id);</span><br><span class="line">  &#125;, 100);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var id = 21;</span><br><span class="line"></span><br><span class="line">foo.call(&#123; id: 42 &#125;);</span><br><span class="line">// id: 42</span><br></pre></td></tr></table></figure>
+<p>上面代码中，setTimeout 的参数是一个箭头函数，这个箭头函数的定义生效是在 foo 函数生成时，而它的真正执行要等到 100 毫秒后。如果是普通函数，执行时 this 应该指向全局对象 window，这时应该输出 21。但是，箭头函数导致 this 总是指向函数定义生效时所在的对象（本例是{id: 42}），所以输出的是 42。</p>
+<p>箭头函数可以让 setTimeout 里面的 this，绑定定义时所在的作用域，而不是指向运行时所在的作用域。下面是另一个例子。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">Timer</span></span>() &#123;</span><br><span class="line">  this.s1 = 0;</span><br><span class="line">  this.s2 = 0;</span><br><span class="line">  // 箭头函数</span><br><span class="line">  setInterval(() =&gt; this.s1++, 1000);</span><br><span class="line">  // 普通函数</span><br><span class="line">  setInterval(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">    this.s2++;</span><br><span class="line">  &#125;, 1000);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var timer = new Timer();</span><br><span class="line"></span><br><span class="line">setTimeout(() =&gt; console.log(<span class="string">'s1: '</span>, timer.s1), 3100);</span><br><span class="line">setTimeout(() =&gt; console.log(<span class="string">'s2: '</span>, timer.s2), 3100);</span><br><span class="line">// s1: 3</span><br><span class="line">// s2: 0</span><br></pre></td></tr></table></figure>
+<p>上面代码中，Timer 函数内部设置了两个定时器，分别使用了箭头函数和普通函数。前者的 this 绑定定义时所在的作用域（即 Timer 函数），后者的 this 指向运行时所在的作用域（即全局对象）。所以，3100 毫秒之后，timer.s1 被更新了 3 次，而 timer.s2 一次都没更新。</p>
+<p>箭头函数可以让 this 指向固定化，这种特性很有利于封装回调函数。下面是一个例子，DOM 事件的回调函数封装在一个对象里面。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var handler = &#123;</span><br><span class="line">  id: <span class="string">'123456'</span>,</span><br><span class="line"></span><br><span class="line">  init: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    document.addEventListener(<span class="string">'click'</span>,</span><br><span class="line">      event =&gt; this.doSomething(event.type), <span class="literal">false</span>);</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  doSomething: <span class="keyword">function</span>(<span class="built_in">type</span>) &#123;</span><br><span class="line">    console.log(<span class="string">'Handling '</span> + <span class="built_in">type</span>  + <span class="string">' for '</span> + this.id);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>上面代码的 init 方法中，使用了箭头函数，这导致这个箭头函数里面的 this，总是指向 handler 对象。否则，回调函数运行时，this.doSomething 这一行会报错，因为此时 this 指向 document 对象。</p>
+<p>this 指向的固定化，并不是因为箭头函数内部有绑定 this 的机制，实际原因是箭头函数根本没有自己的 this，导致内部的 this 就是外层代码块的 this。正是因为它没有 this，所以也就不能用作构造函数。</p>
+<p>所以，箭头函数转成 ES5 的代码如下。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// ES6</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>() &#123;</span><br><span class="line">  setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(<span class="string">'id:'</span>, this.id);</span><br><span class="line">  &#125;, 100);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// ES5</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>() &#123;</span><br><span class="line">  var _this = this;</span><br><span class="line"></span><br><span class="line">  setTimeout(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">    console.log(<span class="string">'id:'</span>, _this.id);</span><br><span class="line">  &#125;, 100);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，转换后的 ES5 版本清楚地说明了，箭头函数里面根本没有自己的 this，而是引用外层的 this。</p>
+<p>请问下面的代码之中有几个 this？</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>() &#123;</span><br><span class="line">  <span class="built_in">return</span> () =&gt; &#123;</span><br><span class="line">    <span class="built_in">return</span> () =&gt; &#123;</span><br><span class="line">      <span class="built_in">return</span> () =&gt; &#123;</span><br><span class="line">        console.log(<span class="string">'id:'</span>, this.id);</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var f = foo.call(&#123;id: 1&#125;);</span><br><span class="line"></span><br><span class="line">var t1 = f.call(&#123;id: 2&#125;)()(); // id: 1</span><br><span class="line">var t2 = f().call(&#123;id: 3&#125;)(); // id: 1</span><br><span class="line">var t3 = f()().call(&#123;id: 4&#125;); // id: 1</span><br></pre></td></tr></table></figure>
+<p>上面代码之中，只有一个 this，就是函数 foo 的 this，所以 t1、t2、t3 都输出同样的结果。因为所有的内层函数都是箭头函数，都没有自己的 this，它们的 this 其实都是最外层 foo 函数的 this。</p>
+<p>除了 this，以下三个变量在箭头函数之中也是不存在的，指向外层函数的对应变量：arguments、super、new.target。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>() &#123;</span><br><span class="line">  setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(<span class="string">'args:'</span>, arguments);</span><br><span class="line">  &#125;, 100);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(2, 4, 6, 8)</span><br><span class="line">// args: [2, 4, 6, 8]</span><br></pre></td></tr></table></figure>
+<p>上面代码中，箭头函数内部的变量 arguments，其实是函数 foo 的 arguments 变量。</p>
+<p>另外，由于箭头函数没有自己的 this，所以当然也就不能用 call()、apply()、bind()这些方法去改变 this 的指向。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">  <span class="built_in">return</span> [</span><br><span class="line">    (() =&gt; this.x).<span class="built_in">bind</span>(&#123; x: <span class="string">'inner'</span> &#125;)()</span><br><span class="line">  ];</span><br><span class="line">&#125;).call(&#123; x: <span class="string">'outer'</span> &#125;);</span><br><span class="line">// [<span class="string">'outer'</span>]</span><br></pre></td></tr></table></figure>
+<p>上面代码中，箭头函数没有自己的 this，所以 bind 方法无效，内部的 this 指向外部的 this。</p>
+<p>长期以来，JavaScript 语言的 this 对象一直是一个令人头痛的问题，在对象方法中使用 this，必须非常小心。箭头函数”绑定”this，很大程度上解决了这个困扰。</p>
+<h5 id="嵌套的箭头函数"><a href="#嵌套的箭头函数" class="headerlink" title="嵌套的箭头函数"></a>嵌套的箭头函数</h5><p>箭头函数内部，还可以再使用箭头函数。下面是一个 ES5 语法的多重嵌套函数。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> insert(value) &#123;</span><br><span class="line">  <span class="built_in">return</span> &#123;into: <span class="keyword">function</span> (array) &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;after: <span class="keyword">function</span> (afterValue) &#123;</span><br><span class="line">      array.splice(array.indexOf(afterValue) + 1, 0, value);</span><br><span class="line">      <span class="built_in">return</span> array;</span><br><span class="line">    &#125;&#125;;</span><br><span class="line">  &#125;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">insert(2).into([1, 3]).after(1); //[1, 2, 3]</span><br></pre></td></tr></table></figure>
+<p>上面这个函数，可以使用箭头函数改写。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> insert = (value) =&gt; (&#123;into: (array) =&gt; (&#123;after: (afterValue) =&gt; &#123;</span><br><span class="line">  array.splice(array.indexOf(afterValue) + 1, 0, value);</span><br><span class="line">  <span class="built_in">return</span> array;</span><br><span class="line">&#125;&#125;)&#125;);</span><br><span class="line"></span><br><span class="line">insert(2).into([1, 3]).after(1); //[1, 2, 3]</span><br></pre></td></tr></table></figure>
+<p>下面是一个部署管道机制（pipeline）的例子，即前一个函数的输出是后一个函数的输入。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const pipeline = (...funcs) =&gt;</span><br><span class="line">  val =&gt; funcs.reduce((a, b) =&gt; b(a), val);</span><br><span class="line"></span><br><span class="line">const plus1 = a =&gt; a + 1;</span><br><span class="line">const mult2 = a =&gt; a * 2;</span><br><span class="line">const addThenMult = pipeline(plus1, mult2);</span><br><span class="line"></span><br><span class="line">addThenMult(5)</span><br><span class="line">// 12</span><br></pre></td></tr></table></figure>
+<p>如果觉得上面的写法可读性比较差，也可以采用下面的写法。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const plus1 = a =&gt; a + 1;</span><br><span class="line">const mult2 = a =&gt; a * 2;</span><br><span class="line"></span><br><span class="line">mult2(plus1(5))</span><br><span class="line">// 12</span><br></pre></td></tr></table></figure>
+<p>箭头函数还有一个功能，就是可以很方便地改写 λ 演算。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// λ演算的写法</span><br><span class="line">fix = λf.(λx.f(λv.x(x)(v)))(λx.f(λv.x(x)(v)))</span><br><span class="line"></span><br><span class="line">// ES6的写法</span><br><span class="line">var fix = f =&gt; (x =&gt; f(v =&gt; x(x)(v)))</span><br><span class="line">               (x =&gt; f(v =&gt; x(x)(v)));</span><br></pre></td></tr></table></figure>
+<p>上面两种写法，几乎是一一对应的。由于 λ 演算对于计算机科学非常重要，这使得我们可以用 ES6 作为替代工具，探索计算机科学。</p>
+<h5 id="绑定-this"><a href="#绑定-this" class="headerlink" title="绑定 this"></a>绑定 this</h5><p>箭头函数可以绑定 this 对象，大大减少了显式绑定 this 对象的写法（call、apply、bind）。但是，箭头函数并不适用于所有场合，所以 ES7 提出了“函数绑定”（function bind）运算符，用来取代 call、apply、bind 调用。虽然该语法还是 ES7 的一个提案，但是 Babel 转码器已经支持。</p>
+<p>函数绑定运算符是并排的两个双冒号（::），双冒号左边是一个对象，右边是一个函数。该运算符会自动将左边的对象，作为上下文环境（即 this 对象），绑定到右边的函数上面。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">foo::bar;</span><br><span class="line">// 等同于</span><br><span class="line">bar.bind(foo);</span><br><span class="line"></span><br><span class="line">foo::bar(...arguments);</span><br><span class="line">// 等同于</span><br><span class="line">bar.apply(foo, arguments);</span><br><span class="line"></span><br><span class="line">const hasOwnProperty = Object.prototype.hasOwnProperty;</span><br><span class="line"><span class="keyword">function</span> hasOwn(obj, key) &#123;</span><br><span class="line">  <span class="built_in">return</span> obj::hasOwnProperty(key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果双冒号左边为空，右边是一个对象的方法，则等于将该方法绑定在该对象上面。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var method = obj::obj.foo;</span><br><span class="line">// 等同于</span><br><span class="line">var method = ::obj.foo;</span><br><span class="line"></span><br><span class="line"><span class="built_in">let</span> <span class="built_in">log</span> = ::console.log;</span><br><span class="line">// 等同于</span><br><span class="line">var <span class="built_in">log</span> = console.log.bind(console);</span><br></pre></td></tr></table></figure>
+<p>由于双冒号运算符返回的还是原对象，因此可以采用链式写法。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 例一</span><br><span class="line">import &#123; map, takeWhile, forEach &#125; from <span class="string">"iterlib"</span>;</span><br><span class="line"></span><br><span class="line">getPlayers()</span><br><span class="line">::map(x =&gt; x.character())</span><br><span class="line">::takeWhile(x =&gt; x.strength &gt; 100)</span><br><span class="line">::forEach(x =&gt; console.log(x));</span><br><span class="line"></span><br><span class="line">// 例二</span><br><span class="line"><span class="built_in">let</span> &#123; find, html &#125; = jake;</span><br><span class="line"></span><br><span class="line">document.querySelectorAll(<span class="string">"div.myClass"</span>)</span><br><span class="line">::find(<span class="string">"p"</span>)</span><br><span class="line">::html(<span class="string">"hahaha"</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="尾调用优化"><a href="#尾调用优化" class="headerlink" title="尾调用优化"></a>尾调用优化</h4><h5 id="什么是尾调用？"><a href="#什么是尾调用？" class="headerlink" title="什么是尾调用？"></a>什么是尾调用？</h5><p>尾调用（Tail Call）是函数式编程的一个重要概念，本身非常简单，一句话就能说清楚，就是指某个函数的最后一步是调用另一个函数。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> f(x)&#123;</span><br><span class="line">  <span class="built_in">return</span> g(x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，函数 f 的最后一步是调用函数 g，这就叫尾调用。</p>
+<p>以下三种情况，都不属于尾调用。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// 情况一</span><br><span class="line"><span class="keyword">function</span> f(x)&#123;</span><br><span class="line">  <span class="built_in">let</span> y = g(x);</span><br><span class="line">  <span class="built_in">return</span> y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 情况二</span><br><span class="line"><span class="keyword">function</span> f(x)&#123;</span><br><span class="line">  <span class="built_in">return</span> g(x) + 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 情况三</span><br><span class="line"><span class="keyword">function</span> f(x)&#123;</span><br><span class="line">  g(x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，情况一是调用函数 g 之后，还有赋值操作，所以不属于尾调用，即使语义完全一样。情况二也属于调用后还有操作，即使写在一行内。情况三等同于下面的代码。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> f(x)&#123;</span><br><span class="line">  g(x);</span><br><span class="line">  <span class="built_in">return</span> undefined;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>尾调用不一定出现在函数尾部，只要是最后一步操作即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> f(x) &#123;</span><br><span class="line">  <span class="keyword">if</span> (x &gt; 0) &#123;</span><br><span class="line">    <span class="built_in">return</span> m(x)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> n(x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，函数 m 和 n 都属于尾调用，因为它们都是函数 f 的最后一步操作。</p>
+<h5 id="尾调用优化-1"><a href="#尾调用优化-1" class="headerlink" title="尾调用优化"></a>尾调用优化</h5><p>尾调用之所以与其他调用不同，就在于它的特殊的调用位置。</p>
+<p>我们知道，函数调用会在内存形成一个“调用记录”，又称“调用帧”（call frame），保存调用位置和内部变量等信息。如果在函数 A 的内部调用函数 B，那么在 A 的调用帧上方，还会形成一个 B 的调用帧。等到 B 运行结束，将结果返回到 A，B 的调用帧才会消失。如果函数 B 内部还调用函数 C，那就还有一个 C 的调用帧，以此类推。所有的调用帧，就形成一个“调用栈”（call stack）。</p>
+<p>尾调用由于是函数的最后一步操作，所以不需要保留外层函数的调用帧，因为调用位置、内部变量等信息都不会再用到了，只要直接用内层函数的调用帧，取代外层函数的调用帧就可以了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">f</span></span>() &#123;</span><br><span class="line">  <span class="built_in">let</span> m = 1;</span><br><span class="line">  <span class="built_in">let</span> n = 2;</span><br><span class="line">  <span class="built_in">return</span> g(m + n);</span><br><span class="line">&#125;</span><br><span class="line">f();</span><br><span class="line"></span><br><span class="line">// 等同于</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">f</span></span>() &#123;</span><br><span class="line">  <span class="built_in">return</span> g(3);</span><br><span class="line">&#125;</span><br><span class="line">f();</span><br><span class="line"></span><br><span class="line">// 等同于</span><br><span class="line">g(3);</span><br></pre></td></tr></table></figure>
+<p>上面代码中，如果函数 g 不是尾调用，函数 f 就需要保存内部变量 m 和 n 的值、g 的调用位置等信息。但由于调用 g 之后，函数 f 就结束了，所以执行到最后一步，完全可以删除 f(x) 的调用帧，只保留 g(3) 的调用帧。</p>
+<p>这就叫做“尾调用优化”（Tail call optimization），即只保留内层函数的调用帧。如果所有函数都是尾调用，那么完全可以做到每次执行时，调用帧只有一项，这将大大节省内存。这就是“尾调用优化”的意义。</p>
+<p>注意，只有不再用到外层函数的内部变量，内层函数的调用帧才会取代外层函数的调用帧，否则就无法进行“尾调用优化”。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> addOne(a)&#123;</span><br><span class="line">  var one = 1;</span><br><span class="line">  <span class="keyword">function</span> inner(b)&#123;</span><br><span class="line">    <span class="built_in">return</span> b + one;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> inner(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的函数不会进行尾调用优化，因为内层函数 inner 用到了外层函数 addOne 的内部变量 one。</p>
+<h5 id="尾递归"><a href="#尾递归" class="headerlink" title="尾递归"></a>尾递归</h5><p>函数调用自身，称为递归。如果尾调用自身，就称为尾递归。</p>
+<p>递归非常耗费内存，因为需要同时保存成千上百个调用帧，很容易发生“栈溢出”错误（stack overflow）。但对于尾递归来说，由于只存在一个调用帧，所以永远不会发生“栈溢出”错误。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> factorial(n) &#123;</span><br><span class="line">  <span class="keyword">if</span> (n === 1) <span class="built_in">return</span> 1;</span><br><span class="line">  <span class="built_in">return</span> n * factorial(n - 1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">factorial(5) // 120</span><br></pre></td></tr></table></figure>
+<p>上面代码是一个阶乘函数，计算 n 的阶乘，最多需要保存 n 个调用记录，复杂度 O(n) 。</p>
+<p>如果改写成尾递归，只保留一个调用记录，复杂度 O(1) 。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> factorial(n, total) &#123;</span><br><span class="line">  <span class="keyword">if</span> (n === 1) <span class="built_in">return</span> total;</span><br><span class="line">  <span class="built_in">return</span> factorial(n - 1, n * total);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">factorial(5, 1) // 120</span><br></pre></td></tr></table></figure>
+<p>还有一个比较著名的例子，就是计算 fibonacci 数列，也能充分说明尾递归优化的重要性</p>
+<p>如果是非尾递归的 fibonacci 递归方法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> Fibonacci (n) &#123;</span><br><span class="line">  <span class="keyword">if</span> ( n &lt;= 1 ) &#123;<span class="built_in">return</span> 1&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">return</span> Fibonacci(n - 1) + Fibonacci(n - 2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Fibonacci(10); // 89</span><br><span class="line">// Fibonacci(100)</span><br><span class="line">// Fibonacci(500)</span><br><span class="line">// 堆栈溢出了</span><br></pre></td></tr></table></figure>
+<p>如果我们使用尾递归优化过的 fibonacci 递归算法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> Fibonacci2 (n , ac1 = 1 , ac2 = 1) &#123;</span><br><span class="line">  <span class="keyword">if</span>( n &lt;= 1 ) &#123;<span class="built_in">return</span> ac2&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">return</span> Fibonacci2 (n - 1, ac2, ac1 + ac2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Fibonacci2(100) // 573147844013817200000</span><br><span class="line">Fibonacci2(1000) // 7.0330367711422765e+208</span><br><span class="line">Fibonacci2(10000) // Infinity</span><br></pre></td></tr></table></figure>
+<p>由此可见，“尾调用优化”对递归操作意义重大，所以一些函数式编程语言将其写入了语言规格。ES6 也是如此，第一次明确规定，所有 ECMAScript 的实现，都必须部署“尾调用优化”。这就是说，在 ES6 中，只要使用尾递归，就不会发生栈溢出，相对节省内存。</p>
+<h5 id="递归函数的改写"><a href="#递归函数的改写" class="headerlink" title="递归函数的改写"></a>递归函数的改写</h5><p>尾递归的实现，往往需要改写递归函数，确保最后一步只调用自身。做到这一点的方法，就是把所有用到的内部变量改写成函数的参数。比如上面的例子，阶乘函数 factorial 需要用到一个中间变量 total ，那就把这个中间变量改写成函数的参数。这样做的缺点就是不太直观，第一眼很难看出来，为什么计算 5 的阶乘，需要传入两个参数 5 和 1？</p>
+<p>两个方法可以解决这个问题。方法一是在尾递归函数之外，再提供一个正常形式的函数。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> tailFactorial(n, total) &#123;</span><br><span class="line">  <span class="keyword">if</span> (n === 1) <span class="built_in">return</span> total;</span><br><span class="line">  <span class="built_in">return</span> tailFactorial(n - 1, n * total);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> factorial(n) &#123;</span><br><span class="line">  <span class="built_in">return</span> tailFactorial(n, 1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">factorial(5) // 120</span><br></pre></td></tr></table></figure>
+<p>上面代码通过一个正常形式的阶乘函数 factorial ，调用尾递归函数 tailFactorial ，看起来就正常多了。</p>
+<p>函数式编程有一个概念，叫做柯里化（currying），意思是将多参数的函数转换成单参数的形式。这里也可以使用柯里化。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> currying(fn, n) &#123;</span><br><span class="line">  <span class="built_in">return</span> <span class="keyword">function</span> (m) &#123;</span><br><span class="line">    <span class="built_in">return</span> fn.call(this, m, n);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> tailFactorial(n, total) &#123;</span><br><span class="line">  <span class="keyword">if</span> (n === 1) <span class="built_in">return</span> total;</span><br><span class="line">  <span class="built_in">return</span> tailFactorial(n - 1, n * total);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const factorial = currying(tailFactorial, 1);</span><br><span class="line"></span><br><span class="line">factorial(5) // 120</span><br></pre></td></tr></table></figure>
+<p>上面代码通过柯里化，将尾递归函数 tailFactorial 变为只接受 1 个参数的 factorial 。</p>
+<p>第二种方法就简单多了，就是采用 ES6 的函数默认值。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> factorial(n, total = 1) &#123;</span><br><span class="line">  <span class="keyword">if</span> (n === 1) <span class="built_in">return</span> total;</span><br><span class="line">  <span class="built_in">return</span> factorial(n - 1, n * total);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">factorial(5) // 120</span><br></pre></td></tr></table></figure>
+<p>上面代码中，参数 total 有默认值 1，所以调用时不用提供这个值。</p>
+<p>总结一下，递归本质上是一种循环操作。纯粹的函数式编程语言没有循环操作命令，所有的循环都用递归实现，这就是为什么尾递归对这些语言极其重要。对于其他支持“尾调用优化”的语言（比如 Lua，ES6），只需要知道循环可以用递归代替，而一旦使用递归，就最好使用尾递归。</p>
+<h5 id="严格模式-1"><a href="#严格模式-1" class="headerlink" title="严格模式"></a>严格模式</h5><p>ES6 的尾调用优化只在严格模式下开启，正常模式是无效的。</p>
+<p>这是因为在正常模式下，函数内部有两个变量，可以跟踪函数的调用栈。</p>
+<p>1.func.arguments：返回调用时函数的参数。<br>2.func.caller：返回调用当前函数的那个函数。<br>尾调用优化发生时，函数的调用栈会改写，因此上面两个变量就会失真。严格模式禁用这两个变量，所以尾调用模式仅在严格模式下生效。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">restricted</span></span>() &#123;</span><br><span class="line">  <span class="string">"use strict"</span>;</span><br><span class="line">  restricted.caller;    // 报错</span><br><span class="line">  restricted.arguments; // 报错</span><br><span class="line">&#125;</span><br><span class="line">restricted();</span><br></pre></td></tr></table></figure>
+<h5 id="尾递归优化的实现"><a href="#尾递归优化的实现" class="headerlink" title="尾递归优化的实现"></a>尾递归优化的实现</h5><p>尾递归优化只在严格模式下生效，那么正常模式下，或者那些不支持该功能的环境中，有没有办法也使用尾递归优化呢？回答是可以的，就是自己实现尾递归优化。</p>
+<p>它的原理非常简单。尾递归之所以需要优化，原因是调用栈太多，造成溢出，那么只要减少调用栈，就不会溢出。怎么做可以减少调用栈呢？就是采用“循环”换掉“递归”。</p>
+<p>下面是一个正常的递归函数。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> sum(x, y) &#123;</span><br><span class="line">  <span class="keyword">if</span> (y &gt; 0) &#123;</span><br><span class="line">    <span class="built_in">return</span> sum(x + 1, y - 1);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">return</span> x;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sum(1, 100000)</span><br><span class="line">// Uncaught RangeError: Maximum call stack size exceeded(…)</span><br></pre></td></tr></table></figure>
+<p>上面代码中，sum 是一个递归函数，参数 x 是需要累加的值，参数 y 控制递归次数。一旦指定 sum 递归 100000 次，就会报错，提示超出调用栈的最大次数。</p>
+<p>蹦床函数（trampoline）可以将递归执行转为循环执行。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> trampoline(f) &#123;</span><br><span class="line">  <span class="keyword">while</span> (f &amp;&amp; f instanceof Function) &#123;</span><br><span class="line">    f = f();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> f;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面就是蹦床函数的一个实现，它接受一个函数 f 作为参数。只要 f 执行后返回一个函数，就继续执行。注意，这里是返回一个函数，然后执行该函数，而不是函数里面调用函数，这样就避免了递归执行，从而就消除了调用栈过大的问题。</p>
+<p>然后，要做的就是将原来的递归函数，改写为每一步返回另一个函数。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> sum(x, y) &#123;</span><br><span class="line">  <span class="keyword">if</span> (y &gt; 0) &#123;</span><br><span class="line">    <span class="built_in">return</span> sum.bind(null, x + 1, y - 1);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">return</span> x;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，sum 函数的每次执行，都会返回自身的另一个版本。</p>
+<p>现在，使用蹦床函数执行 sum，就不会发生调用栈溢出。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">trampoline(sum(1, 100000))</span><br><span class="line">// 100001</span><br></pre></td></tr></table></figure>
+<p>蹦床函数并不是真正的尾递归优化，下面的实现才是。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> tco(f) &#123;</span><br><span class="line">  var value;</span><br><span class="line">  var active = <span class="literal">false</span>;</span><br><span class="line">  var accumulated = [];</span><br><span class="line"></span><br><span class="line">  <span class="built_in">return</span> <span class="keyword">function</span> <span class="function"><span class="title">accumulator</span></span>() &#123;</span><br><span class="line">    accumulated.push(arguments);</span><br><span class="line">    <span class="keyword">if</span> (!active) &#123;</span><br><span class="line">      active = <span class="literal">true</span>;</span><br><span class="line">      <span class="keyword">while</span> (accumulated.length) &#123;</span><br><span class="line">        value = f.apply(this, accumulated.shift());</span><br><span class="line">      &#125;</span><br><span class="line">      active = <span class="literal">false</span>;</span><br><span class="line">      <span class="built_in">return</span> value;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var sum = tco(<span class="keyword">function</span>(x, y) &#123;</span><br><span class="line">  <span class="keyword">if</span> (y &gt; 0) &#123;</span><br><span class="line">    <span class="built_in">return</span> sum(x + 1, y - 1)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">return</span> x</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">sum(1, 100000)</span><br><span class="line">// 100001</span><br></pre></td></tr></table></figure>
+<p>上面代码中，tco 函数是尾递归优化的实现，它的奥妙就在于状态变量 active。默认情况下，这个变量是不激活的。一旦进入尾递归优化的过程，这个变量就激活了。然后，每一轮递归 sum 返回的都是 undefined，所以就避免了递归执行；而 accumulated 数组存放每一轮 sum 执行的参数，总是有值的，这就保证了 accumulator 函数内部的 while 循环总是会执行。这样就很巧妙地将“递归”改成了“循环”，而后一轮的参数会取代前一轮的参数，保证了调用栈只有一层。</p>
+<h5 id="函数参数的尾逗号"><a href="#函数参数的尾逗号" class="headerlink" title="函数参数的尾逗号"></a>函数参数的尾逗号</h5><p>ECMAScript 2017 将允许函数的最后一个参数有尾逗号（trailing comma）。</p>
+<p>此前，函数定义和调用时，都不允许最后一个参数后面出现逗号。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> clownsEverywhere(</span><br><span class="line">  param1,</span><br><span class="line">  param2</span><br><span class="line">) &#123; /* ... */ &#125;</span><br><span class="line"></span><br><span class="line">clownsEverywhere(</span><br><span class="line">  <span class="string">'foo'</span>,</span><br><span class="line">  <span class="string">'bar'</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>上面代码中，如果在 param2 或 bar 后面加一个逗号，就会报错。</p>
+<p>这样的话，如果以后修改代码，想为函数 clownsEverywhere 添加第三个参数，就势必要在第二个参数后面添加一个逗号。这对版本管理系统来说，就会显示，添加逗号的那一行也发生了变动。这看上去有点冗余，因此新的语法允许定义和调用时，尾部直接有一个逗号。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> clownsEverywhere(</span><br><span class="line">  param1,</span><br><span class="line">  param2,</span><br><span class="line">) &#123; /* ... */ &#125;</span><br><span class="line"></span><br><span class="line">clownsEverywhere(</span><br><span class="line">  <span class="string">'foo'</span>,</span><br><span class="line">  <span class="string">'bar'</span>,</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://blog.bochunhao.cn">
+            <img src="/img/loggo.png" alt="BCH">
+            BCH
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.bochunhao.cn/2019/02/01/es6-Function/&title=《es6_Function》 — 个人博客&pic=http://blog.bochunhao.cn/img/loggo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.bochunhao.cn/2019/02/01/es6-Function/&title=《es6_Function》 — 个人博客&source=bch_bk" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.bochunhao.cn/2019/02/01/es6-Function/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《es6_Function》 — 个人博客&url=http://blog.bochunhao.cn/2019/02/01/es6-Function/&via=http://blog.bochunhao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.bochunhao.cn/2019/02/01/es6-Function/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/01/20/es6-Array/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">es6_Array</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        感谢支持
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/vx.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/vx.png" data-alipay="/img/zfb.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <p>个人博客 &copy; 2019</p>
+    <p style="color:#fff;font-size: 16px;font-weight:bolder">
+        不积跬步，无以至千里
+    </p>
+    <p style="color:#fff;font-size: 16px;font-weight:bolder">
+        不积小流，无以成江海
+    </p>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.bochunhao.cn/2019/02/01/es6-Function/&title=《es6_Function》 — 个人博客&pic=http://blog.bochunhao.cn/img/loggo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.bochunhao.cn/2019/02/01/es6-Function/&title=《es6_Function》 — 个人博客&source=bch_bk" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.bochunhao.cn/2019/02/01/es6-Function/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《es6_Function》 — 个人博客&url=http://blog.bochunhao.cn/2019/02/01/es6-Function/&via=http://blog.bochunhao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.bochunhao.cn/2019/02/01/es6-Function/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNElEQVR42u3aS3KEMAxFUfa/6c4CEsN9kpMK8mXU1aHBxwNFH18Xvj6Li9yzunP1+fv92y4ZMmS8lkFev/pm9Ryy6BR2vzUyZMg4gcEfzQPlw4vxk8mvZMiQIYPfkyaR92AZMmTI6KRradnJ000ZMmTI6BSx6HFgQWnA3VyLy5Ah44UM3nX/+8+/Mt+QIUPGqxif8KoF6HRZ8apkyJAxmsFfw5v7fJDZYcuQIeMcBg+XaelI7q814FCEliFDxiDGrkMPnZCdjjkf3itDhoxxDHLwq1bikmem44S4FyhDhoxBDJ4IBs2vMAEl96NjFjJkyBjN4G2yWgHcyVsfElAZMmQcwyBBsFPuphtB1vbDYECGDBnjGNvKyFIZ3GnJbQvBMmTI+PeMzqgy/S3HxKMIGTJkHMAgyVmaqPXDa/CNDBkyDmPsbfSnBWqt2SdDhozZDN6srwXi2gbxYxlB/S1DhozXMnjSRpbOR4+1YL0M2TJkyBjN4K20WgBNZxQ8VUXjChkyZAxi1I5cpEUp3xp+ICwoYmXIkDGawXnpr3iQRSMEGTJkHMDgoZY32tI0kSeX6OSIDBkyRjA6wa7T1q8li8unyZAhYzSDX7zUTFt1KY9vkwwZMiYxao14spQ0TNc2RYYMGecwaqlbGqzT4BuEfhkyZMgAYfGhcb91CHHxP8iQIeNIRq0Fxhtw99ux+f+GDBkyXsUgRWyaLPZHCwFYhgwZoxk8XAaJWiP41g6fyZAhYyjjCxGHiYfHhT1MAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '快回来看我呀！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '个人博客';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
