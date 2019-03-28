@@ -462,10 +462,10 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
     var OriginTitile = document.title, titleTime;
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            document.title = '薄纯浩';
+            document.title = '快回来看我呀！';
             clearTimeout(titleTime);
         } else {
-            document.title = '变身！';
+            document.title = '个人博客';
             titleTime = setTimeout(function() {
                 document.title = OriginTitile;
             },2000);
