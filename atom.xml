@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.bochunhao.cn/"/>
-  <updated>2019-03-27T14:49:32.017Z</updated>
+  <updated>2019-03-28T13:55:57.150Z</updated>
   <id>http://blog.bochunhao.cn/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test1</title>
+    <link href="http://blog.bochunhao.cn/2019/03/28/test1/"/>
+    <id>http://blog.bochunhao.cn/2019/03/28/test1/</id>
+    <published>2019-03-28T13:55:57.000Z</published>
+    <updated>2019-03-28T13:55:57.150Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>es6_Number</title>
@@ -464,29 +478,6 @@ Moun
     </summary>
     
       <category term="react" scheme="http://blog.bochunhao.cn/categories/react/"/>
-    
-    
-      <category term="react" scheme="http://blog.bochunhao.cn/tags/react/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>react_Refs</title>
-    <link href="http://blog.bochunhao.cn/2018/01/05/react-Refs/"/>
-    <id>http://blog.bochunhao.cn/2018/01/05/react-Refs/</id>
-    <published>2018-01-05T12:45:53.000Z</published>
-    <updated>2019-03-27T12:48:34.880Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="React-Refs"><a href="#React-Refs" class="headerlink" title="React Refs"></a>React Refs</h3><p>React 支持一种非常特殊的属性 Ref ，你可以用来绑定到 render() 输出的任何组件上。</p><p>这个特殊的属性允许你引用 render() 返回的相应的支撑实例（ backing instance ）。这样就可以确保在任何时间总是拿到正确的实例。</p><h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><p>绑定一个 ref 属性到 render 的返回值上：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input ref=<span class="string">"myInput"</span> /&gt;</span><br></pre></td></tr></table></figure><p>在其它代码中，通过 this.refs 获取支撑实例:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var input = this.refs.myInput;</span><br><span class="line">var inputValue = input.value;</span><br><span class="line">var inputRect = input.getBoundingClientRect();</span><br></pre></td></tr></table></figure><h4 id="完整实例"><a href="#完整实例" class="headerlink" title="完整实例"></a>完整实例</h4><p>你可以通过使用 this 来获取当前 React 组件，或使用 ref 来获取组件的引用，实例如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class MyComponent extends React.Component &#123;</span><br><span class="line">  <span class="function"><span class="title">handleClick</span></span>() &#123;</span><br><span class="line">    // 使用原生的 DOM API 获取焦点</span><br><span class="line">    this.refs.myInput.focus();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">render</span></span>() &#123;</span><br><span class="line">    //  当组件插入到 DOM 后，ref 属性添加一个组件的引用于到 this.refs</span><br><span class="line">    <span class="built_in">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ref=<span class="string">"myInput"</span> /&gt;</span><br><span class="line">        &lt;input</span><br><span class="line">          <span class="built_in">type</span>=<span class="string">"button"</span></span><br><span class="line">          value=<span class="string">"点我输入框获取焦点"</span></span><br><span class="line">          onClick=&#123;this.handleClick.bind(this)&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;MyComponent /&gt;,</span><br><span class="line">  document.getElementById(<span class="string">'example'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;React-Refs&quot;&gt;&lt;a href=&quot;#React-Refs&quot; class=&quot;headerlink&quot; title=&quot;React Refs&quot;&gt;&lt;/a&gt;React Refs&lt;/h3&gt;&lt;p&gt;React 支持一种非常特殊的属性 Ref ，你可以用来绑定到 render
-      
-    
-    </summary>
     
     
       <category term="react" scheme="http://blog.bochunhao.cn/tags/react/"/>
