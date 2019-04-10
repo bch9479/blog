@@ -14,25 +14,25 @@
     
     
     
-    <title>REACT_组件通信 | 个人博客 | BCH</title>
+    <title>REACT_setState | 个人博客 | BCH</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="react">
-    <meta name="description" content="父子组件通信父组件通过  props  传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过  props  传递数据，子组件不能直接修改  props， 而是必须通过调用父组件函数的方式告知父组件修改数据。 兄弟组件通信对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件">
+    <meta name="description" content="setStatesetState 在 React 中是经常使用的一个 API，但是它存在一些的问题经常会导致初学者出错，核心原因就是因为这个 API 是异步的。首先  setState  的调用并不会马上引起  state  的改变，并且如果你一次调用了多个  setState ，那么结果可能并不如你期待的一样。 12345678handle() &amp;#123;  // 初始化 `count` 为">
 <meta name="keywords" content="react">
 <meta property="og:type" content="article">
-<meta property="og:title" content="REACT_组件通信">
-<meta property="og:url" content="http://blog.bochunhao.cn/2018/03/25/react_fscom/index.html">
+<meta property="og:title" content="REACT_setState">
+<meta property="og:url" content="http://blog.bochunhao.cn/2018/03/22/react_setStarte/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="父子组件通信父组件通过  props  传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过  props  传递数据，子组件不能直接修改  props， 而是必须通过调用父组件函数的方式告知父组件修改数据。 兄弟组件通信对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件">
+<meta property="og:description" content="setStatesetState 在 React 中是经常使用的一个 API，但是它存在一些的问题经常会导致初学者出错，核心原因就是因为这个 API 是异步的。首先  setState  的调用并不会马上引起  state  的改变，并且如果你一次调用了多个  setState ，那么结果可能并不如你期待的一样。 12345678handle() &amp;#123;  // 初始化 `count` 为">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-28T17:17:58.590Z">
+<meta property="og:updated_time" content="2019-04-10T12:21:30.782Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="REACT_组件通信">
-<meta name="twitter:description" content="父子组件通信父组件通过  props  传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过  props  传递数据，子组件不能直接修改  props， 而是必须通过调用父组件函数的方式告知父组件修改数据。 兄弟组件通信对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件">
+<meta name="twitter:title" content="REACT_setState">
+<meta name="twitter:description" content="setStatesetState 在 React 中是经常使用的一个 API，但是它存在一些的问题经常会导致初学者出错，核心原因就是因为这个 API 是异步的。首先  setState  的调用并不会马上引起  state  的改变，并且如果你一次调用了多个  setState ，那么结果可能并不如你期待的一样。 12345678handle() &amp;#123;  // 初始化 `count` 为">
     
         <link rel="alternate" type="application/atom+xml" title="个人博客" href="/atom.xml">
     
@@ -113,7 +113,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">REACT_组件通信</div>
+        <div class="flex-col header-title ellipsis">REACT_setState</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -135,11 +135,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">REACT_组件通信</h1>
+        <h1 class="title">REACT_setState</h1>
         <h5 class="subtitle">
             
-                <time datetime="2018-03-25T14:25:58.000Z" itemprop="datePublished" class="page-time">
-  2018-03-25
+                <time datetime="2018-03-22T12:33:57.000Z" itemprop="datePublished" class="page-time">
+  2018-03-22
 </time>
 
 
@@ -160,17 +160,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#父子组件通信"><span class="post-toc-number">1.</span> <span class="post-toc-text">父子组件通信</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#兄弟组件通信"><span class="post-toc-number">2.</span> <span class="post-toc-text">兄弟组件通信</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#跨多层次组件通信"><span class="post-toc-number">3.</span> <span class="post-toc-text">跨多层次组件通信</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#setState"><span class="post-toc-number">1.</span> <span class="post-toc-text">setState</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-react_fscom" class="post-article article-type-post fade" itemprop="blogPost">
+<article id="post-react_setStarte" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">REACT_组件通信</h1>
+        <h1 class="post-card-title">REACT_setState</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-03-25 22:25:58" datetime="2018-03-25T14:25:58.000Z" itemprop="datePublished">2018-03-25</time>
+            <time class="post-time" title="2018-03-22 20:33:57" datetime="2018-03-22T12:33:57.000Z" itemprop="datePublished">2018-03-22</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/react/">react</a></li></ul>
@@ -185,10 +185,15 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h3><p>父组件通过  props  传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。这种父子通信方式也就是典型的单向数据流，父组件通过  props  传递数据，子组件不能直接修改  props， 而是必须通过调用父组件函数的方式告知父组件修改数据。</p>
-<h3 id="兄弟组件通信"><a href="#兄弟组件通信" class="headerlink" title="兄弟组件通信"></a>兄弟组件通信</h3><p>对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件调用父组件传递过来的事件函数修改父组件中的状态，然后父组件将状态传递给另一个兄弟组件。</p>
-<h3 id="跨多层次组件通信"><a href="#跨多层次组件通信" class="headerlink" title="跨多层次组件通信"></a>跨多层次组件通信</h3><p>如果你使用 16.3 以上版本的话，对于这种情况可以使用 Context API。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">// 创建 Context，可以在开始就传入值</span><br><span class="line">const StateContext = React.createContext()</span><br><span class="line">class Parent extends React.Component &#123;</span><br><span class="line">  <span class="function"><span class="title">render</span></span> () &#123;</span><br><span class="line">    <span class="built_in">return</span> (</span><br><span class="line">      // value 就是传入 Context 中的值</span><br><span class="line">      &lt;StateContext.Provider value=<span class="string">'yck'</span>&gt;</span><br><span class="line">        &lt;Child /&gt;</span><br><span class="line">      &lt;/StateContext.Provider&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Child extends React.Component &#123;</span><br><span class="line">  <span class="function"><span class="title">render</span></span> () &#123;</span><br><span class="line">    <span class="built_in">return</span> (</span><br><span class="line">      &lt;ThemeContext.Consumer&gt;</span><br><span class="line">        // 取出值</span><br><span class="line">        &#123;context =&gt; (</span><br><span class="line">          name is &#123; context &#125;</span><br><span class="line">        )&#125;</span><br><span class="line">      &lt;/ThemeContext.Consumer&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h3 id="setState"><a href="#setState" class="headerlink" title="setState"></a>setState</h3><p>setState 在 React 中是经常使用的一个 API，但是它存在一些的问题经常会导致初学者出错，核心原因就是因为这个 API 是异步的。首先  setState  的调用并不会马上引起  state  的改变，并且如果你一次调用了多个  setState ，那么结果可能并不如你期待的一样。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">handle</span></span>() &#123;</span><br><span class="line">  // 初始化 `count` 为 0</span><br><span class="line">  console.log(this.state.count) // -&gt; 0</span><br><span class="line">  this.setState(&#123; count: this.state.count + 1 &#125;)</span><br><span class="line">  this.setState(&#123; count: this.state.count + 1 &#125;)</span><br><span class="line">  this.setState(&#123; count: this.state.count + 1 &#125;)</span><br><span class="line">  console.log(this.state.count) // -&gt; 0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第一，两次的打印都为 0，因为  setState  是个异步 API，只有同步代码运行完毕才会执行。setState  异步的原因我认为在于，setState  可能会导致 DOM 的重绘，如果调用一次就马上去进行重绘，那么调用多次就会造成不必要的性能损失。设计成异步的话，就可以将多次调用放入一个队列中，在恰当的时候统一进行更新过程。</p>
+<p>第二，虽然调用了三次  setState ，但是  count  的值还是为 1。因为多次调用会合并为一次，只有当更新结束后  state  才会改变，三次调用等同于如下代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Object.assign(</span><br><span class="line">  &#123;&#125;,</span><br><span class="line">  &#123; count: this.state.count + 1 &#125;,</span><br><span class="line">  &#123; count: this.state.count + 1 &#125;,</span><br><span class="line">  &#123; count: this.state.count + 1 &#125;,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>当然你也可以通过以下方式来实现调用三次  setState  使得  count  为 3</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">handle</span></span>() &#123;</span><br><span class="line">  this.setState((prevState) =&gt; (&#123; count: prevState.count + 1 &#125;))</span><br><span class="line">  this.setState((prevState) =&gt; (&#123; count: prevState.count + 1 &#125;))</span><br><span class="line">  this.setState((prevState) =&gt; (&#123; count: prevState.count + 1 &#125;))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果你想在每次调用  setState  后获得正确的  state ，可以通过如下代码实现</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">handle</span></span>() &#123;</span><br><span class="line">    this.setState((prevState) =&gt; (&#123; count: prevState.count + 1 &#125;), () =&gt; &#123;</span><br><span class="line">        console.log(this.state)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -221,7 +226,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.bochunhao.cn/2018/03/25/react_fscom/&title=《REACT_组件通信》 — 个人博客&pic=http://blog.bochunhao.cn/img/loggo.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.bochunhao.cn/2018/03/22/react_setStarte/&title=《REACT_setState》 — 个人博客&pic=http://blog.bochunhao.cn/img/loggo.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -231,22 +236,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.bochunhao.cn/2018/03/25/react_fscom/&title=《REACT_组件通信》 — 个人博客&source=bch_bk" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.bochunhao.cn/2018/03/22/react_setStarte/&title=《REACT_setState》 — 个人博客&source=bch_bk" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.bochunhao.cn/2018/03/25/react_fscom/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.bochunhao.cn/2018/03/22/react_setStarte/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《REACT_组件通信》 — 个人博客&url=http://blog.bochunhao.cn/2018/03/25/react_fscom/&via=http://blog.bochunhao.cn" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《REACT_setState》 — 个人博客&url=http://blog.bochunhao.cn/2018/03/22/react_setStarte/&via=http://blog.bochunhao.cn" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.bochunhao.cn/2018/03/25/react_fscom/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.bochunhao.cn/2018/03/22/react_setStarte/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -269,18 +274,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2018/03/26/vue-lifecycle/" id="post-prev" class="post-nav-link">
+      <a href="/2018/03/25/react_fscom/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">vue_lifecycle</h4>
+        <h4 class="title">REACT_组件通信</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2018/03/22/react_setStarte/" id="post-next" class="post-nav-link">
+      <a href="/2018/01/05/react-Refs/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">REACT_setState</h4>
+        <h4 class="title">react_Refs</h4>
       </a>
     </div>
   
@@ -359,7 +364,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.bochunhao.cn/2018/03/25/react_fscom/&title=《REACT_组件通信》 — 个人博客&pic=http://blog.bochunhao.cn/img/loggo.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.bochunhao.cn/2018/03/22/react_setStarte/&title=《REACT_setState》 — 个人博客&pic=http://blog.bochunhao.cn/img/loggo.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -369,22 +374,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.bochunhao.cn/2018/03/25/react_fscom/&title=《REACT_组件通信》 — 个人博客&source=bch_bk" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.bochunhao.cn/2018/03/22/react_setStarte/&title=《REACT_setState》 — 个人博客&source=bch_bk" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.bochunhao.cn/2018/03/25/react_fscom/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.bochunhao.cn/2018/03/22/react_setStarte/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《REACT_组件通信》 — 个人博客&url=http://blog.bochunhao.cn/2018/03/25/react_fscom/&via=http://blog.bochunhao.cn" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《REACT_setState》 — 个人博客&url=http://blog.bochunhao.cn/2018/03/22/react_setStarte/&via=http://blog.bochunhao.cn" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.bochunhao.cn/2018/03/25/react_fscom/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.bochunhao.cn/2018/03/22/react_setStarte/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -395,7 +400,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJUlEQVR42u3aS27DMAwFwNz/0um2QFr7kVQWkserIDEUzobgR69X/Lw/nsmbv7///Hx9/ujBwMDYlvG+fKqM63CTM6/f+TcGDAyMBzDytFgNopc589gwMDAwekkwKfgSPAYGBsY84VaDyAtQDAwMjF4Tu2pglyTxL/biGBgYGzImjeW3P39lv4GBgbEV41188kFbsgxYFhUGBsbRjDzB5SXaddu5ap2AgYHxHEaeNJMrF9XLGfm47QaGgYHxGEZzHN/iVVekN2tRDAyMoxm9gX41Wedj/VGgGBgYRzMm18LyBeQkNSfRYmBgnM3oXX3oNat565ufj4GBcTYjOaLHrsLy0/6IEAMD42jG2jQ6H41Nik4MDIyzGdXQ165Ck/eT8R8GBsapjOqAvtpwJsVlArj5BgMD42hGPnDv7UWrK4EF5SYGBsZxjF5jmS8dkysazcRafQkDA2NbRvVaQ2+glifZahNbrnMxMDA2ZyR/lrS1ecLNT4iQGBgYD2DkybFXuvXSbqEaxMDAeACjmmrzBJovLyfnYGBgPIGRj9KqQ7S16XXUi2NgYGzIeBef6nCtt1TIW9xo/4mBgbE5Y1nOjhPxnDe5/IGBgbEvo3clqzpE6w3mMDAwMHpNbG/oX902lttgDAwMjEUta/Wq2c3aMvkBAwPjkYxkDJcXl5MEvWC/gYGBsRUjXwYkQ7f5hK9cjGJgYBzNmByaLwnyIHprAwwMjEMZP9Cv2xmuIdasAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJElEQVR42u3awY7CMAxFUf7/p4s0q5FQ2/vsMJo6N6uKAs1hYezYrxdex8/6vD67+3vxb7v+1IIlQ4aMxzKOy3W2dc7gSPL+U6oMGTI2YPDN8UeSLabvOX1dhgwZMsJHEvB10JchQ4aMtQGXbKtT1sqQIUMGL2JrxSo/JeMlsQwZMnZjdBoD377+o/6GDBky/jHjCBcvVnkYXbArGTJkjGaQ4QnyAHJ3VYp5Go5lyJAxmpFmXLwQJQVn2ihdNi4mQ4aMhzD4AzqJIG9ScvZNUihDhoxBDHK7dkBWI6WtAhkyZOzDqB3ck0RwVcqI8kAZMmRszOBhsTZmwX+mm1AuQ4aMoYy1myZHcrWC+YYqQ4aMbRj8aIzfTdNBHvRlyJCxMyNtN9baCZ1WhAwZMnZj8KSwlg7y4/7OKzJkyJjNqA1P9Ee++E8T/2/IkCFjA0Zn/IJsKIWhkC1DhozRDF6+koQv3TofyAiaDTJkyBjNqB3Kp0VpraxFoVaGDBlDGatGvtLikwyQ8YM8GTJk7MBAo1c4fSTJXycc39TiMmTIGMfoHN/X2plp4zNIJWXIkDGUcYSrdhjXSQpRW0KGDBmjGbUN8cO4NFlM8TJkyNiHkY5kkUK0E7LjsTAZMmRsw+i0M2ubWJVoypAhQwYPrLUSNG2IypAhQwYvJnmJy1sCKb6YGsqQIeOxDFLEkuZlWqwuAMiQIWMDRqcx8O1rPvYhQ4aMoYw3EzOodjOrJ1oAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
