@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>MobileLayout | 个人博客 | BCH</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="移动端布局">
+    <meta name="description" content="移动端布局方案1、rem 和 vwrem 和 vw 都是为了解决移动端适配问题。rem 方案中最成功的就是淘宝的 lib-flexible 了，它是通过 javascript 将整个布局分割成 10 份，从而进行有效布局。不过有计算 dpr 的问题，在一些 dpr 比较怪异的手机上会出现脱相的问题。后来又产生了 vw 布局，使用了 vw 之后，也再无需通过 javascript 的帮助进行布局的切">
+<meta name="keywords" content="移动端布局">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MobileLayout">
+<meta property="og:url" content="http://blog.bochunhao.cn/2019/04/23/MobileLayout/index.html">
+<meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="移动端布局方案1、rem 和 vwrem 和 vw 都是为了解决移动端适配问题。rem 方案中最成功的就是淘宝的 lib-flexible 了，它是通过 javascript 将整个布局分割成 10 份，从而进行有效布局。不过有计算 dpr 的问题，在一些 dpr 比较怪异的手机上会出现脱相的问题。后来又产生了 vw 布局，使用了 vw 之后，也再无需通过 javascript 的帮助进行布局的切">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-23T12:52:40.252Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MobileLayout">
+<meta name="twitter:description" content="移动端布局方案1、rem 和 vwrem 和 vw 都是为了解决移动端适配问题。rem 方案中最成功的就是淘宝的 lib-flexible 了，它是通过 javascript 将整个布局分割成 10 份，从而进行有效布局。不过有计算 dpr 的问题，在一些 dpr 比较怪异的手机上会出现脱相的问题。后来又产生了 vw 布局，使用了 vw 之后，也再无需通过 javascript 的帮助进行布局的切">
+    
+        <link rel="alternate" type="application/atom+xml" title="个人博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/loggo.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">BCH</h5>
+          <a href="mailto:17600280987@163.com" title="17600280987@163.com" class="mail">17600280987@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-archives"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/bch9479/blog" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://weibo.com/5900743344/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">MobileLayout</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">MobileLayout</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-04-23T12:39:53.000Z" itemprop="datePublished" class="page-time">
+  2019-04-23
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/移动端布局/">移动端布局</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#移动端布局方案"><span class="post-toc-number">1.</span> <span class="post-toc-text">移动端布局方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1、rem-和-vw"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1、rem 和 vw</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-1、-rem-的问题"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">1.1、 rem 的问题</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-2、vw-的问题"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">1.2、vw 的问题</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-3、它们共同的问题"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">1.3、它们共同的问题</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2、移动端布局的初衷"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2、移动端布局的初衷</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-1、一个新的-Units-单位（该小节摘自https-fusion-design-design-doc-16）"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">2.1、一个新的 Units 单位（该小节摘自https://fusion.design/design/doc/16）</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3、具体实现"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3、具体实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#主要思路"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">主要思路</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#前提"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">前提</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-2-1、方式一：styled-components-css-in-js-JSX"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">3.2.1、方式一：styled-components + css-in-js + JSX</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Vue："><span class="post-toc-number">1.3.3.1.</span> <span class="post-toc-text">Vue：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#react"><span class="post-toc-number">1.3.3.2.</span> <span class="post-toc-text">react:</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-2-2、方式二：在浏览器运行时动态计算"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">3.2.2、方式二：在浏览器运行时动态计算</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-2-3、优缺点"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">3.2.3、优缺点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#优点："><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">优点：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#缺点："><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">缺点：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#最后"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">最后</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-MobileLayout" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">MobileLayout</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-04-23 20:39:53" datetime="2019-04-23T12:39:53.000Z" itemprop="datePublished">2019-04-23</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/移动端布局/">移动端布局</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="移动端布局方案"><a href="#移动端布局方案" class="headerlink" title="移动端布局方案"></a>移动端布局方案</h3><h4 id="1、rem-和-vw"><a href="#1、rem-和-vw" class="headerlink" title="1、rem 和 vw"></a>1、rem 和 vw</h4><p>rem 和 vw 都是为了解决移动端适配问题。rem 方案中最成功的就是淘宝的 lib-flexible 了，它是通过 javascript 将整个布局分割成 10 份，从而进行有效布局。不过有计算 dpr 的问题，在一些 dpr 比较怪异的手机上会出现脱相的问题。后来又产生了 vw 布局，使用了 vw 之后，也再无需通过 javascript 的帮助进行布局的切分，而是自动的将整个布局切割为等分的 100 份，也就是 1vw = 1%的页面宽度。</p>
+<h5 id="1-1、-rem-的问题"><a href="#1-1、-rem-的问题" class="headerlink" title="1.1、 rem 的问题"></a>1.1、 rem 的问题</h5><p>.在奇葩的 dpr 设备上表现效果不太好，比如 一些华为的高端机型 用 rem 布局会出现错乱。<br>.设置根字体大小的方式有两种，一种是媒体查询，优点：不需要额外使用 js 去更改 html 的字体，缺点：不连续，或者说并能完* 全实现对所有设备的布局规范统一；<br>.另一种是 js 动态更改 html 字体，优点：连续；缺点：不如直接写媒体查询的体验好；<br>.不支持 css3 calc 的需要大量密集的 @media hack；<br>.使用 iframe 引用也会出现问题；<br>.需要解决在 ios 上的 1px 边框问题，但是这个在 lib-flexible 中已经解决：（1px 变 2px， 又被 initial-scale=0.5 缩小了一半<br>.rem 需要引入一个 lib 库<br>.html 的 font-size 设置到 12px 以下还是会按照 12px=1rem 来计算，这样所有使用了 rem 单位的尺寸都是错的</p>
+<h5 id="1-2、vw-的问题"><a href="#1-2、vw-的问题" class="headerlink" title="1.2、vw 的问题"></a>1.2、vw 的问题</h5><p>.支持程度不太好，安卓 4.4 以下都不支持</p>
+<h5 id="1-3、它们共同的问题"><a href="#1-3、它们共同的问题" class="headerlink" title="1.3、它们共同的问题"></a>1.3、它们共同的问题</h5><p>.都需要计算以达到适配的目的<br>.额外引入工具，在编译阶段完成转换<br>.UI 的回归测试不友好。毕竟设计稿是 px，而页面是 rem 或 vm。<br>.都是相对单位。rem 的比例是可以通过控制 html 字体大小来控制的，而 vw 的比例是固定的。<br>.无法和 web 项目共用统一套工程化方案，因为 web 项目不需要使用 rem 和 vw 单位。</p>
+<h4 id="2、移动端布局的初衷"><a href="#2、移动端布局的初衷" class="headerlink" title="2、移动端布局的初衷"></a>2、移动端布局的初衷</h4><p>可以轻松搞定任意布局<br>通过设计稿，可以让应用在不同的设备上有完美的体验效果</p>
+<p>虽然 rem 和 vw 可以很好完成它们的初衷，不过同时它们也是有代价的（就是它们存在的问题）。那有没有一种方案可以规避掉以上 rem 和 vw 的问题又可以很好的完成初衷哪？</p>
+<h5 id="2-1、一个新的-Units-单位（该小节摘自https-fusion-design-design-doc-16）"><a href="#2-1、一个新的-Units-单位（该小节摘自https-fusion-design-design-doc-16）" class="headerlink" title="2.1、一个新的 Units 单位（该小节摘自https://fusion.design/design/doc/16）"></a>2.1、一个新的 Units 单位（该小节摘自<a href="https://fusion.design/design/doc/16）" target="_blank" rel="noopener">https://fusion.design/design/doc/16）</a></h5><p>DP 为 UI 设计中的唯一可用单位<br>由于 DP 在不同设备中的叫法不同，且用于描述字号的单位有所不同（如 SP，PT），但其基本计算方法和原则相同且通用，所以在设计过程中，我们考虑到严谨性，统一采用只写数字不带单位的方法书写。</p>
+<p>选用 DP 的原因</p>
+<p>像素密度 PPI：指每英寸包含的像素(Px)个数</p>
+<p>如图同一物理尺寸（肉眼所见尺寸）下，低密度显示器的像素个数明显小于高密度显示器的像素个数，所以像素（PX)在多变的设备和分辨率下不是一个稳定可用的单位</p>
+<p>与密度无关的像素（DP）：设备独立像素</p>
+<p>DP 可以自适应屏幕的密度，不管屏幕密度怎么变化，实际显示的物理尺寸相同，DP 可以保证物理尺寸的一致性，DP 是目前最适合 UI 设计的单位，同时也是使代码语言相通的尺寸。<br>转换公式<br>当屏幕的 PPI 为 160 时，1DP=1PX；例：Iphone4，Iphone5，Iphone6，PPI 为 326，在这些屏幕之下 1DP=2PX<br>DP=(PX160)/PPI<br>PX=DP(PPI/160)</p>
+<p>切图规则 DP 是与开发代码共用的语言，但一些需要置入的 jpg，png 等图片非矢量，依旧采用 px 作为单位，这个时候我们需要将图片适配到不同 PPI 的屏幕中去。</p>
+<p>实际场景中，无法为各种屏幕做切图适配，我么遵循大图可压缩小，小图不可变大的原则：</p>
+<pre>
+【Mobile】选择3x图输出，适配于ios和andirod
+【Web】选择2x的图输出，适配普通屏幕和retina屏幕
+</pre>
+
+<p>画布设置规则</p>
+<pre>
+【Mobile】选择375*667作为绘图尺寸
+【Andriod】 选择360*640作为绘图尺寸
+【Web】使用1440宽作为绘图尺寸
+</pre>
+
+<h4 id="3、具体实现"><a href="#3、具体实现" class="headerlink" title="3、具体实现"></a>3、具体实现</h4><h5 id="主要思路"><a href="#主要思路" class="headerlink" title="主要思路"></a>主要思路</h5><p>1.设计稿中统一使用 dp 作为像素单位，具体规则参考上面的切图规则和画布设计规则<br>2.rem 和 vw 多多少少存在各种问题，所以统一使用 px 作为实现单位<br>3.web 和 wap 可以使用同一套工程方案 4.实现设计稿的 dp 到真实应用中 px 的映射关系，并且 px 会随着设备窗口大小的改变而改变</p>
+<p>当然，如果稿子是 px 的也可以手动将 px 转换为 dp。</p>
+<p>想要实现这个整体方案，核心就在于第 4 条（实现设计稿的 dp 到真实应用中 px 的映射关系），并且这个过程只靠工程化的编译阶段是无法完美解决的，必须和浏览器运行时一起配合工作才能够达成我们的目标。</p>
+<h5 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h5><p>业务模块的 css 不可以抽离为独立的 css 文件，必须输出在 js 文件中（style-loader 的能力），这样才有改变 css 内容的基本能力。<br>定义一个尺寸单位 dp，标识这是在设计稿上的尺寸（类似于小程序中的 rpx）。<br>并不是所有的 px 都需要做弹性转换的，对于需要做弹性转换的容器的 px 统一改为 dp，否则继续使用 px。</p>
+<p>假设我们根据 Mobile 设计稿定义一个移动端 H5 的容器元素：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"box"</span>&gt;</span><br><span class="line">	&lt;div class=<span class="string">"tip"</span>&gt;this is tip&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.box &#123;</span><br><span class="line">	/* 这里使用的单位为dp，表示需要根据设备大小进行弹缩 */</span><br><span class="line">	width: 100dp;</span><br><span class="line">	height: 150dp;</span><br><span class="line">	background: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box .tip &#123;</span><br><span class="line">	/* 使用的单位为px，不需要根据设备大小进行弹缩。无论设备怎么变化，该元素的宽高都是10像素。 */</span><br><span class="line">	width: 10px;</span><br><span class="line">	height: 10px;</span><br><span class="line">	background: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最终，元素.box 会根据设备的宽高的改变而改变自身的大小，下方就是.box 元素在不同设备下的宽和高：</p>
+<p>设备 宽度 高度</p>
+<p>设计稿 100dp 150dp<br>iPhone 5/SE 85.33px 128px<br>iPhone 6/7/8 100px 150px<br>iPhone 6/7/8 Plus 110.4px 165.60px<br>iPhone X 100px 150px<br>Galaxy S5 96px 144px<br>在实现这个功能必须先提供一个转换 dp 为 px 的帮助函数：unitParser。因为接下来的两种方式中都需要这个函数来帮助我们实现最终目的。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">const allowMiniPixel = () =&gt; &#123;</span><br><span class="line">    <span class="built_in">let</span> allow = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (window.devicePixelRatio &amp;&amp; devicePixelRatio &gt;= 2) &#123;</span><br><span class="line">        <span class="built_in">let</span> ele = document.createElement(<span class="string">"div"</span>);</span><br><span class="line">        ele.style.border = <span class="string">".5px solid transparent"</span>;</span><br><span class="line">        document.body.appendChild(ele);</span><br><span class="line">        allow = 1 === ele.offsetHeight;</span><br><span class="line">        document.body.removeChild(ele);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> allow;</span><br><span class="line">&#125;();</span><br><span class="line"><span class="keyword">function</span> unitParser(unit) &#123;</span><br><span class="line">	<span class="built_in">let</span> <span class="built_in">type</span> = void 0 === unit ? <span class="string">"undefined"</span> : getType(unit);</span><br><span class="line">	<span class="keyword">if</span> (<span class="string">"number"</span> === <span class="built_in">type</span>) &#123;</span><br><span class="line">		unit += <span class="string">"dp"</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (<span class="string">"string"</span> !== <span class="built_in">type</span>) &#123;</span><br><span class="line">		<span class="built_in">return</span> unit;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">let</span> regExp = /^([\d\.]+)(np|dp)?$/g;</span><br><span class="line">	<span class="built_in">return</span> unit.replace(regExp, (chars, count, suffix) =&gt; &#123;</span><br><span class="line">		count = Number(count)</span><br><span class="line">		switch (suffix) &#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">"np"</span>:</span><br><span class="line">				// np不做转换。1np就是1px 100np就是100px</span><br><span class="line">				<span class="built_in">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">"dp"</span>:</span><br><span class="line">			default:</span><br><span class="line">				// 注意这里375。说明的上文说了，设计稿是按照iphone 6的375进行设计的。</span><br><span class="line">				// deviceWidth为屏幕的宽度。iphone 5/SE为320、iphone 6/7/8为375</span><br><span class="line">				count = count / 375 * deviceWidth</span><br><span class="line">		&#125;;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (!allowMiniPixel &amp;&amp; count &lt; 1) &#123;</span><br><span class="line">			count = 1</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">return</span> count + <span class="string">"px"</span>;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="3-2-1、方式一：styled-components-css-in-js-JSX"><a href="#3-2-1、方式一：styled-components-css-in-js-JSX" class="headerlink" title="3.2.1、方式一：styled-components + css-in-js + JSX"></a>3.2.1、方式一：styled-components + css-in-js + JSX</h5><h6 id="Vue："><a href="#Vue：" class="headerlink" title="Vue："></a>Vue：</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">import styled from <span class="string">'vue-emotion'</span></span><br><span class="line">import unitParser from <span class="string">'./unitParser.js'</span>;</span><br><span class="line"></span><br><span class="line">const box = styled(<span class="string">'div'</span>)`</span><br><span class="line">	width: <span class="variable">$&#123;unitParser("100dp")&#125;</span>;</span><br><span class="line">	height: <span class="variable">$&#123;unitParser("150dp")&#125;</span>;</span><br><span class="line">	background: red;</span><br><span class="line">`</span><br><span class="line"></span><br><span class="line">const tip = styled(div)`</span><br><span class="line">    width: 10px;</span><br><span class="line">	height: 10px;</span><br><span class="line">	background: blue;</span><br><span class="line">`</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">  <span class="function"><span class="title">render</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> (</span><br><span class="line">      &lt;box&gt;</span><br><span class="line">        &lt;tip&gt;this is a tip&lt;/tip&gt;</span><br><span class="line">      &lt;/box&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h6 id="react"><a href="#react" class="headerlink" title="react:"></a>react:</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import styled from <span class="string">'styled-components'</span>;</span><br><span class="line">import unitParser from <span class="string">'./unitParser.js'</span>;</span><br><span class="line"></span><br><span class="line">const Box = styled.div`</span><br><span class="line">    width: <span class="variable">$&#123;unitParser("100dp")&#125;</span>;</span><br><span class="line">	height: <span class="variable">$&#123;unitParser("150dp")&#125;</span>;</span><br><span class="line">	background: red;</span><br><span class="line">`</span><br><span class="line">const Tip = styled.div`</span><br><span class="line">    width: 10px;</span><br><span class="line">	height: 10px;</span><br><span class="line">	background: red;</span><br><span class="line">`</span><br><span class="line"></span><br><span class="line">render(</span><br><span class="line">  &lt;Box&gt;</span><br><span class="line">    &lt;Tip&gt;this is a tip&lt;/Tip&gt;</span><br><span class="line">  &lt;/Box&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>注意： 使用此方案需要注意和 sass、post-css 等工具的结合使用问题，会增加一定的工程复杂度。另外这种方案会产生大量的元素 style 属性，导致 dom 复杂度增加。</p>
+<h5 id="3-2-2、方式二：在浏览器运行时动态计算"><a href="#3-2-2、方式二：在浏览器运行时动态计算" class="headerlink" title="3.2.2、方式二：在浏览器运行时动态计算"></a>3.2.2、方式二：在浏览器运行时动态计算</h5><p>自定义一个 webpack 的 css-loader，进行 unitParser 处理。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> styleInject(css, ref) &#123;</span><br><span class="line">  <span class="keyword">if</span> ( ref === void 0 ) ref = &#123;&#125;;</span><br><span class="line">  var insertAt = ref.insertAt;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!css || typeof document === <span class="string">'undefined'</span>) &#123; <span class="built_in">return</span>; &#125;</span><br><span class="line"></span><br><span class="line">  var head = document.head || document.getElementsByTagName(<span class="string">'head'</span>)[0];</span><br><span class="line">  var style = document.createElement(<span class="string">'style'</span>);</span><br><span class="line">  style.type = <span class="string">'text/css'</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (insertAt === <span class="string">'top'</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (head.firstChild) &#123;</span><br><span class="line">      head.insertBefore(style, head.firstChild);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      head.appendChild(style);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    head.appendChild(style);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (style.styleSheet) &#123;</span><br><span class="line">    style.styleSheet.cssText = css;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    style.appendChild(document.createTextNode(css));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var css = <span class="string">".box &#123;width: "</span></span><br><span class="line">+ unitParser(<span class="string">"100dp"</span>)</span><br><span class="line">+ <span class="string">"; height: "</span></span><br><span class="line">+ unitParser(<span class="string">"150dp"</span>)</span><br><span class="line">+ <span class="string">"; background: red;&#125; .box .tip &#123;width: 10px; height:10px; background: blue&#125;"</span>;</span><br><span class="line"></span><br><span class="line">styleInject(css);</span><br></pre></td></tr></table></figure>
+<h4 id="3-2-3、优缺点"><a href="#3-2-3、优缺点" class="headerlink" title="3.2.3、优缺点"></a>3.2.3、优缺点</h4><h5 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h5><p>文章开头所提到的 rem 和 vw 都存在众多问题，该方案都可以完美解决。<br>还可以和其他任何单位混合使用，这意味这使用这种方案的同时还可以使用之前的 rem 和 vw 方式。</p>
+<h5 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h5><p>不管使用方式一还是方式二，都会对项目的工程化复杂度增加，不过和目前处理 rem 以及 vm 的 px2rem 以及 px2viewport 等工具相比，这点复杂度根本不值一提。<br>增加了 js bundle 文件的体积，减少了 css 文件的体积。不过没有整体的体积没有增加，仅仅是将部分业务的 css 内容搬到了 js 文件里。</p>
+<h5 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h5><p>借用了大部分工程化的能力，主要还是用来 css in js 的能力<br>但是这样有个缺点。就是视窗大小改变的时候会出现布局错乱。不过影响不大，因为真机里是不会出现窗口大小改版的。而且这一套方案完全抹平了 web 和 wap 的差异性，在开发层面完全一直。需要缩放就用 dp，不需要就用 np 和 px 作为单位即可<br>这套方案还是蛮不错的，比 rem 和 vw 好很多。确实属于第三代移动端布局方案了</p>
+<p>作者：YataoZhang<br>链接：<a href="https://juejin.im/post/5cb078f05188251ace1fedb4" target="_blank" rel="noopener">https://juejin.im/post/5cb078f05188251ace1fedb4</a><br>来源：掘金<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://blog.bochunhao.cn">
+            <img src="/img/loggo.png" alt="BCH">
+            BCH
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动端布局/">移动端布局</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.bochunhao.cn/2019/04/23/MobileLayout/&title=《MobileLayout》 — 个人博客&pic=http://blog.bochunhao.cn/img/loggo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.bochunhao.cn/2019/04/23/MobileLayout/&title=《MobileLayout》 — 个人博客&source=bch_bk" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.bochunhao.cn/2019/04/23/MobileLayout/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MobileLayout》 — 个人博客&url=http://blog.bochunhao.cn/2019/04/23/MobileLayout/&via=http://blog.bochunhao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.bochunhao.cn/2019/04/23/MobileLayout/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/04/23/PageEditing/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">PageEditing</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        感谢支持
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/vx.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/vx.png" data-alipay="/img/zfb.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <p>个人博客 &copy; 2018</p>
+    <p style="color:#fff;font-size: 16px;font-weight:bolder">
+        不积跬步，无以至千里
+    </p>
+    <p style="color:#fff;font-size: 16px;font-weight:bolder">
+        不积小流，无以成江海
+    </p>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.bochunhao.cn/2019/04/23/MobileLayout/&title=《MobileLayout》 — 个人博客&pic=http://blog.bochunhao.cn/img/loggo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.bochunhao.cn/2019/04/23/MobileLayout/&title=《MobileLayout》 — 个人博客&source=bch_bk" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.bochunhao.cn/2019/04/23/MobileLayout/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MobileLayout》 — 个人博客&url=http://blog.bochunhao.cn/2019/04/23/MobileLayout/&via=http://blog.bochunhao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.bochunhao.cn/2019/04/23/MobileLayout/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACGUlEQVR42u3aMZLDIAwF0Nz/0tk2M1k7X5JdGB5VhrENj0JBiNcrbu+P9tlz9Mx3O3/yaJSLGwYGxmMZyfDVyX33J/ij55PRMTAwdmAcRbDzTyeAahg9Zx/2Y2BgYMRBsBeazwM9BgYGxpwxSYOTHgwMDIw8iU0mV01N8wO4y3JxDAyMBzImieXdv2+pb2BgYDyK0UtEq1u6ZFqTJBkDA2NtRnWYPN1NCplzNgYGxm6Muw/XrjqAa95cw8DAWI5RvfTQC5HVhfvBw8DAWJRRfaE3WHWLWT56w8DAWJqRH4FVE9HqYkXXKSZlAwwMjMcy7gh/k6Q0D+sYGBg7M3oHZHlcn286/xkdAwNjaUZyuHYe8vKUNflO70gOAwNjbUZvur0yZ4LJk9jD2yIYGBiLMvIgWJ1Eb7rlHgwMjA0Y1YBY3SwmO9Mbt4YYGBhLMJJPV3uqSWwh28bAwNiYccehW3WBqpctMDAwdmDkh2LlUmKx/NkrZ0aDYWBgLMHIpzUJtZNQnnwHAwNjZ0a+gcvf6pUfClUODAyMRRm9Td586pNxMTAwdmC8i+0Vt+pbo/wbAwNjacZkWr3fCa982QIDA2MDRi+BvGq1JlfEMDAwdmNMpthLWXtbzygXx8DA2J6Rh9dJSTIvo2JgYGBMypPVA7hkOS7+38DAwHgUY35pNU9HryokYGBg7MOolhijjdpgEtWNJgYGxtKMP0JJIuDa4SmcAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '快回来看我呀！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '个人博客';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
